@@ -78,11 +78,13 @@ print(ppp, "ppppppppppppppppppppppppppppppppppppp")
 print(epep)
 #print(len(df), len(df_e), len(df_p))
 i = 0
+tmp_test0 = pd.DataFrame()
 for col in df_e.columns:
     i = i + 1
     val_fre = pd.DataFrame()
     #val_fre = val_fre.append(df[col].value_counts())
     val_fre = val_fre.append(df_e[col].value_counts(normalize = True))
+    tmp_test0 = tmp_test0.append(df_e[col].value_counts(normalize = True))
     #print(val_fre)
     #cha.append([])
     cha.append(val_fre.columns.values.tolist()) 
@@ -114,6 +116,7 @@ for col in df_p.columns:
          arr_p[i].append(val_fre.ix[[0]].values[0][j])    #probility in condi p
 #print(type_num_p)
 tmp_test.index = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+tmp_test0.index = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 print(tmp_test.head())
 i = 0
 cha_test = []
@@ -188,24 +191,27 @@ print(arr_e)
 ft = 1
 outcome = []
 #print(arr_e(2,1))
+print(tmp_test0)
 for y in range (0, count-tmp2):
-    ft = 1
+    ft1 = 1
+    ft2 = 1
     for ik in range(1, 23):
         #print(df_test.iat[y, ik])
-        ft = ft*tmp_test.at[ik, df_test.iat[y, ik]]
+        ft1 = ft1*tmp_test.at[ik, df_test.iat[y, ik]]
+        ft2 = ft2*tmp_test0.at[ik, df_test.iat[y, ik]]
     #$if(df_test.iat[y,0] == 'e'):
-    ft1 = ft/epep[0]
+    ft2 = ft2/epep[0]   #eat
     #else:
-    ft2 = ft/epep[1]
-    print(ft1, ft2)
+    ft1 = ft1/epep[1]    #poisin
+    #print(ft1, ft2)
     if(np.isnan(ft1) == True):
         ft1 = 0
     if(np.isnan(ft2) == True):
         ft2 = 0
     if(ft1 <= ft2):
-        outcome.append('p')
-    else:
         outcome.append('e')
+    else:
+        outcome.append('p')
 #print(df_test.iat[0, 0])
  #   break
 print(outcome)    
