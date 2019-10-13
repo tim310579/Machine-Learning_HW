@@ -45,11 +45,9 @@ df = df[0:tmp2]
 #print(len(df))
 '''with open('output2.data', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-
     df.to_csv('output2.data')
 with open('outputtest.data', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-
     df_test.to_csv('outputtest.data')
 '''
 df_e = pd.DataFrame()
@@ -66,8 +64,19 @@ for col in df_p.columns:
     delete = df_p[df_p[col] == "e"].index
     df_p.drop(delete, inplace = True)
     break
-
-print(len(df), len(df_e), len(df_p))
+ppp = pd.DataFrame()
+epep = []
+for col in df.columns:
+    ppp = ppp.append(df[col].value_counts(normalize = True))
+    #epep.append(ppp.ix[[0]].values[0][0])
+    #epep.append(ppp.values[1][0])
+    #epep = [ppp.iat[0, 0], ppp.iat[0,1]]
+    break
+epep.append((ppp.iat[0,0]))
+epep.append((ppp.iat[0,1]))
+print(ppp, "ppppppppppppppppppppppppppppppppppppp")
+print(epep)
+#print(len(df), len(df_e), len(df_p))
 i = 0
 for col in df_e.columns:
     i = i + 1
@@ -87,11 +96,13 @@ for col in df_e.columns:
          arr_e[i].append(val_fre.ix[[0]].values[0][j])    #probility
     #val_fre.drop(val_fre.index[:1])
 i = 0
+tmp_test = pd.DataFrame()
 for col in df_p.columns:
     i = i + 1
     val_fre = pd.DataFrame()
     #val_fre = val_fre.append(df[col].value_counts())
     val_fre = val_fre.append(df_p[col].value_counts(normalize = True))
+    tmp_test = tmp_test.append(df_p[col].value_counts(normalize = True))
     cha2.append(val_fre.columns.values.tolist()) 
     #print(val_fre.columns.values.tolist())
     j = 0
@@ -102,6 +113,8 @@ for col in df_p.columns:
             #print(val_fre.values)
          arr_p[i].append(val_fre.ix[[0]].values[0][j])    #probility in condi p
 #print(type_num_p)
+tmp_test.index = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+print(tmp_test.head())
 i = 0
 cha_test = []
 for col in df_test.columns:
@@ -120,19 +133,19 @@ print(type_num_e)
 print(type_num_p)'''
 type_num_test = [0, 2, 6, 4, 8, 2, 7, 2, 2, 2, 9, 2, 4, 4, 4, 7, 7, 1, 2, 3, 4, 6, 6, 6]
 #type_num_test= [0, 2, 5, 4, 8, 2, 5, 2, 2, 2, 9, 2, 4, 4, 4, 6, 6, 1, 2, 3, 4, 5, 5, 6]
+'''ct = 1
 for cl in df_e.columns:
     for nums in range(1, type_num_test[ct]+1):
         #print(nums)
         df_e[cl].replace(cha_test[ct-1][nums-1], nums, inplace = True)     #transform
-    ct = ct +1                                                  #to int struct
-    #break
+    ct = ct +1  
 ct = 1
 for cl in df_p.columns:
     for nums in range(1, type_num_test[ct]+1):
         #print(nums)
         df_p[cl].replace(cha_test[ct-1][nums-1], nums, inplace = True) #transform
     ct = ct +1                                          #to int struct
-'''
+
 type_num_test = []
 #cha_test = []
 for j in range(0, 24):
@@ -144,7 +157,7 @@ type_num_test[1] = 2
 print(type_num_test)
 print(cha)
 print(cha2)
-print(cha_test)'''
+print(cha_test)
 
 ct = 1
 for cl in df_test.columns:
@@ -170,20 +183,39 @@ with open('output2.data', 'w', newline='') as csvfile:
     df_p.to_csv('output2.data')
 
 ft = 1
+print(arr_e)
+'''
+ft = 1
+outcome = []
+#print(arr_e(2,1))
 for y in range (0, count-tmp2):
-   for ik in range(1, 23):
+    ft = 1
+    for ik in range(1, 23):
         #print(df_test.iat[y, ik])
-        ft = ft*arr_e[ik+1][df_test.iat[y, ik]]
-
-                #ft = ft*arr[ik][df.iat[y, ik]]
-    
+        ft = ft*tmp_test.at[ik, df_test.iat[y, ik]]
+    #$if(df_test.iat[y,0] == 'e'):
+    ft1 = ft/epep[0]
+    #else:
+    ft2 = ft/epep[1]
+    print(ft1, ft2)
+    if(np.isnan(ft1) == True):
+        ft1 = 0
+    if(np.isnan(ft2) == True):
+        ft2 = 0
+    if(ft1 <= ft2):
+        outcome.append('p')
+    else:
+        outcome.append('e')
+#print(df_test.iat[0, 0])
+ #   break
+print(outcome)    
 #print(arr)
 #print(ft)
-'''for k in range(1, 22):
+'''
+for k in range(1, 22):
     for l in range(0,3):
         print(arr[k][l])
 with open('output.data', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-
     df.to_csv('output.data')'''
-#print(count)
+
