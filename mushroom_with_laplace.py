@@ -41,11 +41,17 @@ for col in df.columns:
 epep.append((ppp.iat[0,0]))
 epep.append((ppp.iat[0,1]))
 tmp_test0 = pd.DataFrame()
+#print(len(df_e), len(df_p))
 for col in df_e.columns:
-    tmp_test0 = tmp_test0.append(df_e[col].value_counts(normalize = True))  #probability in cond of etible
+    tmp_test0 = tmp_test0.append(df_e[col].value_counts())  #numbers in cond of etible
 tmp_test = pd.DataFrame()
 for col in df_p.columns:
-    tmp_test = tmp_test.append(df_p[col].value_counts(normalize = True))    #probibility in condition of poison    
+    tmp_test = tmp_test.append(df_p[col].value_counts())    #nums in condition of poison    
+tmp_test0 = tmp_test0.fillna(0)
+tmp_test = tmp_test.fillna(0)
+tmp_test0 = (tmp_test0 + 3)/ (len(df_e) + 3*22)
+tmp_test = (tmp_test + 3)/ (len(df_p) + 3*22)
+
 tmp_test.index = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 tmp_test0.index = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 tmp_test = tmp_test.fillna(0)  #poison
