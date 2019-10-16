@@ -167,7 +167,6 @@ for index, col in df_k0.iterrows():
         df_k0_ver = df_k0_ver.append(df_k0[index:index+1])  #choose data is versi.. in k0
     else:
         df_k0_vir = df_k0_vir.append(df_k0[index:index+1])  #virgi
-print("gkhk")
 for index1, col1 in df_k1.iterrows():
     if(col1['class'].values == "Iris-setosa"):
         df_k1_set = df_k1_set.append(df_k1[index1:index1+1])
@@ -240,7 +239,118 @@ for col in df_k01_vir.columns:
     i = i + 1
     if(i == colun):
         break
-print(set_mean_devi01)
-print(ver_mean_devi01)
-print(vir_mean_devi01)
+#df_k01 mean, std for 3 class is ok
+i = 0
+colun = df_k12_set.shape[1]-1
+for col in df_k12_set.columns:
+    set_mean_devi12.append(df_k12_set[col].mean(0))   #avg
+    set_mean_devi12.append(df_k12_set[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+i = 0
+colun = df_k12_ver.shape[1]-1
+for col in df_k12_ver.columns:
+    ver_mean_devi12.append(df_k12_ver[col].mean(0))   #avg
+    ver_mean_devi12.append(df_k12_ver[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+i = 0
+colun = df_k12_vir.shape[1]-1
+for col in df_k12_vir.columns:
+    vir_mean_devi12.append(df_k12_vir[col].mean(0))   #avg
+    vir_mean_devi12.append(df_k12_vir[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+#k12 ok
+i = 0
+colun = df_k02_set.shape[1]-1
+for col in df_k02_set.columns:
+    set_mean_devi02.append(df_k02_set[col].mean(0))   #avg
+    set_mean_devi02.append(df_k02_set[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+i = 0
+colun = df_k02_ver.shape[1]-1
+for col in df_k02_ver.columns:
+    ver_mean_devi02.append(df_k02_ver[col].mean(0))   #avg
+    ver_mean_devi02.append(df_k02_ver[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+i = 0
+colun = df_k02_vir.shape[1]-1
+for col in df_k02_vir.columns:
+    vir_mean_devi02.append(df_k02_vir[col].mean(0))   #avg
+    vir_mean_devi02.append(df_k02_vir[col].std(0))   #deviation
+    i = i + 1
+    if(i == colun):
+        break
+pi = math.pi
+sqrt_2pi = math.sqrt(2*pi)
+pre_set0 = [0, 0, 0] #[0] mean predict setosa, and actual setosa  [1] means predict setosa, and actual versi..   [2] mean pre set, and actual virgi..
+pre_ver0 = [0, 0, 0]
+pre_vir0 = [0, 0, 0]
+#take k0 for test
+for j in range(0, len(df_k0)):
+    pro1 = 1
+    pro2 = 1
+    pro3 = 1
+    for i in range(0, 4):
+        tmp1 = 1/(set_mean_devi12[2*i+1]*sqrt_2pi)*math.exp((-(df_k0.ix[j,i]-set_mean_devi12[2*i])**2)/(2*set_mean_devi12[2*i+1]**2))
+        tmp2 = 1/(ver_mean_devi12[2*i+1]*sqrt_2pi)*math.exp((-(df_k0.ix[j,i]-ver_mean_devi12[2*i])**2)/(2*ver_mean_devi12[2*i+1]**2))
+        tmp3 = 1/(vir_mean_devi12[2*i+1]*sqrt_2pi)*math.exp((-(df_k0.ix[j,i]-vir_mean_devi12[2*i])**2)/(2*vir_mean_devi12[2*i+1]**2))
+        pro1 *= tmp1
+        pro2 *= tmp2
+        pro3 *= tmp3
+    maxx = max(pro1, pro2, pro3)
+    if(pro1 == maxx):
+        if(df_k0.ix[j, 4] == "Iris-setosa"):
+            pre_set0[0] += 1
+        elif(df_k0.ix[j, 4] == "Iris-versicolor"):
+            pre_set0[1] += 1
+        else:
+            pre_set0[2] += 1
+        #print("Iris-setosa", df_test.ix[j, 4])
+    elif(pro2 == maxx):
+        if(df_k0.ix[j, 4] == "Iris-setosa"):
+            pre_ver0[0] += 1
+        elif(df_k0.ix[j, 4] == "Iris-versicolor"):
+            pre_ver0[1] += 1
+        else:
+            pre_ver0[2] += 1
+        #print("Iris-versicolor", df_test.ix[j, 4])
+    else:
+        if(df_k0.ix[j, 4] == "Iris-setosa"):
+            pre_vir0[0] += 1
+        elif(df_k0.ix[j, 4] == "Iris-versicolor"):
+            pre_vir0[1] += 1
+        else:
+            pre_vir0[2] += 1
+print(pre_set0)
+outcome_k0 = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
+outcome_k0['Pre Iris-setosa'] = [pre_set0[0], pre_set0[1], pre_set0[2]]
+outcome_k0['Pre Iris-versicolor'] = [pre_ver0[0], pre_ver0[1], pre_ver0[2]]
+outcome_k0['Pre Iris-virginica'] = [pre_vir0[0], pre_vir0[1], pre_vir0[2]]
+print("Confusion Matrix, Pre->Predict, Act->Actual" )
 
+print(outcome_k0)
+acc0 = (pre_set0[0] + pre_ver0[1] + pre_vir0[2])/len(df_k0)
+print("Accuracy: ", acc0)
+rec0 = []
+rec0.append(pre_set0[0]/(pre_set0[0] + pre_ver0[0] + pre_vir0[0]))
+rec0.append(pre_ver0[1]/(pre_set0[1] + pre_ver0[1] + pre_vir0[1]))
+rec0.append(pre_vir0[2]/(pre_set0[2] + pre_ver0[2] + pre_vir0[2]))
+pre0 = []
+pre0.append(pre_set0[0]/(pre_set0[0] + pre_set0[1] + pre_set0[2]))
+pre0.append(pre_ver0[1]/(pre_ver0[0] + pre_ver0[1] + pre_ver0[2]))
+pre0.append(pre_vir0[2]/(pre_vir0[0] + pre_vir0[1] + pre_vir0[2]))
+rec_pre0 = pd.DataFrame(index = ['Sensitivity(Recall)', 'Precision'], columns = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
+rec_pre0['Iris-setosa'] = [rec0[0], pre0[0]]
+rec_pre0['Iris-versicolor'] = [rec0[1], pre0[1]]
+rec_pre0['Iris-virginica'] = [rec0[2], pre0[2]]
+print(rec_pre0)
+print('')
