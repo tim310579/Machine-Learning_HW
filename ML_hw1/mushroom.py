@@ -1,0 +1,233 @@
+import numpy as np
+import csv
+import pandas as pd
+import re
+import math
+c = ['eaten','cap-shape','cap-surface','cap-color','bruises?','odor','gill-attachment','gill-spacing','gill-size','gill-color','stalk-shape','stalk-root','stalk-surface-above-ring','stalk-surface-below-ring','stalk-color-above-ring','stalk-color-below-ring','veil-type','veil-color','ring-numbe','ring-type','spore-print-color','population','habitat']
+#df = pd.read_csv('agaricus-lepiota.data')
+#count = df.groupby('p').size()
+#sr = pd.Series(df, index = c)
+df = pd.read_csv('agaricus-lepiota.data', header = None)
+df.columns = [c]
+for col in df.columns:
+    delete = df[df[col] == "?"].index
+    df.drop(delete, inplace = True)
+#df = df.sample(frac=1).reset_index(drop = True)   #shuffle
+#df_test = df[tmp2:count]
+#df = df[0:tmp2]
+
+df_e = pd.DataFrame()
+df_e = df.copy()
+df_p = df.copy()
+#print(df[df['eaten']=='p'])
+#df.drop(dell, inplace = True)
+for col in df_e.columns:
+    delete = df_e[df_e[col] == "p"].index
+    #print(delete)
+    df_e.drop(delete, inplace = True)
+    break
+for col in df_p.columns:
+    delete = df_p[df_p[col] == "e"].index
+    df_p.drop(delete, inplace = True)
+    break
+df_e = df_e.sample(frac=1).reset_index(drop = True)   #shuffle
+df_p = df_p.sample(frac=1).reset_index(drop = True)   #shuffle
+count_e = len(df_e)*0.7
+count_e = int(count_e)
+count_p = len(df_p)*0.7
+count_p = int(count_p)
+df_teste = pd.DataFrame()
+df_testp = pd.DataFrame()
+df_teste = df_e[count_e:len(df_e)]  #test data for 'e'
+df_testp = df_p[count_p:len(df_p)]  #....'p'
+df_test = pd.concat([df_teste, df_testp], axis = 0)
+df_test.index = range(0, len(df_test))
+
+epep = []
+epep.append(count_e/(count_e + count_p))
+epep.append(count_p/(count_e + count_p))
+tmp_test0 = pd.DataFrame()
+for col in df_e.columns:
+    tmp_test0 = tmp_test0.append(df_e[col].value_counts(normalize = True))  #probability in cond of etible
+tmp_test = pd.DataFrame()
+for col in df_p.columns:
+    tmp_test = tmp_test.append(df_p[col].value_counts(normalize = True))    #probibility in condition of poison    
+tmp_test.index = range(0, len(tmp_test)) #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+tmp_test0.index = range(0, len(tmp_test0))  #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+tmp_test = tmp_test.fillna(0)  #poison
+tmp_test0 = tmp_test0.fillna(0) #etible
+cnt = 0
+cnt2 = 0
+i = 0
+TP = 0
+TN = 0
+FP = 0
+FN = 0
+for y in range (0, len(df_test)):
+    ft1 = 1
+    ft2 = 1
+    for ik in range(1, 23):
+        #print(df_test.iat[y, ik])
+        ft1 = ft1*tmp_test.at[ik, df_test.iat[y, ik]]
+        ft2 = ft2*tmp_test0.at[ik, df_test.iat[y, ik]]
+    #$if(df_test.iat[y,0] == 'e'):
+    ft2 = ft2/epep[0]   #eat
+    
+    ft1 = ft1/epep[1]    #poisin
+      
+    if(ft1 <= ft2):
+        predict = 'e'
+        if(predict == df_test.iat[i, 0]):
+            TP = TP + 1
+        else:
+            FP = FP + 1
+    else:
+        predict = 'p'
+        if(predict == df_test.iat[i, 0]):
+            TN = TN + 1
+        else:
+            FN = FN + 1
+    i = i + 1
+#print(count_e, count_p)
+#print(len(df_e), len(df_p))
+#print(TP, FN, FP, TN)
+outcome = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
+outcome['Predict Positive(etible)'] = [TP, FP]
+outcome['Predict negative(poison)'] = [FN, TN]
+print("Confusion Matrix with Holdout validation")
+print(outcome)
+acc = (TP+TN) / (TP+TN+FP+FN)
+rec = TP/(TP+FN)
+pre = TP/(TP+FP)
+print("Accuracy:", acc)
+print("Sensitivity(Recall):", rec)
+print("Precision:", pre)
+'''
+K-fold
+'''
+dfk = df.copy()
+dfk = dfk.sample(frac=1).reset_index(drop = True)
+k1 = len(dfk)/3
+k1 = int(k1)
+k2 = k1*2
+#print(k1)
+df_k0 = dfk[0:k1]   #can choose 1 to be testdata
+df_k1 = dfk[k1:k2]
+df_k2 = dfk[k2:len(dfk)]
+#print(df_k0.head())
+df_k0e = df_k0.copy()
+df_k0p = df_k0.copy()
+df_k1e = df_k1.copy()
+df_k1p = df_k1.copy()
+df_k2e = df_k2.copy()
+df_k2p = df_k2.copy()
+
+for col in df_k0e.columns:
+    delete = df_k0e[df_k0e[col] == "p"].index
+    df_k0e.drop(delete, inplace = True)
+    break
+for col in df_k0p.columns:
+    delete = df_k0p[df_k0p[col] == "e"].index
+    df_k0p.drop(delete, inplace = True)
+    break
+for col in df_k1e.columns:
+    delete = df_k1e[df_k1e[col] == "p"].index
+    df_k1e.drop(delete, inplace = True)
+    break
+for col in df_k1p.columns:
+    delete = df_k1p[df_k1p[col] == "e"].index
+    df_k1p.drop(delete, inplace = True)
+    break
+for col in df_k2e.columns:
+    delete = df_k2e[df_k2e[col] == "p"].index
+    df_k2e.drop(delete, inplace = True)
+    break
+for col in df_k2p.columns:
+    delete = df_k2p[df_k2p[col] == "e"].index
+    df_k2p.drop(delete, inplace = True)
+    break
+ep = []
+ep.append((len(df_k0e)+len(df_k1e))/(len(df_k0)+len(df_k1)))#let k2 be testdata
+ep.append((len(df_k1e)+len(df_k2e))/(len(df_k1)+len(df_k2)))#k0
+ep.append((len(df_k2e)+len(df_k0e))/(len(df_k0)+len(df_k2)))#k1
+ep.append((len(df_k0p)+len(df_k1p))/(len(df_k0)+len(df_k1)))#let k2 be testdata
+ep.append((len(df_k1p)+len(df_k2p))/(len(df_k1)+len(df_k2)))#k0
+ep.append((len(df_k2p)+len(df_k0p))/(len(df_k0)+len(df_k2)))#k1
+
+print(ep)
+df_k01e = pd.concat([df_k0e, df_k1e], axis = 0) #concat k0, k1 e
+df_k01p = pd.concat([df_k0p, df_k1p], axis = 0) #concat k0, k1 p
+df_k12e = pd.concat([df_k1e, df_k2e], axis = 0) #concat k2, k1 e
+df_k12p = pd.concat([df_k1p, df_k2p], axis = 0) #concat k2, k1 p
+df_k02e = pd.concat([df_k0e, df_k2e], axis = 0) #concat k0, k2 e
+df_k02p = pd.concat([df_k0p, df_k2p], axis = 0) #concat k0, k2 p
+pro_01e = pd.DataFrame()
+pro_01p = pd.DataFrame()
+pro_12e = pd.DataFrame()
+pro_12p = pd.DataFrame()
+pro_02e = pd.DataFrame()
+pro_02p = pd.DataFrame()
+#print(df_k01e)
+for col in df_k01e.columns:
+    pro_01e = pro_01e.append(df_k01e[col].value_counts(normalize = True))
+for col in df_k01p.columns:
+    pro_01p = pro_01p.append(df_k01p[col].value_counts(normalize = True))
+for col in df_k12e.columns:
+    pro_12e = pro_12e.append(df_k12e[col].value_counts(normalize = True)) 
+for col in df_k12p.columns:
+    pro_12p = pro_12p.append(df_k12p[col].value_counts(normalize = True)) 
+for col in df_k02e.columns:
+    pro_02e = pro_02e.append(df_k02e[col].value_counts(normalize = True)) 
+for col in df_k01p.columns:
+    pro_02p = pro_02p.append(df_k02p[col].value_counts(normalize = True)) 
+pro_01e = pro_01e.fillna(0)
+pro_01p = pro_01p.fillna(0)
+pro_12e = pro_12e.fillna(0)
+pro_12p = pro_12p.fillna(0)
+pro_02e = pro_02e.fillna(0)
+pro_02p = pro_02p.fillna(0)
+'''
+print(pro_01e.head())
+print(pro_01p.head())
+print(pro_12e.head())
+print(pro_12p.head())
+print(pro_02e.head())
+print(pro_02p.head())'''
+tp = 0
+tn = 0
+fp = 0
+fn = 0
+i = 0
+print(pro_12e.head())
+pro_12e.index = 
+for y in range(0, len(df_k0)):      #let k0 be testdata first
+    f1 = 1
+    f2 = 2
+    for k in range(1, 23):
+        f1 = f1*pro_12e.at[k, df_k0.iat[y, k]]
+        f2 = f2*pro_12p.at[k, df_k0.iat[y, k]]
+    f1 = f1/ep[1] #'e'
+    f2 = f2/ep[4] #'p'
+    if(f1 >= f2):
+        predict = 'e'
+        if(predict == df_k0.iat[i, 0]):
+            tp += 1
+        else:
+            fp += 1
+    else:
+        predict = 'p'
+        if(predict == df_k0.iat[i, 0]):
+            tn += 1
+        else:
+            fn += 1
+    i += 1
+outcome_k0 = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
+outcome['Predict Positive(etible)'] = [tp, fp]
+outcome['Predict negative(poison)'] = [fn, tn]
+print(outcome_k0)
+acc_k0 = (tp+tn) / (tp+tn+fp+fn)
+rec_k0 = tp/(tp+fn)
+pre_k0 = tp/(tp+fp)
+print("Accuracy:", acc_k0)
+print("Sensitivity(Recall):", rec_k0)
+print("Precision:", pre_k0)
