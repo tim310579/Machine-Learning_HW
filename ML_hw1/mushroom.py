@@ -40,9 +40,11 @@ df_teste = pd.DataFrame()
 df_testp = pd.DataFrame()
 df_teste = df_e[count_e:len(df_e)]  #test data for 'e'
 df_testp = df_p[count_p:len(df_p)]  #....'p'
-df_test = pd.concat([df_teste, df_testp], axis = 0)
+df_test = pd.concat([df_teste, df_testp], axis = 0) #testdata
 df_test.index = range(0, len(df_test))
-
+df_e = df_e[0: count_e] #7/10 for train e
+df_p = df_p[0: count_p] #'p'
+#print(len(df_e), len(df_p), len(df))
 epep = []
 epep.append(count_e/(count_e + count_p))
 epep.append(count_p/(count_e + count_p))
