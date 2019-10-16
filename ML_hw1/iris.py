@@ -66,7 +66,27 @@ for col in df_vir.columns:
     i = i+1
     if(i == colum):
         break
+
 #print(df_set)
+with open("mean_devi.data", "w") as f:
+    for it in set_mean:
+        f.write("%s   "% it)
+    f.write("\n")
+    for it in set_devi:
+        f.write("%s   "% it)
+    f.write("\n")
+    for it in ver_mean:
+        f.write("%s   "% it)
+    f.write("\n")
+    for it in ver_devi:
+        f.write("%s   "% it)
+    f.write("\n")
+    for it in vir_mean:
+        f.write("%s   "% it)
+    f.write("\n")
+    for it in vir_devi:
+        f.write("%s   "% it)
+
 #print(set_mean, set_devi)
 #print(ver_mean, ver_devi)
 #print(vir_mean, vir_devi)
@@ -477,12 +497,12 @@ rec_pre2['Iris-versicolor'] = [rec2[1], pre2[1]]
 rec_pre2['Iris-virginica'] = [rec2[2], pre2[2]]
 #print(rec_pre2)
 #print('')
-print("Average Confusion matrix--------------------------------------------------------")
+print("Average Confusion matrix with K-fold--------------------------------------------")
 outcome_avg = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
 outcome_avg = (outcome_k0+outcome_k1+outcome_k2)/3
 print(outcome_avg)
 rec_pre_avg = pd.DataFrame(index = ['Sensitivity(Recall)', 'Precision'], columns = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
 rec_pre_avg = (rec_pre0+rec_pre1+rec_pre2)/3
 acc_avg = (acc0 + acc1 + acc2)/3
-print(acc_avg)
+print("Average Accuracy:", acc_avg)
 print(rec_pre_avg)

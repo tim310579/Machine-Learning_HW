@@ -322,7 +322,7 @@ pre_k2 = tp2/(tp2+fp2)
 #print("Sensitivity(Recall):", rec_k2)
 #print("Precision:", pre_k2)
 print('')
-print("Average Confusion matrix-----------------------------------------------")
+print("Average Confusion matrix with K-fold------------------------")
 outcome_avg = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
 outcome_avg['Predict Positive(etible)'] = [(tp+tp1+tp2)/3, (fp+fp1+fp2)/3]
 outcome_avg['Predict negative(poison)'] = [(fn+fn1+fn2)/3, (tn+tn1+tn2)/3]

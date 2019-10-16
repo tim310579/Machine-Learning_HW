@@ -58,6 +58,8 @@ tmp_test.index = range(0, len(tmp_test)) #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
 tmp_test0.index = range(0, len(tmp_test0))  #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 tmp_test = tmp_test.fillna(0)  #poison
 tmp_test0 = tmp_test0.fillna(0) #etible
+tmp_test0.to_csv('output0.data')
+tmp_test.to_csv('output1.data')
 cnt = 0
 cnt2 = 0
 i = 0
@@ -313,7 +315,7 @@ pre_k2 = tp2/(tp2+fp2)
 #print("Sensitivity(Recall):", rec_k2)
 #print("Precision:", pre_k2)
 print('')
-print("Average Confusion matrix-----------------------------------------------")
+print("Average Confusion matrix with K-fold validation---------------------------------")
 outcome_avg = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
 outcome_avg['Predict Positive(etible)'] = [(tp+tp1+tp2)/3, (fp+fp1+fp2)/3]
 outcome_avg['Predict negative(poison)'] = [(fn+fn1+fn2)/3, (tn+tn1+tn2)/3]
