@@ -154,7 +154,7 @@ ep.append((len(df_k0p)+len(df_k1p))/(len(df_k0)+len(df_k1)))#let k2 be testdata
 ep.append((len(df_k1p)+len(df_k2p))/(len(df_k1)+len(df_k2)))#k0
 ep.append((len(df_k2p)+len(df_k0p))/(len(df_k0)+len(df_k2)))#k1
 
-print(ep)
+#print(ep)
 df_k01e = pd.concat([df_k0e, df_k1e], axis = 0) #concat k0, k1 e
 df_k01p = pd.concat([df_k0p, df_k1p], axis = 0) #concat k0, k1 p
 df_k12e = pd.concat([df_k1e, df_k2e], axis = 0) #concat k2, k1 e
@@ -197,12 +197,16 @@ tp = 0
 tn = 0
 fp = 0
 fn = 0
+pro_12e.index = range(0, len(pro_12e))
+pro_12p.index = range(0, len(pro_12p))
+pro_01e.index = range(0, len(pro_01e))
+pro_01p.index = range(0, len(pro_01p))
+pro_02e.index = range(0, len(pro_02e))
+pro_02p.index = range(0, len(pro_02p))
 i = 0
-print(pro_12e.head())
-pro_12e.index = 
 for y in range(0, len(df_k0)):      #let k0 be testdata first
     f1 = 1
-    f2 = 2
+    f2 = 1
     for k in range(1, 23):
         f1 = f1*pro_12e.at[k, df_k0.iat[y, k]]
         f2 = f2*pro_12p.at[k, df_k0.iat[y, k]]
@@ -222,8 +226,9 @@ for y in range(0, len(df_k0)):      #let k0 be testdata first
             fn += 1
     i += 1
 outcome_k0 = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
-outcome['Predict Positive(etible)'] = [tp, fp]
-outcome['Predict negative(poison)'] = [fn, tn]
+outcome_k0['Predict Positive(etible)'] = [tp, fp]
+outcome_k0['Predict negative(poison)'] = [fn, tn]
+print("Confusion matrix with k0 be testdata")
 print(outcome_k0)
 acc_k0 = (tp+tn) / (tp+tn+fp+fn)
 rec_k0 = tp/(tp+fn)
@@ -231,3 +236,40 @@ pre_k0 = tp/(tp+fp)
 print("Accuracy:", acc_k0)
 print("Sensitivity(Recall):", rec_k0)
 print("Precision:", pre_k0)
+tp1 = 0
+tn1 = 0
+fp1 = 0
+fn1 = 0
+i = 0
+for y in range(0, len(df_k1)):      #let k1 be testdata 
+    f1 = 1
+    f2 = 1
+    for k in range(1, 23):
+        f1 = f1*pro_02e.at[k, df_k1.iat[y, k]]
+        f2 = f2*pro_02p.at[k, df_k1.iat[y, k]]
+    f1 = f1/ep[2] #'e'
+    f2 = f2/ep[5] #'p'
+    if(f1 >= f2):
+        predict = 'e'
+        if(predict == df_k1.iat[i, 0]):
+            tp1 += 1
+        else:
+            fp1 += 1
+    else:
+        predict = 'p'
+        if(predict == df_k1.iat[i, 0]):
+            tn1 += 1
+        else:
+            fn1 += 1
+    i += 1
+outcome_k1 = pd.DataFrame(index = ['Actual Positive(etible)', 'Actual Negative(poison)'], columns = ['Predict Positive(etible)', 'Predict negative(poison)'])
+outcome_k1['Predict Positive(etible)'] = [tp1, fp1]
+outcome_k1['Predict negative(poison)'] = [fn1, tn1]
+print("Confusion matrix with k1 be testdata")
+print(outcome_k1)
+acc_k1 = (tp1+tn1) / (tp1+tn1+fp1+fn1)
+rec_k1 = tp1/(tp1+fn1)
+pre_k1 = tp1/(tp1+fp1)
+print("Accuracy:", acc_k1)
+print("Sensitivity(Recall):", rec_k1)
+print("Precision:", pre_k1)
