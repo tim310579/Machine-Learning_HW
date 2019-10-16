@@ -117,7 +117,7 @@ outcome = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virgin
 outcome['Pre Iris-setosa'] = [pre_set[0], pre_set[1], pre_set[2]]
 outcome['Pre Iris-versicolor'] = [pre_ver[0], pre_ver[1], pre_ver[2]]
 outcome['Pre Iris-virginica'] = [pre_vir[0], pre_vir[1], pre_vir[2]]
-print("Confusion Matrix, Pre->Predict, Act->Actual" )
+print("Confusion Matrix for holdout validation, Pre->Predict, Act->Actual--------------")
 
 print(outcome)
 acc = (pre_set[0] + pre_ver[1] + pre_vir[2])/len(df_test)
@@ -330,13 +330,11 @@ for j in range(0, len(df_k0)):
             pre_vir0[1] += 1
         else:
             pre_vir0[2] += 1
-print(pre_set0)
 outcome_k0 = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
 outcome_k0['Pre Iris-setosa'] = [pre_set0[0], pre_set0[1], pre_set0[2]]
 outcome_k0['Pre Iris-versicolor'] = [pre_ver0[0], pre_ver0[1], pre_ver0[2]]
 outcome_k0['Pre Iris-virginica'] = [pre_vir0[0], pre_vir0[1], pre_vir0[2]]
-print("Confusion Matrix, Pre->Predict, Act->Actual" )
-
+print("Confusion Matrix for k0 be testdata, Pre->Predict, Act->Actual------------------")
 print(outcome_k0)
 acc0 = (pre_set0[0] + pre_ver0[1] + pre_vir0[2])/len(df_k0)
 print("Accuracy: ", acc0)
@@ -354,3 +352,139 @@ rec_pre0['Iris-versicolor'] = [rec0[1], pre0[1]]
 rec_pre0['Iris-virginica'] = [rec0[2], pre0[2]]
 print(rec_pre0)
 print('')
+
+#test k1
+
+pre_set1 = [0, 0, 0] #[0] mean predict setosa, and actual setosa  [1] means predict setosa, and actual versi..   [2] mean pre set, and actual virgi..
+pre_ver1 = [0, 0, 0]
+pre_vir1 = [0, 0, 0]
+#take k1 for test
+for j in range(0, len(df_k1)):
+    pro1 = 1
+    pro2 = 1
+    pro3 = 1
+    for i in range(0, 4):
+        tmp1 = 1/(set_mean_devi02[2*i+1]*sqrt_2pi)*math.exp((-(df_k1.ix[j,i]-set_mean_devi02[2*i])**2)/(2*set_mean_devi02[2*i+1]**2))
+        tmp2 = 1/(ver_mean_devi02[2*i+1]*sqrt_2pi)*math.exp((-(df_k1.ix[j,i]-ver_mean_devi02[2*i])**2)/(2*ver_mean_devi02[2*i+1]**2))
+        tmp3 = 1/(vir_mean_devi02[2*i+1]*sqrt_2pi)*math.exp((-(df_k1.ix[j,i]-vir_mean_devi02[2*i])**2)/(2*vir_mean_devi02[2*i+1]**2))
+        pro1 *= tmp1
+        pro2 *= tmp2
+        pro3 *= tmp3
+    maxx = max(pro1, pro2, pro3)
+    if(pro1 == maxx):
+        if(df_k1.ix[j, 4] == "Iris-setosa"):
+            pre_set1[0] += 1
+        elif(df_k1.ix[j, 4] == "Iris-versicolor"):
+            pre_set1[1] += 1
+        else:
+            pre_set1[2] += 1
+        #print("Iris-setosa", df_test.ix[j, 4])
+    elif(pro2 == maxx):
+        if(df_k1.ix[j, 4] == "Iris-setosa"):
+            pre_ver1[0] += 1
+        elif(df_k1.ix[j, 4] == "Iris-versicolor"):
+            pre_ver1[1] += 1
+        else:
+            pre_ver1[2] += 1
+        #print("Iris-versicolor", df_test.ix[j, 4])
+    else:
+        if(df_k1.ix[j, 4] == "Iris-setosa"):
+            pre_vir1[0] += 1
+        elif(df_k1.ix[j, 4] == "Iris-versicolor"):
+            pre_vir1[1] += 1
+        else:
+            pre_vir1[2] += 1
+outcome_k1 = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
+outcome_k1['Pre Iris-setosa'] = [pre_set1[0], pre_set1[1], pre_set1[2]]
+outcome_k1['Pre Iris-versicolor'] = [pre_ver1[0], pre_ver1[1], pre_ver1[2]]
+outcome_k1['Pre Iris-virginica'] = [pre_vir1[0], pre_vir1[1], pre_vir1[2]]
+print("Confusion Matrix for k1 be testdata, Pre->Predict, Act->Actual------------------")
+
+print(outcome_k1)
+acc1 = (pre_set1[0] + pre_ver1[1] + pre_vir1[2])/len(df_k1)
+print("Accuracy: ", acc1)
+rec1 = []
+rec1.append(pre_set1[0]/(pre_set1[0] + pre_ver1[0] + pre_vir1[0]))
+rec1.append(pre_ver1[1]/(pre_set1[1] + pre_ver1[1] + pre_vir1[1]))
+rec1.append(pre_vir1[2]/(pre_set1[2] + pre_ver1[2] + pre_vir1[2]))
+pre1 = []
+pre1.append(pre_set1[0]/(pre_set1[0] + pre_set1[1] + pre_set1[2]))
+pre1.append(pre_ver1[1]/(pre_ver1[0] + pre_ver1[1] + pre_ver1[2]))
+pre1.append(pre_vir1[2]/(pre_vir1[0] + pre_vir1[1] + pre_vir1[2]))
+rec_pre1 = pd.DataFrame(index = ['Sensitivity(Recall)', 'Precision'], columns = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
+rec_pre1['Iris-setosa'] = [rec1[0], pre1[0]]
+rec_pre1['Iris-versicolor'] = [rec1[1], pre1[1]]
+rec_pre1['Iris-virginica'] = [rec1[2], pre1[2]]
+print(rec_pre1)
+print('')
+
+#k2 test
+pre_set2 = [0, 0, 0] #[0] mean predict setosa, and actual setosa  [1] means predict setosa, and actual versi..   [2] mean pre set, and actual virgi..
+pre_ver2 = [0, 0, 0]
+pre_vir2 = [0, 0, 0]
+#take k2 for test
+for j in range(0, len(df_k0)):
+    pro1 = 1
+    pro2 = 1
+    pro3 = 1
+    for i in range(0, 4):
+        tmp1 = 1/(set_mean_devi01[2*i+1]*sqrt_2pi)*math.exp((-(df_k2.ix[j,i]-set_mean_devi01[2*i])**2)/(2*set_mean_devi01[2*i+1]**2))
+        tmp2 = 1/(ver_mean_devi01[2*i+1]*sqrt_2pi)*math.exp((-(df_k2.ix[j,i]-ver_mean_devi01[2*i])**2)/(2*ver_mean_devi01[2*i+1]**2))
+        tmp3 = 1/(vir_mean_devi01[2*i+1]*sqrt_2pi)*math.exp((-(df_k2.ix[j,i]-vir_mean_devi01[2*i])**2)/(2*vir_mean_devi01[2*i+1]**2))
+        pro1 *= tmp1
+        pro2 *= tmp2
+        pro3 *= tmp3
+    maxx = max(pro1, pro2, pro3)
+    if(pro1 == maxx):
+        if(df_k2.ix[j, 4] == "Iris-setosa"):
+            pre_set2[0] += 1
+        elif(df_k2.ix[j, 4] == "Iris-versicolor"):
+            pre_set2[1] += 1
+        else:
+            pre_set2[2] += 1
+        #print("Iris-setosa", df_test.ix[j, 4])
+    elif(pro2 == maxx):
+        if(df_k2.ix[j, 4] == "Iris-setosa"):
+            pre_ver2[0] += 1
+        elif(df_k2.ix[j, 4] == "Iris-versicolor"):
+            pre_ver2[1] += 1
+        else:
+            pre_ver2[2] += 1
+        #print("Iris-versicolor", df_test.ix[j, 4])
+    else:
+        if(df_k2.ix[j, 4] == "Iris-setosa"):
+            pre_vir2[0] += 1
+        elif(df_k2.ix[j, 4] == "Iris-versicolor"):
+            pre_vir2[1] += 1
+        else:
+            pre_vir2[2] += 1
+outcome_k2 = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
+outcome_k2['Pre Iris-setosa'] = [pre_set2[0], pre_set2[1], pre_set2[2]]
+outcome_k2['Pre Iris-versicolor'] = [pre_ver2[0], pre_ver2[1], pre_ver2[2]]
+outcome_k2['Pre Iris-virginica'] = [pre_vir2[0], pre_vir2[1], pre_vir2[2]]
+print("Confusion Matrix for k2 be testdata, Pre->Predict, Act->Actual------------------")
+
+print(outcome_k2)
+acc2 = (pre_set2[0] + pre_ver2[1] + pre_vir2[2])/len(df_k2)
+print("Accuracy: ", acc2)
+rec2 = []
+rec2.append(pre_set2[0]/(pre_set2[0] + pre_ver2[0] + pre_vir2[0]))
+rec2.append(pre_ver2[1]/(pre_set2[1] + pre_ver2[1] + pre_vir2[1]))
+rec2.append(pre_vir2[2]/(pre_set2[2] + pre_ver2[2] + pre_vir2[2]))
+pre2 = []
+pre2.append(pre_set2[0]/(pre_set2[0] + pre_set2[1] + pre_set2[2]))
+pre2.append(pre_ver2[1]/(pre_ver2[0] + pre_ver2[1] + pre_ver2[2]))
+pre2.append(pre_vir2[2]/(pre_vir2[0] + pre_vir2[1] + pre_vir2[2]))
+rec_pre2 = pd.DataFrame(index = ['Sensitivity(Recall)', 'Precision'], columns = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
+rec_pre2['Iris-setosa'] = [rec2[0], pre2[0]]
+rec_pre2['Iris-versicolor'] = [rec2[1], pre2[1]]
+rec_pre2['Iris-virginica'] = [rec2[2], pre2[2]]
+print(rec_pre2)
+print('')
+print("Average Confusion matrix--------------------------------------------------------")
+outcome_avg = pd.DataFrame(index = ['Act Iris-setosa', 'Act versicolor', 'Act virginica'], columns = ['Pre Iris-setosa', 'Pre Iris-versicolor', 'Pre Iris-virginica'])
+outcome_avg = (outcome_k0+outcome_k1+outcome_k2)/3
+print(outcome_avg)
+rec_pre_avg = pd.DataFrame(index = ['Sensitivity(Recall)', 'Precision'], columns = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
+rec_pre_avg = (rec_pre0+rec_pre1+rec_pre2)/3
+print(rec_pre_avg)
