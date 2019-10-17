@@ -12,7 +12,10 @@ df_test = pd.DataFrame()
 df_set = pd.DataFrame()
 df_ver = pd.DataFrame()
 df_vir = pd.DataFrame()
-
+col = df['class']
+#print(col)
+for col in df.columns:
+ #   print(col)
 
 for index, row in df.iterrows():
     if(row['class'].values == 'Iris-setosa'):   

@@ -9,6 +9,7 @@ c = ['eaten','cap-shape','cap-surface','cap-color','bruises?','odor','gill-attac
 #sr = pd.Series(df, index = c)
 df = pd.read_csv('agaricus-lepiota.data', header = None)
 df.columns = [c]
+#print(df.head())
 for col in df.columns:
     delete = df[df[col] == "?"].index
     df.drop(delete, inplace = True)
@@ -49,17 +50,22 @@ epep = []
 epep.append(count_e/(count_e + count_p))
 epep.append(count_p/(count_e + count_p))
 tmp_test0 = pd.DataFrame()
+val_fre_all = pd.DataFrame()
+for col in df.columns:
+    val_fre_all = val_fre_all.append(df[col].value_counts(normalize = True))
+val_fre_all = val_fre_all.fillna(0)
+val_fre_all.to_csv('val_fre_all.csv')
 for col in df_e.columns:
     tmp_test0 = tmp_test0.append(df_e[col].value_counts(normalize = True))  #probability in cond of etible
 tmp_test = pd.DataFrame()
 for col in df_p.columns:
     tmp_test = tmp_test.append(df_p[col].value_counts(normalize = True))    #probibility in condition of poison    
-tmp_test.index = range(0, len(tmp_test)) #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-tmp_test0.index = range(0, len(tmp_test0))  #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 tmp_test = tmp_test.fillna(0)  #poison
 tmp_test0 = tmp_test0.fillna(0) #etible
-tmp_test0.to_csv('output0.data')
-tmp_test.to_csv('output1.data')
+tmp_test0.to_csv('val_fre_e.csv')
+tmp_test.to_csv('vla_fre_p.csv')
+tmp_test.index = range(0, len(tmp_test)) #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+tmp_test0.index = range(0, len(tmp_test0))  #[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 cnt = 0
 cnt2 = 0
 i = 0
