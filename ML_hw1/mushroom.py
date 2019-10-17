@@ -54,7 +54,7 @@ val_fre_all = pd.DataFrame()
 for col in df.columns:
     val_fre_all = val_fre_all.append(df[col].value_counts(normalize = True))
 val_fre_all = val_fre_all.fillna(0)
-val_fre_all.to_csv('val_fre_all.csv')
+#val_fre_all.to_csv('val_fre_all.csv')
 for col in df_e.columns:
     tmp_test0 = tmp_test0.append(df_e[col].value_counts(normalize = True))  #probability in cond of etible
 tmp_test = pd.DataFrame()
