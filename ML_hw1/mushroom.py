@@ -74,17 +74,24 @@ TN = 0
 FP = 0
 FN = 0
 for y in range (0, len(df_test)):
-    ft1 = 1
-    ft2 = 1
+    #ft1 = 1
+    #ft2 = 1
+    ft1 = 0
+    ft2 = 0
     for ik in range(1, 23):
         #print(df_test.iat[y, ik])
-        ft1 = ft1*tmp_test.at[ik, df_test.iat[y, ik]]
-        ft2 = ft2*tmp_test0.at[ik, df_test.iat[y, ik]]
+        #print(tmp_test.at[ik, df_test.iat[y, ik]])
+        if(tmp_test.at[ik, df_test.iat[y, ik]] != 0):
+            ft1 += math.log(tmp_test.at[ik, df_test.iat[y, ik]])
+        if(tmp_test0.at[ik, df_test.iat[y, ik]] != 0):
+            ft2 += math.log(tmp_test0.at[ik, df_test.iat[y, ik]])
+        #ft1 = ft1*tmp_test.at[ik, df_test.iat[y, ik]]
+        #ft2 = ft2*tmp_test0.at[ik, df_test.iat[y, ik]]
     #$if(df_test.iat[y,0] == 'e'):
-    ft2 = ft2/epep[0]   #eat
-    
-    ft1 = ft1/epep[1]    #poisin
-      
+    #ft2 = ft2/epep[0]   #eat
+    ft2 += math.log(epep[0])
+    #ft1 = ft1/epep[1]    #poisin
+    ft2 += math.log(epep[1])
     if(ft1 <= ft2):
         predict = 'e'
         if(predict == df_test.iat[i, 0]):
