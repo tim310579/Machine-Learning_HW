@@ -222,13 +222,19 @@ pro_02e.index = range(0, len(pro_02e))
 pro_02p.index = range(0, len(pro_02p))
 i = 0
 for y in range(0, len(df_k0)):      #let k0 be testdata first
-    f1 = 1
-    f2 = 1
+    f1 = 0
+    f2 = 0
     for k in range(1, 23):
-        f1 = f1*pro_12e.at[k, df_k0.iat[y, k]]
-        f2 = f2*pro_12p.at[k, df_k0.iat[y, k]]
-    f1 = f1/ep[1] #'e'
-    f2 = f2/ep[4] #'p'
+        if(pro_12e.at[k, df_k0.iat[y, k]] != 0):
+            f1 += math.log(pro_12e.at[k, df_k0.iat[y, k]])
+        if(pro_12p.at[k, df_k0.iat[y, k]] != 0):
+            f2 += math.log(pro_12p.at[k, df_k0.iat[y, k]])
+            #f1 = f1*pro_12e.at[k, df_k0.iat[y, k]]
+        #f2 = f2*pro_12p.at[k, df_k0.iat[y, k]]
+    #f1 = f1/ep[1] #'e'
+    #f2 = f2/ep[4] #'p'
+    f1 += math.log(ep[1])
+    f2 += math.log(ep[4])
     if(f1 >= f2):
         predict = 'e'
         if(predict == df_k0.iat[i, 0]):
@@ -259,13 +265,17 @@ fp1 = 0
 fn1 = 0
 i = 0
 for y in range(0, len(df_k1)):      #let k1 be testdata 
-    f1 = 1
-    f2 = 1
+    f1 = 0
+    f2 = 0
     for k in range(1, 23):
-        f1 = f1*pro_02e.at[k, df_k1.iat[y, k]]
-        f2 = f2*pro_02p.at[k, df_k1.iat[y, k]]
-    f1 = f1/ep[2] #'e'
-    f2 = f2/ep[5] #'p'
+        if(pro_02e.at[k, df_k1.iat[y, k]] != 0):
+            f1 += math.log(pro_02e.at[k, df_k1.iat[y, k]])
+        if(pro_02p.at[k, df_k1.iat[y, k]] != 0):
+            f2 += math.log(pro_02p.at[k, df_k1.iat[y, k]])
+        #f1 = f1*pro_02e.at[k, df_k1.iat[y, k]]
+        #f2 = f2*pro_02p.at[k, df_k1.iat[y, k]]
+    f1 = f1+math.log(ep[2]) #'e'
+    f2 = f2+math.log(ep[5]) #'p'
     if(f1 >= f2):
         predict = 'e'
         if(predict == df_k1.iat[i, 0]):
@@ -296,13 +306,17 @@ fp2 = 0
 fn2 = 0
 i = 0
 for y in range(0, len(df_k2)):      #let k2 be testdata
-    f1 = 1
-    f2 = 1
+    f1 = 0
+    f2 = 0
     for k in range(1, 23):
-        f1 = f1*pro_01e.at[k, df_k2.iat[y, k]]
-        f2 = f2*pro_01p.at[k, df_k2.iat[y, k]]
-    f1 = f1/ep[0] #'e'
-    f2 = f2/ep[3] #'p'
+        if(pro_01e.at[k, df_k2.iat[y, k]] != 0):
+            f1 += math.log(pro_01e.at[k, df_k2.iat[y, k]])
+        if(pro_01p.at[k, df_k2.iat[y, k]] != 0):
+            f2 += math.log(pro_01p.at[k, df_k2.iat[y, k]])
+        #f1 = f1*pro_01e.at[k, df_k2.iat[y, k]]
+        #f2 = f2*pro_01p.at[k, df_k2.iat[y, k]]
+    f1 = f1+math.log(ep[0]) #'e'
+    f2 = f2+math.log(ep[3]) #'p'
     if(f1 >= f2):
         predict = 'e'
         if(predict == df_k2.iat[i, 0]):
