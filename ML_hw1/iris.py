@@ -12,10 +12,6 @@ df_test = pd.DataFrame()
 df_set = pd.DataFrame()
 df_ver = pd.DataFrame()
 df_vir = pd.DataFrame()
-col = df['class']
-#print(col)
-for col in df.columns:
- #   print(col)
 
 for index, row in df.iterrows():
     if(row['class'].values == 'Iris-setosa'):   
@@ -71,7 +67,7 @@ for col in df_vir.columns:
         break
 
 #print(df_set)
-with open("mean_devi.data", "w") as f:
+'''with open("mean_devi.data", "w") as f:
     for it in set_mean:
         f.write("%s   "% it)
     f.write("\n")
@@ -89,7 +85,7 @@ with open("mean_devi.data", "w") as f:
     f.write("\n")
     for it in vir_devi:
         f.write("%s   "% it)
-
+'''
 #print(set_mean, set_devi)
 #print(ver_mean, ver_devi)
 #print(vir_mean, vir_devi)
