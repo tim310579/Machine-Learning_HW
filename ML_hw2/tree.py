@@ -5,6 +5,12 @@ import re
 import math
 
 def cal_entropy(col, category):
+    base_H = 0
+    df_H = pd.DataFrame()
+    df_H = df_H.append(category.value_counts(normalize = True))
+    H = 0
+    H += -df_H.ix[0, 0]*math.log(df_H.ix[0, 0], 2) - df_H.ix[0, 1]*math.log(df_H.ix[0, 1], 2)
+    #return H
     if col.dtypes == int:
         #merge = pd.DataFrame()
         #merge = pd.concat([col, category], axis = 1)
@@ -20,11 +26,11 @@ def cal_entropy(col, category):
         fir = col.quantile(.25)
         mid = col.median(axis = 0)
         thi = col.quantile(.75)
-        tmp1[tmp1 < fir] = 0    #use 1/4, 2/4, 3/4 to let it be discrete
+        tmp1[tmp1 <= fir] = 0    #use 1/4, 2/4, 3/4 to let it be discrete
         tmp1[tmp1 > fir] = 1
-        tmp2[tmp2 < mid] = 0
+        tmp2[tmp2 <= mid] = 0
         tmp2[tmp2 > mid] = 1
-        tmp3[tmp3 < thi] = 0
+        tmp3[tmp3 <= thi] = 0
         tmp3[tmp3 > thi] = 1
         merge1 = pd.concat([tmp1, category], axis = 1)
         merge2 = pd.concat([tmp2, category], axis = 1)
@@ -33,19 +39,7 @@ def cal_entropy(col, category):
         merge1.columns = ['col', 'cate']
         merge2.columns = ['col', 'cate']
         merge3.columns = ['col', 'cate']
-        a = merge1.median()
-        #return merge1
-        arr1 = pd.DataFrame()
-        arr1 = arr1.append(tmp1.value_counts(normalize = True))
-        arr2 = pd.DataFrame()
-        arr2 = arr2.append(tmp2.value_counts(normalize = True))
-        arr3 = pd.DataFrame()
-        arr3 = arr3.append(tmp3.value_counts(normalize = True))
-    
-        H1 = -arr1.ix[0, 0]*math.log(arr1.ix[0, 0], 2) - arr1.ix[0, 1]*math.log(arr1.ix[0, 1], 2) # H(T, D)
-        H2 = -arr2.ix[0, 0]*math.log(arr2.ix[0, 0], 2) - arr2.ix[0, 1]*math.log(arr2.ix[0, 1], 2)
-        H3 = -arr3.ix[0, 0]*math.log(arr3.ix[0, 0], 2) - arr3.ix[0, 1]*math.log(arr3.ix[0, 1], 2)
-        #return H1, H2, H3
+
         part1 = pd.DataFrame()
         part2 = pd.DataFrame()
         part3 = pd.DataFrame() #probability of occurence
@@ -70,7 +64,6 @@ def cal_entropy(col, category):
         merge2_2.drop(delete2_2, inplace = True)
         merge3.drop(delete3, inplace = True)
         merge3_2.drop(delete3_2, inplace = True)
-        #return merge1, merge1_2
         arr1_1 = pd.DataFrame()
         arr1_1 = arr1_1.append(merge1['cate'].value_counts(normalize = True))
         arr1_2 = pd.DataFrame()
@@ -83,23 +76,63 @@ def cal_entropy(col, category):
         arr3_1 = arr3_1.append(merge3['cate'].value_counts(normalize = True))
         arr3_2 = pd.DataFrame()
         arr3_2 = arr3_2.append(merge3_2['cate'].value_counts(normalize = True))
-        
+        '''
+        print(arr1_1)
+        print(arr1_2)
+        print(arr2_1)
+        print(arr2_2)
+        print(arr3_1)
+        print(arr3_2)
+        '''
+        #return
         R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0] + (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
         R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0] + (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
         R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0] + (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
 
-        G1 = H1 - R1
-        G2 = H2 - R2
-        G3 = H3 - R3
-        return G1, G2, G3
+        G1 = H - R1
+        G2 = H - R2
+        G3 = H - R3
+        #return R1, R2, R3, G1, G2, G3
+        maxx = max(G1, G2, G3)
+        if(maxx == G1):
+            return fir, G1
+        elif(maxx == G2):
+            return mid, G2
+        else:
+            return thi, G3
         #return arr
     else:
-        print('obb')
-'''
-    tmp = pd.DataFrame()
-    tmp = tmp.append(col.value_counts(normalize = True))
-    return tmp
-'''
+        tmp = pd.DataFrame()
+        tmp = tmp.append(col.value_counts(normalize = True))
+        merge = pd.concat([col, category], axis = 1)
+        merge.columns = ['col', 'cate']
+        R = []
+        H_part = 0
+        df_tmp_entropy = pd.DataFrame()
+        df_h = pd.DataFrame()
+        for col in tmp.columns:
+            df_h = df_h.drop(df_h.index, inplace = True)
+            df_h = df_tmp_entropy.drop(df_tmp_entropy.index, inplace = True)
+            choose = 0
+            choose = merge[merge['col'] == col].index
+            df_h = merge.ix[choose, 1]
+            
+            df_tmp_entropy = df_tmp_entropy.append(df_h.value_counts(normalize = True))
+            df_tmp_entropy = df_tmp_entropy.fillna(1)
+            
+            H_part = -df_tmp_entropy.ix[0, 0]*math.log(df_tmp_entropy.ix[0, 0], 2) - df_tmp_entropy.ix[0, 1]*math.log(df_tmp_entropy.ix[0, 1], 2)
+            R.append(H_part)
+           # H_part *= tmp.ix[0, i]
+        
+        for i in range(tmp.shape[1]):
+            R[i] *= tmp.ix[0, i]
+        ret_R = 0
+        for i in range(len(R)):
+            ret_R += R[i]
+        G = H - ret_R
+        string = 'string' 
+        return string, G
+        
 dfx = pd.read_csv('X_train.csv')
 dfy = pd.read_csv('y_train.csv')
 #print(len(dfx), len(dfy))
@@ -115,6 +148,7 @@ dfy = dfy.drop(columns = ['Id'])
 df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
 #print(df_train.tail())
 #print(dfy)
-
-print(cal_entropy(df_train['age'], df_train['Category']))
+cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
+for col in cc:
+    print(cal_entropy(df_train[col], df_train['Category']))
 
