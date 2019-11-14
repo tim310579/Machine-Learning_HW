@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import math
 
-def cal_entropy(col, category):
+def cal_gain(col, category):
     base_H = 0
     df_H = pd.DataFrame()
     df_H = df_H.append(category.value_counts(normalize = True))
@@ -47,6 +47,7 @@ def cal_entropy(col, category):
         part1 = part1.append(merge1['col'].value_counts(normalize = True))
         part2 = part2.append(merge2['col'].value_counts(normalize = True))
         part3 = part3.append(merge3['col'].value_counts(normalize = True)) 
+        #print(part1, part2, part3)
         #return part1, part2, part3
         merge1_2 = merge1.copy()
         merge2_2 = merge2.copy()
@@ -77,7 +78,27 @@ def cal_entropy(col, category):
         arr3_2 = pd.DataFrame()
         arr3_2 = arr3_2.append(merge3_2['cate'].value_counts(normalize = True))
         '''
-        print(arr1_1)
+        print(merge1)
+        print(merge1_2)
+        print(arr1_1, 'lalalala')
+        print(arr1_2)
+        print(arr2_1)
+        print(arr2_2)
+        print(arr3_1)
+        print(arr3_2)'''
+        
+        arr1_1 = arr1_1.fillna(1)
+        arr1_2 = arr1_2.fillna(1)
+        arr2_1 = arr2_1.fillna(1)
+        arr2_2 = arr2_2.fillna(1)
+        arr3_1 = arr3_1.fillna(1)
+        arr3_2 = arr3_2.fillna(1)
+        '''
+        print(part1)
+        print(part2)
+        print(part3)
+        print(col.tail())
+        print(arr1_1, 'lalalala')
         print(arr1_2)
         print(arr2_1)
         print(arr2_2)
@@ -85,9 +106,16 @@ def cal_entropy(col, category):
         print(arr3_2)
         '''
         #return
-        R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0] + (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
-        R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0] + (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
-        R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0] + (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
+        
+        R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0]
+        if(arr1_2.shape[1] == 2):
+            R1 += (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
+        R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0]
+        if(arr2_2.shape[1] == 2):
+            R2 += (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
+        R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0]
+        if(arr3_2.shape[1] == 2):
+            R3 += (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
 
         G1 = H - R1
         G2 = H - R2
@@ -110,6 +138,8 @@ def cal_entropy(col, category):
         H_part = 0
         df_tmp_entropy = pd.DataFrame()
         df_h = pd.DataFrame()
+        #print(merge)
+        #merge.to_csv('see.data')
         for col in tmp.columns:
             df_h = df_h.drop(df_h.index, inplace = True)
             df_h = df_tmp_entropy.drop(df_tmp_entropy.index, inplace = True)
@@ -118,9 +148,14 @@ def cal_entropy(col, category):
             df_h = merge.ix[choose, 1]
             
             df_tmp_entropy = df_tmp_entropy.append(df_h.value_counts(normalize = True))
-            df_tmp_entropy = df_tmp_entropy.fillna(1)
+            #print(df_tmp_entropy)
             
-            H_part = -df_tmp_entropy.ix[0, 0]*math.log(df_tmp_entropy.ix[0, 0], 2) - df_tmp_entropy.ix[0, 1]*math.log(df_tmp_entropy.ix[0, 1], 2)
+            df_tmp_entropy = df_tmp_entropy.fillna(1)
+            #print(df_tmp_entropy, 'lalalala')
+            if(df_tmp_entropy.shape[1] > 1):
+                H_part = -df_tmp_entropy.ix[0, 0]*math.log(df_tmp_entropy.ix[0, 0], 2) - df_tmp_entropy.ix[0, 1]*math.log(df_tmp_entropy.ix[0, 1], 2)
+            else:
+                H_part = 0
             R.append(H_part)
            # H_part *= tmp.ix[0, i]
         
@@ -132,7 +167,56 @@ def cal_entropy(col, category):
         G = H - ret_R
         string = 'string' 
         return string, G
-        
+       
+'''
+create tree
+'''
+compare_num = 0
+def create_tree(data, label, target):
+    ret_all_p_n = pd.DataFrame()
+    ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
+    #print(label)
+    if(ret_all_p_n.ix[0, 0] == len(data) or ret_all_p_n.ix[0, 1] == len(data)):
+        print("AAAAAAA")
+        cate = pd.DataFrame()
+        cate = data['Category']
+        #if(cate.ix[0, 0] == 0):
+            #return 1
+        #else:
+            #return 1
+    else:
+        tmp = []
+        Gain = []
+        for col in label:
+            G = cal_gain(data[col], data['Category'])
+            tmp.append(G[1])
+            Gain.append(G)
+        i = tmp.index(max(tmp))
+        data_copy = data.copy()
+        #print(i, Gain)
+        if(Gain[i][0] != 'string'):
+            target = label[i]
+            compare_num = Gain[i][1]
+            data_copy[data_copy[target] <= compare_num] = 0
+            data_copy[data_copy[target] > compare_num] = 1
+        elif(Gain[i][0] == 'string'):
+            target = label[i]
+            del(label[i])
+        mytree = {target:{}}
+        print(target)
+        sub_tree = pd.DataFrame()
+        sub_tree = sub_tree.append(data_copy[target].value_counts())
+        for col in sub_tree.columns:
+            choose = data_copy[data_copy[target] == col].index
+            #print(choose)
+            branch = pd.DataFrame()
+            #branch = data_copy[data_copy[target[0]].isin([col])]
+            branch = data.loc[choose]
+            #print(branch)
+            mytree[target][col] = create_tree(branch, label, target)
+            #return branch
+        return mytree
+    
 dfx = pd.read_csv('X_train.csv')
 dfy = pd.read_csv('y_train.csv')
 #print(len(dfx), len(dfy))
@@ -149,6 +233,9 @@ df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
 #print(df_train.tail())
 #print(dfy)
 cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
-for col in cc:
-    print(cal_entropy(df_train[col], df_train['Category']))
+
+target = []
+#for col in cc:
+ #   print(cal_gain(df_train[col], df_train['Category']))
+mytree = (create_tree(df_train, cc, target))
 
