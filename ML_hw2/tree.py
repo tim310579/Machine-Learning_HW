@@ -98,6 +98,7 @@ def cal_gain(col, category):
         print(part2)
         print(part3)
         print(col.tail())
+        
         print(arr1_1, 'lalalala')
         print(arr1_2)
         print(arr2_1)
@@ -106,16 +107,48 @@ def cal_gain(col, category):
         print(arr3_2)
         '''
         #return
-        
-        R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0]
-        if(arr1_2.shape[1] == 2):
-            R1 += (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
-        R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0]
-        if(arr2_2.shape[1] == 2):
-            R2 += (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
-        R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0]
-        if(arr3_2.shape[1] == 2):
-            R3 += (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
+        if(arr1_1.empty):
+            R1 = 0
+        else:
+            if(arr1_1.shape[1] == 1):
+                R1 = 0
+            else:
+                R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0]
+        if(arr1_2.empty):
+            R1 += 0
+        else:
+            if(arr1_2.shape[1] == 1):
+                R1 += 0
+            else:
+                R1 += (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
+        if(arr2_1.empty):
+            R2 = 0
+        else:
+            if(arr2_1.shape[1] == 1):
+                R2 = 0
+            else:
+                R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0]
+        if(arr2_2.empty):
+            R2 += 0
+        else:
+            if(arr2_2.shape[1] == 1):
+                R2 += 0
+            else:
+                R2 += (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
+        if(arr3_1.empty):
+            R3 = 0
+        else:
+            if(arr3_1.shape[1] == 1):
+                R3 = 0
+            else:
+                R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0]
+        if(arr3_2.empty):
+            R3 += 0
+        else:
+            if(arr3_2.shape[1] == 1):
+                R3 += 0
+            else:
+                R3 += (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
 
         G1 = H - R1
         G2 = H - R2
@@ -176,14 +209,22 @@ def create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
     #print(label)
-    if(ret_all_p_n.ix[0, 0] == len(data) or ret_all_p_n.ix[0, 1] == len(data)):
-        print("AAAAAAA")
-        cate = pd.DataFrame()
-        cate = data['Category']
-        #if(cate.ix[0, 0] == 0):
-            #return 1
-        #else:
-            #return 1
+    #data = data.reset_index()
+    #print(ret_all_p_n)
+    #print(len(data))
+    for col in ret_all_p_n.columns:
+        if(ret_all_p_n.ix[0, col] == len(data)):
+            #if(ret_all_p_n.ix[0, 0] == len(data)):
+            #print("AAAAA")
+            data = data.reset_index()
+            le = data.shape[1]
+            return (data.ix[0, le-1])
+        '''
+        if(cate.ix[0, 0] == 0):
+            return 0
+        else:
+            return 1
+        '''
     else:
         tmp = []
         Gain = []
@@ -192,28 +233,34 @@ def create_tree(data, label, target):
             tmp.append(G[1])
             Gain.append(G)
         i = tmp.index(max(tmp))
+        data_copy = pd.DataFrame()
+        data_copy = data_copy.drop(data_copy.index, inplace = True)
         data_copy = data.copy()
         #print(i, Gain)
         if(Gain[i][0] != 'string'):
             target = label[i]
-            compare_num = Gain[i][1]
+            compare_num = Gain[i][0]
             data_copy[data_copy[target] <= compare_num] = 0
             data_copy[data_copy[target] > compare_num] = 1
         elif(Gain[i][0] == 'string'):
             target = label[i]
-            del(label[i])
+            #del(label[i])
+        label_target = target
+        if(Gain[i][0] != 'string'):
+            target = target + str(Gain[i][0])
+        #label_target = target
         mytree = {target:{}}
-        print(target)
+        #print(target)
         sub_tree = pd.DataFrame()
-        sub_tree = sub_tree.append(data_copy[target].value_counts())
+        sub_tree = sub_tree.append(data_copy[label_target].value_counts())
         for col in sub_tree.columns:
-            choose = data_copy[data_copy[target] == col].index
+            choose = data_copy[data_copy[label_target] == col].index
             #print(choose)
             branch = pd.DataFrame()
             #branch = data_copy[data_copy[target[0]].isin([col])]
             branch = data.loc[choose]
             #print(branch)
-            mytree[target][col] = create_tree(branch, label, target)
+            mytree[target][col] = create_tree(branch, label, label_target)
             #return branch
         return mytree
     
@@ -230,6 +277,7 @@ for col in c:
     dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
 dfy = dfy.drop(columns = ['Id'])    
 df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
+#df_train = df_train[10: 20]
 #print(df_train.tail())
 #print(dfy)
 cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
@@ -238,4 +286,4 @@ target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
 mytree = (create_tree(df_train, cc, target))
-
+print(mytree)
