@@ -1,8 +1,11 @@
+
 import numpy as np
 import csv
 import pandas as pd
 import re
 import math
+import matplotlib.pyplot as plt
+
 
 def cal_gain(col, category):
     base_H = 0
@@ -247,7 +250,7 @@ def create_tree(data, label, target):
             #del(label[i])
         label_target = target
         if(Gain[i][0] != 'string'):
-            target = target + str(Gain[i][0])
+            target = target + '==' + str(Gain[i][0])
         #label_target = target
         mytree = {target:{}}
         #print(target)
@@ -263,7 +266,39 @@ def create_tree(data, label, target):
             mytree[target][col] = create_tree(branch, label, label_target)
             #return branch
         return mytree
-    
+'''
+test
+'''
+def classify(tree, featlabel, testdata):
+    testdata.index = ['0']
+    root = list(tree.keys())[0]
+    root_feat = root.split('==')
+    second = tree[root]
+    key = testdata.ix[0, root_feat[0]]
+    #print(testdata.ix[0, 'Id'], key)
+    #valueOFfeat = second[key]
+    if(len(root_feat) == 2):
+        compare_num = float(root_feat[1])
+        if key <= compare_num:
+            valueOFfeat = second[0]
+        else:
+            valueOFfeat = second[1]
+        if isinstance(valueOFfeat, dict):
+            classlabel = classify(valueOFfeat, featlabel, testdata)
+        else:
+            classlabel = valueOFfeat
+    else:
+        try:
+            valueOFfeat = second[key]
+        except KeyError:
+            #print('cannot predict this one since the node has no feature of it, so replace it with zero')
+            return 0
+        if isinstance(valueOFfeat, dict):
+            classlabel = classify(valueOFfeat, featlabel, testdata)
+        else:
+            classlabel = valueOFfeat
+    return classlabel
+
 dfx = pd.read_csv('X_train.csv')
 dfy = pd.read_csv('y_train.csv')
 #print(len(dfx), len(dfy))
@@ -271,13 +306,15 @@ c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', '
 dfa = pd.DataFrame()
 
 #print(dfx['workclass']=="?")
+dfx_test = pd.read_csv('X_test.csv')
 
 
 for col in c:
     dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
 dfy = dfy.drop(columns = ['Id'])    
 df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-#df_train = df_train[10: 20]
+#df_tmp = df_train.copy()
+df_train = df_train[70: 100]
 #print(df_train.tail())
 #print(dfy)
 cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
@@ -286,4 +323,17 @@ target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
 mytree = (create_tree(df_train, cc, target))
-print(mytree)
+#print(dfx_test[0:1])
+#print(mytree)
+#decisionNode = dict(boxstyle="sawtooth", fc="0.8")          #创建字典decisionNode,定义判断节点形态
+#leafNode = dict(boxstyle="round4", fc="0.8")                #创建字典leafNode,定义叶节点形态
+#arrow_args = dict(arrowstyle="<-")
+#createPlot(mytree)
+outcome = pd.DataFrame(columns = ['Id', 'Category'])
+for i in range(0, len(dfx_test)):
+    predict = classify(mytree, cc, dfx_test[i:i+1])
+    outcome.loc[i, 'Id'] = dfx_test.ix[i, 'Id']
+    outcome.loc[i, 'Category'] = int(predict)
+#outcome.columns = ['Id', 'Category']
+print(outcome)
+outcome.to_csv('submission.csv', index = False)
