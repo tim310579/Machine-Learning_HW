@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 #warnings.filterwarnings('ignore')
 
+cdef float H, R1, R2, R3, G1, G2, G3, maxx, fir, mid, thi, H_part
 cpdef cal_gain(col, category):
     #base_H = 0
     df_H = pd.DataFrame()
@@ -210,7 +211,7 @@ cpdef cal_gain(col, category):
 '''
 create tree
 '''
-compare_num = 0
+cdef float compare_num = 0
 
 cpdef create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
@@ -273,10 +274,13 @@ cpdef create_tree(data, label, target):
 '''
 test
 '''
-cdef dict second, valueOFfeat
+cdef dict tree, mytree, second, valueOFfeat
+cdef str root, key
+cdef int p
 cpdef classify(tree, featlabel, testdata):
     testdata.index = ['0']
     root = list(tree.keys())[0]
+    #print(type(root))
     root_feat = root.split('==')
     second = tree[root]
     p = featlabel.index(root_feat[0])+1
@@ -307,13 +311,13 @@ cpdef classify(tree, featlabel, testdata):
     return classlabel
 cdef int predict
 cdef int Id
-def do_all():
+cdef list c, cc
+cpdef int do_all():
     dfx = pd.read_csv('X_train.csv')
     dfy = pd.read_csv('y_train.csv')
 #print(len(dfx), len(dfy))
     c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
     dfa = pd.DataFrame()
-
 #print(dfx['workclass']=="?")
     dfx_test = pd.read_csv('X_test.csv')
 
@@ -323,7 +327,7 @@ def do_all():
     dfy = dfy.drop(columns = ['Id'])    
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
 #df_tmp = df_train.copy()
-    df_train = df_train[70: 100]
+    #df_train = df_train[70: 120]
 #print(df_train.tail())
 #print(dfy)
     cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
