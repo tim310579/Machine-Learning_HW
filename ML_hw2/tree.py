@@ -1,4 +1,4 @@
-
+import warnings
 import numpy as np
 import csv
 import pandas as pd
@@ -6,13 +6,14 @@ import re
 import math
 import matplotlib.pyplot as plt
 
+#warnings.filterwarnings('ignore')
 
 def cal_gain(col, category):
-    base_H = 0
+    #base_H = 0
     df_H = pd.DataFrame()
     df_H = df_H.append(category.value_counts(normalize = True))
     H = 0
-    H += -df_H.ix[0, 0]*math.log(df_H.ix[0, 0], 2) - df_H.ix[0, 1]*math.log(df_H.ix[0, 1], 2)
+    H += -df_H.iat[0, 0]*math.log(df_H.iat[0, 0], 2) - df_H.iat[0, 1]*math.log(df_H.iat[0, 1], 2)
     #return H
     if col.dtypes == int:
         #merge = pd.DataFrame()
@@ -116,42 +117,42 @@ def cal_gain(col, category):
             if(arr1_1.shape[1] == 1):
                 R1 = 0
             else:
-                R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0]
+                R1 = (-arr1_1.iat[0, 0]*math.log(arr1_1.iat[0, 0], 2) - arr1_1.iat[0, 1]*math.log(arr1_1.iat[0, 1], 2))*part1.iat[0, 0]
         if(arr1_2.empty):
             R1 += 0
         else:
             if(arr1_2.shape[1] == 1):
                 R1 += 0
             else:
-                R1 += (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
+                R1 += (-arr1_2.iat[0, 0]*math.log(arr1_2.iat[0, 0], 2) - arr1_2.iat[0, 1]*math.log(arr1_2.iat[0, 1], 2))*part1.iat[0, 1]
         if(arr2_1.empty):
             R2 = 0
         else:
             if(arr2_1.shape[1] == 1):
                 R2 = 0
             else:
-                R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0]
+                R2 = (-arr2_1.iat[0, 0]*math.log(arr2_1.iat[0, 0], 2) - arr2_1.iat[0, 1]*math.log(arr2_1.iat[0, 1], 2))*part2.iat[0, 0]
         if(arr2_2.empty):
             R2 += 0
         else:
             if(arr2_2.shape[1] == 1):
                 R2 += 0
             else:
-                R2 += (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
+                R2 += (-arr2_2.iat[0, 0]*math.log(arr2_2.iat[0, 0], 2) - arr2_2.iat[0, 1]*math.log(arr2_2.iat[0, 1], 2))*part2.iat[0, 1]
         if(arr3_1.empty):
             R3 = 0
         else:
             if(arr3_1.shape[1] == 1):
                 R3 = 0
             else:
-                R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0]
+                R3 = (-arr3_1.iat[0, 0]*math.log(arr3_1.iat[0, 0], 2) - arr3_1.iat[0, 1]*math.log(arr3_1.iat[0, 1], 2))*part3.iat[0, 0]
         if(arr3_2.empty):
             R3 += 0
         else:
             if(arr3_2.shape[1] == 1):
                 R3 += 0
             else:
-                R3 += (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
+                R3 += (-arr3_2.iat[0, 0]*math.log(arr3_2.iat[0, 0], 2) - arr3_2.iat[0, 1]*math.log(arr3_2.iat[0, 1], 2))*part3.iat[0, 1]
 
         G1 = H - R1
         G2 = H - R2
@@ -189,14 +190,14 @@ def cal_gain(col, category):
             df_tmp_entropy = df_tmp_entropy.fillna(1)
             #print(df_tmp_entropy, 'lalalala')
             if(df_tmp_entropy.shape[1] > 1):
-                H_part = -df_tmp_entropy.ix[0, 0]*math.log(df_tmp_entropy.ix[0, 0], 2) - df_tmp_entropy.ix[0, 1]*math.log(df_tmp_entropy.ix[0, 1], 2)
+                H_part = -df_tmp_entropy.iat[0, 0]*math.log(df_tmp_entropy.iat[0, 0], 2) - df_tmp_entropy.iat[0, 1]*math.log(df_tmp_entropy.iat[0, 1], 2)
             else:
                 H_part = 0
             R.append(H_part)
            # H_part *= tmp.ix[0, i]
         
         for i in range(tmp.shape[1]):
-            R[i] *= tmp.ix[0, i]
+            R[i] *= tmp.iat[0, i]
         ret_R = 0
         for i in range(len(R)):
             ret_R += R[i]
@@ -208,6 +209,7 @@ def cal_gain(col, category):
 create tree
 '''
 compare_num = 0
+
 def create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
@@ -221,7 +223,7 @@ def create_tree(data, label, target):
             #print("AAAAA")
             data = data.reset_index()
             le = data.shape[1]
-            return (data.ix[0, le-1])
+            return (data.iat[0, le-1])
         '''
         if(cate.ix[0, 0] == 0):
             return 0
@@ -274,7 +276,9 @@ def classify(tree, featlabel, testdata):
     root = list(tree.keys())[0]
     root_feat = root.split('==')
     second = tree[root]
-    key = testdata.ix[0, root_feat[0]]
+    p = featlabel.index(root_feat[0])+1
+    #print(p, root_feat, testdata)
+    key = testdata.iat[0, p]
     #print(testdata.ix[0, 'Id'], key)
     #valueOFfeat = second[key]
     if(len(root_feat) == 2):
@@ -288,11 +292,13 @@ def classify(tree, featlabel, testdata):
         else:
             classlabel = valueOFfeat
     else:
-        try:
-            valueOFfeat = second[key]
-        except KeyError:
-            #print('cannot predict this one since the node has no feature of it, so replace it with zero')
+        if second.setdefault('key', None) == None:
             return 0
+        else:
+            valueOFfeat = second[key]
+        #except KeyError:
+            #print('cannot predict this one since the node has no feature of it, so replace it with zero')
+            #return 0
         if isinstance(valueOFfeat, dict):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
@@ -330,10 +336,15 @@ mytree = (create_tree(df_train, cc, target))
 #arrow_args = dict(arrowstyle="<-")
 #createPlot(mytree)
 outcome = pd.DataFrame(columns = ['Id', 'Category'])
+print(outcome.dtypes)
 for i in range(0, len(dfx_test)):
     predict = classify(mytree, cc, dfx_test[i:i+1])
-    outcome.loc[i, 'Id'] = dfx_test.ix[i, 'Id']
-    outcome.loc[i, 'Category'] = int(predict)
+    Id = dfx_test.iat[i, 0]
+    outcome.loc[i, 'Id'] = Id
+    outcome.loc[i, 'Category'] = predict
 #outcome.columns = ['Id', 'Category']
-print(outcome)
+print(outcome.dtypes)
+outcome['Id'] = outcome['Id'].astype('int')
+outcome['Category'] = outcome['Category'].astype('int')
+print(outcome.dtypes)
 outcome.to_csv('submission.csv', index = False)
