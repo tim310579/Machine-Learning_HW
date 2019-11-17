@@ -182,8 +182,9 @@ def cal_gain(col, category):
             df_h = df_tmp_entropy.drop(df_tmp_entropy.index, inplace = True)
             choose = 0
             choose = merge[merge['col'] == col].index
-            df_h = merge.ix[choose, 1]
-            
+            #print(merge)
+            df_h = merge.loc[choose, 'cate']
+            #print(df_h)
             df_tmp_entropy = df_tmp_entropy.append(df_h.value_counts(normalize = True))
             #print(df_tmp_entropy)
             
@@ -217,8 +218,8 @@ def create_tree(data, label, target):
     #data = data.reset_index()
     #print(ret_all_p_n)
     #print(len(data))
-    for col in ret_all_p_n.columns:
-        if(ret_all_p_n.ix[0, col] == len(data)):
+    for col in range(ret_all_p_n.shape[1]):
+        if(ret_all_p_n.iat[0, col] == len(data)):
             #if(ret_all_p_n.ix[0, 0] == len(data)):
             #print("AAAAA")
             data = data.reset_index()
@@ -292,13 +293,11 @@ def classify(tree, featlabel, testdata):
         else:
             classlabel = valueOFfeat
     else:
-        if second.setdefault('key', None) == None:
-            return 0
-        else:
+        try:
             valueOFfeat = second[key]
-        #except KeyError:
+        except KeyError:
             #print('cannot predict this one since the node has no feature of it, so replace it with zero')
-            #return 0
+            return 0
         if isinstance(valueOFfeat, dict):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
@@ -329,12 +328,7 @@ target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
 mytree = (create_tree(df_train, cc, target))
-#print(dfx_test[0:1])
-#print(mytree)
-#decisionNode = dict(boxstyle="sawtooth", fc="0.8")          #创建字典decisionNode,定义判断节点形态
-#leafNode = dict(boxstyle="round4", fc="0.8")                #创建字典leafNode,定义叶节点形态
-#arrow_args = dict(arrowstyle="<-")
-#createPlot(mytree)
+
 outcome = pd.DataFrame(columns = ['Id', 'Category'])
 print(outcome.dtypes)
 for i in range(0, len(dfx_test)):
