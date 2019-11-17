@@ -1,17 +1,20 @@
-
+import warnings
 import numpy as np
 import csv
 import pandas as pd
 import re
 import math
 import matplotlib.pyplot as plt
+#import cython
 
-def cal_gain(col, category):
-    base_H = 0
+#warnings.filterwarnings('ignore')
+
+cpdef cal_gain(col, category):
+    #base_H = 0
     df_H = pd.DataFrame()
     df_H = df_H.append(category.value_counts(normalize = True))
     H = 0
-    H += -df_H.ix[0, 0]*math.log(df_H.ix[0, 0], 2) - df_H.ix[0, 1]*math.log(df_H.ix[0, 1], 2)
+    H += -df_H.iat[0, 0]*math.log(df_H.iat[0, 0], 2) - df_H.iat[0, 1]*math.log(df_H.iat[0, 1], 2)
     #return H
     if col.dtypes == int:
         #merge = pd.DataFrame()
@@ -115,42 +118,42 @@ def cal_gain(col, category):
             if(arr1_1.shape[1] == 1):
                 R1 = 0
             else:
-                R1 = (-arr1_1.ix[0, 0]*math.log(arr1_1.ix[0, 0], 2) - arr1_1.ix[0, 1]*math.log(arr1_1.ix[0, 1], 2))*part1.ix[0, 0]
+                R1 = (-arr1_1.iat[0, 0]*math.log(arr1_1.iat[0, 0], 2) - arr1_1.iat[0, 1]*math.log(arr1_1.iat[0, 1], 2))*part1.iat[0, 0]
         if(arr1_2.empty):
             R1 += 0
         else:
             if(arr1_2.shape[1] == 1):
                 R1 += 0
             else:
-                R1 += (-arr1_2.ix[0, 0]*math.log(arr1_2.ix[0, 0], 2) - arr1_2.ix[0, 1]*math.log(arr1_2.ix[0, 1], 2))*part1.ix[0, 1]
+                R1 += (-arr1_2.iat[0, 0]*math.log(arr1_2.iat[0, 0], 2) - arr1_2.iat[0, 1]*math.log(arr1_2.iat[0, 1], 2))*part1.iat[0, 1]
         if(arr2_1.empty):
             R2 = 0
         else:
             if(arr2_1.shape[1] == 1):
                 R2 = 0
             else:
-                R2 = (-arr2_1.ix[0, 0]*math.log(arr2_1.ix[0, 0], 2) - arr2_1.ix[0, 1]*math.log(arr2_1.ix[0, 1], 2))*part2.ix[0, 0]
+                R2 = (-arr2_1.iat[0, 0]*math.log(arr2_1.iat[0, 0], 2) - arr2_1.iat[0, 1]*math.log(arr2_1.iat[0, 1], 2))*part2.iat[0, 0]
         if(arr2_2.empty):
             R2 += 0
         else:
             if(arr2_2.shape[1] == 1):
                 R2 += 0
             else:
-                R2 += (-arr2_2.ix[0, 0]*math.log(arr2_2.ix[0, 0], 2) - arr2_2.ix[0, 1]*math.log(arr2_2.ix[0, 1], 2))*part2.ix[0, 1]
+                R2 += (-arr2_2.iat[0, 0]*math.log(arr2_2.iat[0, 0], 2) - arr2_2.iat[0, 1]*math.log(arr2_2.iat[0, 1], 2))*part2.iat[0, 1]
         if(arr3_1.empty):
             R3 = 0
         else:
             if(arr3_1.shape[1] == 1):
                 R3 = 0
             else:
-                R3 = (-arr3_1.ix[0, 0]*math.log(arr3_1.ix[0, 0], 2) - arr3_1.ix[0, 1]*math.log(arr3_1.ix[0, 1], 2))*part3.ix[0, 0]
+                R3 = (-arr3_1.iat[0, 0]*math.log(arr3_1.iat[0, 0], 2) - arr3_1.iat[0, 1]*math.log(arr3_1.iat[0, 1], 2))*part3.iat[0, 0]
         if(arr3_2.empty):
             R3 += 0
         else:
             if(arr3_2.shape[1] == 1):
                 R3 += 0
             else:
-                R3 += (-arr3_2.ix[0, 0]*math.log(arr3_2.ix[0, 0], 2) - arr3_2.ix[0, 1]*math.log(arr3_2.ix[0, 1], 2))*part3.ix[0, 1]
+                R3 += (-arr3_2.iat[0, 0]*math.log(arr3_2.iat[0, 0], 2) - arr3_2.iat[0, 1]*math.log(arr3_2.iat[0, 1], 2))*part3.iat[0, 1]
 
         G1 = H - R1
         G2 = H - R2
@@ -180,22 +183,23 @@ def cal_gain(col, category):
             df_h = df_tmp_entropy.drop(df_tmp_entropy.index, inplace = True)
             choose = 0
             choose = merge[merge['col'] == col].index
-            df_h = merge.ix[choose, 1]
-            
+            #print(merge)
+            df_h = merge.loc[choose, 'cate']
+            #print(df_h)
             df_tmp_entropy = df_tmp_entropy.append(df_h.value_counts(normalize = True))
             #print(df_tmp_entropy)
             
             df_tmp_entropy = df_tmp_entropy.fillna(1)
             #print(df_tmp_entropy, 'lalalala')
             if(df_tmp_entropy.shape[1] > 1):
-                H_part = -df_tmp_entropy.ix[0, 0]*math.log(df_tmp_entropy.ix[0, 0], 2) - df_tmp_entropy.ix[0, 1]*math.log(df_tmp_entropy.ix[0, 1], 2)
+                H_part = -df_tmp_entropy.iat[0, 0]*math.log(df_tmp_entropy.iat[0, 0], 2) - df_tmp_entropy.iat[0, 1]*math.log(df_tmp_entropy.iat[0, 1], 2)
             else:
                 H_part = 0
             R.append(H_part)
            # H_part *= tmp.ix[0, i]
         
         for i in range(tmp.shape[1]):
-            R[i] *= tmp.ix[0, i]
+            R[i] *= tmp.iat[0, i]
         ret_R = 0
         for i in range(len(R)):
             ret_R += R[i]
@@ -207,20 +211,21 @@ def cal_gain(col, category):
 create tree
 '''
 compare_num = 0
-def create_tree(data, label, target):
+
+cpdef create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
     #print(label)
     #data = data.reset_index()
     #print(ret_all_p_n)
     #print(len(data))
-    for col in ret_all_p_n.columns:
-        if(ret_all_p_n.ix[0, col] == len(data)):
+    for col in range(ret_all_p_n.shape[1]):
+        if(ret_all_p_n.iat[0, col] == len(data)):
             #if(ret_all_p_n.ix[0, 0] == len(data)):
             #print("AAAAA")
             data = data.reset_index()
             le = data.shape[1]
-            return (data.ix[0, le-1])
+            return (data.iat[0, le-1])
         '''
         if(cate.ix[0, 0] == 0):
             return 0
@@ -249,7 +254,7 @@ def create_tree(data, label, target):
             #del(label[i])
         label_target = target
         if(Gain[i][0] != 'string'):
-            target = target + ' ' + str(Gain[i][0])
+            target = target + '==' + str(Gain[i][0])
         #label_target = target
         mytree = {target:{}}
         #print(target)
@@ -265,95 +270,80 @@ def create_tree(data, label, target):
             mytree[target][col] = create_tree(branch, label, label_target)
             #return branch
         return mytree
-
-def getNumLeafs(mytree):
-    numleafs = 0
-    root = list(mytree.keys())[0]
-    second = mytree[root]
-    for key in second.keys():
-        if type(second[key]).__name__=='dict':
-            numleafs += getNumLeafs(second[key])
+'''
+test
+'''
+cdef dict second, valueOFfeat
+cpdef classify(tree, featlabel, testdata):
+    testdata.index = ['0']
+    root = list(tree.keys())[0]
+    root_feat = root.split('==')
+    second = tree[root]
+    p = featlabel.index(root_feat[0])+1
+    #print(p, root_feat, testdata)
+    key = testdata.iat[0, p]
+    #print(testdata.ix[0, 'Id'], key)
+    #valueOFfeat = second[key]
+    if(len(root_feat) == 2):
+        compare_num = float(root_feat[1])
+        if key <= compare_num:
+            valueOFfeat = second[0]
         else:
-            numleafs += 1
-    return numleafs
-def gettreeDepth(mytree):
-    maxDepth = 0
-    root = list(mytree.keys())[0]
-    second = mytree[root]
-    for key in second.keys():
-        if type(second[key]).__name__=='dict':#test to see if the nodes are dictonaires, if not they are leaf nodes
-            thisDepth = 1 + gettreeDepth(second[key])
-        else:  
-            thisDepth = 1
-        if thisDepth > maxDepth: 
-            maxDepth = thisDepth
-    return maxDepth
-def plotNode(nodeTxt, centerPt, parentPt, nodeType):
-    createPlot.ax1.annotate(nodeTxt, xy=parentPt,  xycoords='axes fraction',
-             xytext=centerPt, textcoords='axes fraction',
-             va="center", ha="center", bbox=nodeType, arrowprops=arrow_args )
-
-#在父子节点间填充信息，绘制线上的标注
-def plotMidText(cntrPt, parentPt, txtString):
-    xMid = (parentPt[0]-cntrPt[0])/2.0 + cntrPt[0]
-    yMid = (parentPt[1]-cntrPt[1])/2.0 + cntrPt[1]
-    createPlot.ax1.text(xMid, yMid, txtString, va="center", ha="center", rotation=30)
-
-#计算宽和高，递归，决定整个树图的绘制
-def plotTree(mytree, parentPt, nodeTxt):#if the first key tells you what feat was split on
-    numLeafs = getNumLeafs(mytree)  #this determines the x width of this tree
-    depth = gettreeDepth(mytree)
-    firstStr = list(mytree.keys())[0]     #the text label for this node should be this
-    cntrPt = (plotTree.xOff + (1.0 + float(numLeafs))/2.0/plotTree.totalW, plotTree.yOff)
-    plotMidText(cntrPt, parentPt, nodeTxt)
-    plotNode(firstStr, cntrPt, parentPt, decisionNode)
-    secondDict = mytree[firstStr]
-    plotTree.yOff = plotTree.yOff - 1.0/plotTree.totalD
-    for key in secondDict.keys():
-        if type(secondDict[key]).__name__=='dict':#test to see if the nodes are dictonaires, if not they are leaf nodes
-            plotTree(secondDict[key],cntrPt,str(key))        #recursion
-        else:   #it's a leaf node print the leaf node
-            plotTree.xOff = plotTree.xOff + 1.0/plotTree.totalW
-            plotNode(secondDict[key], (plotTree.xOff, plotTree.yOff), cntrPt, leafNode)
-            plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key))
-    plotTree.yOff = plotTree.yOff + 1.0/plotTree.totalD
-#if you do get a dictonary you know it's a tree, and the first element will be another dict
-
-def createPlot(inTree):
-    fig = plt.figure(1, facecolor='white')
-    fig.clf()
-    axprops = dict(xticks=[], yticks=[])
-    createPlot.ax1 = plt.subplot(111, frameon=False, **axprops)    #no ticks
-    #createPlot.ax1 = plt.subplot(111, frameon=False) #ticks for demo puropses
-    plotTree.totalW = float(getNumLeafs(inTree))
-    plotTree.totalD = float(gettreeDepth(inTree))
-    plotTree.xOff = -0.5/plotTree.totalW; plotTree.yOff = 1.0;
-    plotTree(inTree, (0.5,1.0), '')
-    plt.show()
-def do_all(): 
+            valueOFfeat = second[1]
+        if isinstance(valueOFfeat, dict):
+            classlabel = classify(valueOFfeat, featlabel, testdata)
+        else:
+            classlabel = valueOFfeat
+    else:
+        try:
+            valueOFfeat = second[key]
+        except KeyError:
+            #print('cannot predict this one since the node has no feature of it, so replace it with zero')
+            return 0
+        if isinstance(valueOFfeat, dict):
+            classlabel = classify(valueOFfeat, featlabel, testdata)
+        else:
+            classlabel = valueOFfeat
+    return classlabel
+cdef int predict
+cdef int Id
+def do_all():
     dfx = pd.read_csv('X_train.csv')
     dfy = pd.read_csv('y_train.csv')
-    #print(len(dfx), len(dfy))
+#print(len(dfx), len(dfy))
     c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
     dfa = pd.DataFrame()
 
-    #print(dfx['workclass']=="?")
+#print(dfx['workclass']=="?")
+    dfx_test = pd.read_csv('X_test.csv')
+
+
     for col in c:
         dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
     dfy = dfy.drop(columns = ['Id'])    
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-    df_train = df_train[0: 100]
-    #print(df_train.tail())
-    #print(dfy)
+#df_tmp = df_train.copy()
+    df_train = df_train[70: 100]
+#print(df_train.tail())
+#print(dfy)
     cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
 
     target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
     mytree = (create_tree(df_train, cc, target))
-    print(mytree)
 
-    decisionNode = dict(boxstyle="sawtooth", fc="0.8")          #创建字典decisionNode,定义判断节点形态
-    leafNode = dict(boxstyle="round4", fc="0.8")                #创建字典leafNode,定义叶节点形态
-    arrow_args = dict(arrowstyle="<-")
-    createPlot(mytree)
+    outcome = pd.DataFrame(columns = ['Id', 'Category'])
+    print(outcome.dtypes)
+    for i in range(0, len(dfx_test)):
+        predict = classify(mytree, cc, dfx_test[i:i+1])
+        Id = dfx_test.iat[i, 0]
+        outcome.loc[i, 'Id'] = Id
+        outcome.loc[i, 'Category'] = predict
+#outcome.columns = ['Id', 'Category']
+    print(outcome.dtypes)
+    outcome['Id'] = outcome['Id'].astype('int')
+    outcome['Category'] = outcome['Category'].astype('int')
+    print(outcome.dtypes)
+    outcome.to_csv('submission.csv', index = False)
+    return 0
