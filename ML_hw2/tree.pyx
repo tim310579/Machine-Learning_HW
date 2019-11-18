@@ -322,7 +322,7 @@ for col in c:
 dfy = dfy.drop(columns = ['Id'])    
 
 
-cpdef do_all():
+cpdef hold_out():
 #print(len(dfx), len(dfy))
     
 #print(dfx['workclass']=="?")
@@ -394,4 +394,114 @@ cpdef do_all():
     print 'Accuracy:', acc
     print 'Sensitivity(Recall):', rec
     print 'precision:', pre
+cdef dict k12tree, k23tree, k13tree
 
+cpdef K_fold():
+    df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
+    df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
+    df_traink = df_traink[0:500]
+    split = len(df_traink)
+    df_traink1 = df_traink[0:int(split/3)]
+    df_traink2 = df_traink[int(split/3):int((split*2)/3)]
+    df_traink3 = df_traink[int((split*2)/3):split]
+    df_traink2 = df_traink2.reset_index(drop = True)
+    df_traink3 = df_traink3.reset_index(drop = True)
+    traink12 = pd.concat([df_traink1, df_traink2], axis = 0)
+    traink23 = pd.concat([df_traink2, df_traink3], axis = 0)
+    traink13 = pd.concat([df_traink1, df_traink3], axis = 0)
+    traink12 = traink12.reset_index(drop = True)
+    traink23 = traink23.reset_index(drop = True)
+    traink13 = traink13.reset_index(drop = True)
+    target1 = []
+    target2 = []
+    target3 = []
+    k12tree = (create_tree(traink12, cc, target1))
+    k23tree = (create_tree(traink23, cc, target2))
+    k13tree = (create_tree(traink13, cc, target3))
+    
+    matrix12 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp1 = float(0)
+    tn1 = float(0)
+    fp1 = float(0)
+    fn1 = float(0)
+    for i in range(0, len(df_traink3)):
+        predict = classify(k12tree, cc, df_traink3[i:i+1])
+        if(predict == df_traink3.iat[i, df_traink3.shape[1]-1]):
+            if(predict == 1):   tp1 += 1
+            else:   tn1 += 1
+        else:
+            if(predict == 1):   fp1 += 1
+            else:   fn1 += 1
+    acc1 = (tp1+tn1) / (tp1+tn1+fp1+fn1)
+    rec1 = tp1/(tp1+fn1)
+    pre1 = tp1/(tp1+fp1)
+    matrix12['Predict > 50k(1)'] = [tp1, fp1]
+    matrix12['Predict <= 50k(0)'] = [fn1, tn1]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix12)
+    #print 'Accuracy:', acc1
+    #print 'Sensitivity(Recall):', rec1
+    #print 'precision:', pre1
+
+    #for K2
+    matrix23 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp2 = float(0)
+    tn2 = float(0)
+    fp2 = float(0)
+    fn2 = float(0)
+    for i in range(0, len(df_traink1)):
+        predict = classify(k23tree, cc, df_traink1[i:i+1])
+        if(predict == df_traink1.iat[i, df_traink1.shape[1]-1]):
+            if(predict == 1):   tp2 += 1
+            else:   tn2 += 1
+        else:
+            if(predict == 1):   fp2 += 1
+            else:   fn2 += 1
+    acc2 = (tp2+tn2) / (tp2+tn2+fp2+fn2)
+    rec2 = tp2/(tp2+fn2)
+    pre2 = tp2/(tp2+fp2)
+    matrix23['Predict > 50k(1)'] = [tp2, fp2]
+    matrix23['Predict <= 50k(0)'] = [fn2, tn2]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix23)
+    #print 'Accuracy:', acc2
+    #print 'Sensitivity(Recall):', rec2
+    #print 'precision:', pre2
+    
+    #for k3
+    matrix13 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp3 = float(0)
+    tn3 = float(0)
+    fp3 = float(0)
+    fn3 = float(0)
+    for i in range(0, len(df_traink2)):
+        predict = classify(k13tree, cc, df_traink2[i:i+1])
+        if(predict == df_traink2.iat[i, df_traink2.shape[1]-1]):
+            if(predict == 1):   tp3 += 1
+            else:   tn3 += 1
+        else:
+            if(predict == 1):   fp3 += 1
+            else:   fn3 += 1
+    acc3 = (tp3+tn3) / (tp3+tn3+fp3+fn3)
+    rec3 = tp3/(tp3+fn3)
+    pre3 = tp3/(tp3+fp3)
+    matrix13['Predict > 50k(1)'] = [tp3, fp3]
+    matrix13['Predict <= 50k(0)'] = [fn3, tn3]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix13)
+    #print 'Accuracy:', acc3
+    #print 'Sensitivity(Recall):', rec3
+    #print 'precision:', pre3
+
+    print ' '
+    print('Average Confusion matrix with K_fold')
+    matrix_avg = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    matrix_avg['Predict > 50k(1)'] = [np.mean([tp1, tp2, tp3]), np.mean([fp1, fp2, fp3])]
+    matrix_avg['Predict <= 50k(0)'] = [np.mean([fn1, fn2, fn3]), np.mean([tn1, tn2, tn3])]
+    print(matrix_avg)
+    av_acc = np.mean([acc1, acc2, acc3])
+    av_rec = np.mean([rec1, rec2, rec3])
+    av_pre = np.mean([pre1, pre2, pre3])
+    print 'Average Accuracy:', av_acc
+    print 'Average Sensitivity(Recall):', av_rec
+    print 'Average Precision:', av_pre
