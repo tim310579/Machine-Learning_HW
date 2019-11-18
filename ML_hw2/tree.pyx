@@ -5,7 +5,7 @@ import pandas as pd
 import re
 import math
 import matplotlib.pyplot as plt
-#import cython
+import cython
 
 #warnings.filterwarnings('ignore')
 
@@ -212,7 +212,8 @@ cpdef cal_gain(col, category):
 create tree
 '''
 cdef float compare_num = 0
-
+cdef int le
+cdef list label
 cpdef create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
@@ -312,42 +313,85 @@ cpdef classify(tree, featlabel, testdata):
 cdef int predict
 cdef int Id
 cdef list c, cc
-cpdef int do_all():
-    dfx = pd.read_csv('X_train.csv')
-    dfy = pd.read_csv('y_train.csv')
+dfx = pd.read_csv('X_train.csv')
+dfy = pd.read_csv('y_train.csv')
+c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
+cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
+for col in c:
+    dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
+dfy = dfy.drop(columns = ['Id'])    
+
+
+cpdef do_all():
 #print(len(dfx), len(dfy))
-    c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
-    dfa = pd.DataFrame()
+    
 #print(dfx['workclass']=="?")
     dfx_test = pd.read_csv('X_test.csv')
-
-
-    for col in c:
-        dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
-    dfy = dfy.drop(columns = ['Id'])    
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-#df_tmp = df_train.copy()
-    #df_train = df_train[70: 120]
+    df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
+    #df_train = df_train[0:6000]
+
+    choose1 = df_train[df_train['Category'] == 1].index
+    df_train1 = df_train.loc[choose1]
+    #print(df_train1)
+    choose0 = df_train[df_train['Category'] == 0].index
+    df_train0 = df_train.loc[choose0]
+    split1 = len(df_train1)
+    split0 = len(df_train0)
+    df_test1 = df_train1[int(split1*0.7): split1]
+    df_test0 = df_train0[int(split0*0.7): split0]
+    df_train1 = df_train1[0: int(split1*0.7)]
+    df_train0 = df_train0[0: int(split0*0.7)]
+    df_test = pd.concat([df_test1, df_test0], axis = 0)
+    df_train10 = pd.concat([df_train1, df_train0], axis = 0)
+    df_test = df_test.reset_index()
+    df_train10 = df_train10.reset_index()
+    #df_check = df_test['Category']
+    df_test = df_test.drop('index', axis = 1)
+    
+    
+    #print(df_test)
 #print(df_train.tail())
 #print(dfy)
-    cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
-
+    
     target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
-    mytree = (create_tree(df_train, cc, target))
+    mytree = (create_tree(df_train10, cc, target))
+    matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    #outcome = pd.DataFrame(columns = ['Id', 'Category'])
+    #print(outcome.dtypes)
+    tp = float(0)
+    tn = float(0)
+    fp = float(0)
+    fn = float(0)
+    for i in range(0, len(df_test)):
+        predict = classify(mytree, cc, df_test[i:i+1])
+        #print(predict, df_test.iat[i, df_test.shape[1]-1])
+        if(predict == df_test.iat[i, df_test.shape[1]-1]):
+            if(predict == 1):   tp += 1
+            else:   tn += 1
+        else:
+            if(predict == 1):   fp += 1
+            else:   fn += 1
+    #Id = df_test.iat[i, 0]
+    #outcome.loc[i, 'Id'] = Id
+    #outcome.loc[i, 'Category'] = predict
+    #outcome.columns = ['Id', 'Category']
+    #print(outcome.dtypes)
+    #outcome['Id'] = outcome['Id'].astype('int')
+    #outcome['Category'] = outcome['Category'].astype('int')
+    #print(outcome.dtypes)
+    #outcome.to_csv('submission.csv', index 
+    
+    acc = (tp+tn) / (tp+tn+fp+fn)
+    rec = tp/(tp+fn)
+    pre = tp/(tp+fp)
+    matrix['Predict > 50k(1)'] = [tp, fp]
+    matrix['Predict <= 50k(0)'] = [fn, tn]
+    print('Confusion Matrix--------------------------')
+    print(matrix)
+    print 'Accuracy:', acc
+    print 'Sensitivity(Recall):', rec
+    print 'precision:', pre
 
-    outcome = pd.DataFrame(columns = ['Id', 'Category'])
-    print(outcome.dtypes)
-    for i in range(0, len(dfx_test)):
-        predict = classify(mytree, cc, dfx_test[i:i+1])
-        Id = dfx_test.iat[i, 0]
-        outcome.loc[i, 'Id'] = Id
-        outcome.loc[i, 'Category'] = predict
-#outcome.columns = ['Id', 'Category']
-    print(outcome.dtypes)
-    outcome['Id'] = outcome['Id'].astype('int')
-    outcome['Category'] = outcome['Category'].astype('int')
-    print(outcome.dtypes)
-    outcome.to_csv('submission.csv', index = False)
-    return 0
