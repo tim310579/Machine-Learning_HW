@@ -4,10 +4,14 @@ import csv
 import pandas as pd
 import re
 import math
-import matplotlib.pyplot as plt
+#import numba as nb
+#import matplotlib.pyplot as plt
+import cython
 
 #warnings.filterwarnings('ignore')
 
+#cdef float H, R1, R2, R3, G1, G2, G3, maxx, fir, mid, thi, H_part
+#@nb.jit()
 def cal_gain(col, category):
     #base_H = 0
     df_H = pd.DataFrame()
@@ -15,8 +19,9 @@ def cal_gain(col, category):
     H = 0
     H += -df_H.iat[0, 0]*math.log(df_H.iat[0, 0], 2) - df_H.iat[0, 1]*math.log(df_H.iat[0, 1], 2)
     #return H
-    if col.dtypes == int:
-        #merge = pd.DataFrame()
+    #print(col)
+    if col.dtypes == np.int64: 
+     	#merge = pd.DataFrame()
         #merge = pd.concat([col, category], axis = 1)
         #merge.columns = ['col', 'Category']
         #return merge
@@ -209,8 +214,10 @@ def cal_gain(col, category):
 '''
 create tree
 '''
-compare_num = 0
-
+#cdef float compare_num = 0
+#cdef int le
+#cdef list label
+#@nb.jit()
 def create_tree(data, label, target):
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
@@ -272,9 +279,14 @@ def create_tree(data, label, target):
 '''
 test
 '''
+#cdef dict tree, mytree, second, valueOFfeat
+#cdef str root, key
+#cdef int p
+#@nb.jit()
 def classify(tree, featlabel, testdata):
     testdata.index = ['0']
     root = list(tree.keys())[0]
+    #print(type(root))
     root_feat = root.split('==')
     second = tree[root]
     p = featlabel.index(root_feat[0])+1
@@ -303,42 +315,197 @@ def classify(tree, featlabel, testdata):
         else:
             classlabel = valueOFfeat
     return classlabel
-
+#cdef int predict
+#cdef int Id
+#cdef list c, cc
 dfx = pd.read_csv('X_train.csv')
 dfy = pd.read_csv('y_train.csv')
-#print(len(dfx), len(dfy))
 c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
-dfa = pd.DataFrame()
-
-#print(dfx['workclass']=="?")
-dfx_test = pd.read_csv('X_test.csv')
-
-
+cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
+cn = ['age', 'fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
 for col in c:
     dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
 dfy = dfy.drop(columns = ['Id'])    
-df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-#df_tmp = df_train.copy()
-df_train = df_train[70: 100]
-#print(df_train.tail())
-#print(dfy)
-cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
 
-target = []
+#@nb.jit()
+def hold_out():
+#print(len(dfx), len(dfy))
+    
+#print(dfx['workclass']=="?")
+    dfx_test = pd.read_csv('X_test.csv')
+    df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
+    df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
+    df_train = df_train[0:300]
+    choose1 = df_train[df_train['Category'] == 1].index
+    df_train1 = df_train.loc[choose1]
+    #print(df_train1)
+    choose0 = df_train[df_train['Category'] == 0].index
+    df_train0 = df_train.loc[choose0]
+    split1 = len(df_train1)
+    split0 = len(df_train0)
+    df_test1 = df_train1[int(split1*0.7): split1]
+    df_test0 = df_train0[int(split0*0.7): split0]
+    df_train1 = df_train1[0: int(split1*0.7)]
+    df_train0 = df_train0[0: int(split0*0.7)]
+    df_test = pd.concat([df_test1, df_test0], axis = 0)
+    df_train10 = pd.concat([df_train1, df_train0], axis = 0)
+    df_test = df_test.reset_index()
+    df_train10 = df_train10.reset_index(drop = True)
+    
+    df_test = df_test.drop('index', axis = 1)
+    
+    target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
-mytree = (create_tree(df_train, cc, target))
+    mytree = (create_tree(df_train10, cc, target))
+    #print(mytree)
+    matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    #outcome = pd.DataFrame(columns = ['Id', 'Category'])
+    #print(outcome.dtypes)
+    tp = float(0)
+    tn = float(0)
+    fp = float(0)
+    fn = float(0)
+    for i in range(0, len(df_test)):
+        predict = classify(mytree, cc, df_test[i:i+1])
+        #print(predict, df_test.iat[i, df_test.shape[1]-1])
+        if(predict == df_test.iat[i, df_test.shape[1]-1]):
+            if(predict == 1):   tp += 1
+            else:   tn += 1
+        else:
+            if(predict == 1):   fp += 1
+            else:   fn += 1
+    #Id = df_test.iat[i, 0]
+    #outcome.loc[i, 'Id'] = Id
+    #outcome.loc[i, 'Category'] = predict
+    #outcome.columns = ['Id', 'Category']
+    #print(outcome.dtypes)
+    #outcome['Id'] = outcome['Id'].astype('int')
+    #outcome['Category'] = outcome['Category'].astype('int')
+    #print(outcome.dtypes)
+    #outcome.to_csv('submission.csv', index 
+    #print(tp, fp, tn, fn)
+    acc = (tp+tn) / (tp+tn+fp+fn)
+    rec = tp/(tp+fn)
+    pre = tp/(tp+fp)
+    matrix['Predict > 50k(1)'] = [tp, fp]
+    matrix['Predict <= 50k(0)'] = [fn, tn]
+    print('Confusion Matrix--------------------------')
+    print(matrix)
+    print ('Accuracy:', acc)
+    print ('Sensitivity(Recall):', rec)
+    print ('precision:', pre)
+#cdef dict k12tree, k23tree, k13tree
+#@nb.jit()
+def K_fold():
+    df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
+    df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
+    df_traink = df_traink[0:300]
+    split = len(df_traink)
+    df_traink1 = df_traink[0:int(split/3)]
+    df_traink2 = df_traink[int(split/3):int((split*2)/3)]
+    df_traink3 = df_traink[int((split*2)/3):split]
+    df_traink2 = df_traink2.reset_index(drop = True)
+    df_traink3 = df_traink3.reset_index(drop = True)
+    traink12 = pd.concat([df_traink1, df_traink2], axis = 0)
+    traink23 = pd.concat([df_traink2, df_traink3], axis = 0)
+    traink13 = pd.concat([df_traink1, df_traink3], axis = 0)
+    traink12 = traink12.reset_index(drop = True)
+    traink23 = traink23.reset_index(drop = True)
+    traink13 = traink13.reset_index(drop = True)
+    target1 = []
+    target2 = []
+    target3 = []
+    k12tree = (create_tree(traink12, cc, target1))
+    k23tree = (create_tree(traink23, cc, target2))
+    k13tree = (create_tree(traink13, cc, target3))
+    
+    matrix12 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp1 = float(0)
+    tn1 = float(0)
+    fp1 = float(0)
+    fn1 = float(0)
+    for i in range(0, len(df_traink3)):
+        predict = classify(k12tree, cc, df_traink3[i:i+1])
+        if(predict == df_traink3.iat[i, df_traink3.shape[1]-1]):
+            if(predict == 1):   tp1 += 1
+            else:   tn1 += 1
+        else:
+            if(predict == 1):   fp1 += 1
+            else:   fn1 += 1
+    acc1 = (tp1+tn1) / (tp1+tn1+fp1+fn1)
+    rec1 = tp1/(tp1+fn1)
+    pre1 = tp1/(tp1+fp1)
+    matrix12['Predict > 50k(1)'] = [tp1, fp1]
+    matrix12['Predict <= 50k(0)'] = [fn1, tn1]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix12)
+    #print 'Accuracy:', acc1
+    #print 'Sensitivity(Recall):', rec1
+    #print 'precision:', pre1
 
-outcome = pd.DataFrame(columns = ['Id', 'Category'])
-print(outcome.dtypes)
-for i in range(0, len(dfx_test)):
-    predict = classify(mytree, cc, dfx_test[i:i+1])
-    Id = dfx_test.iat[i, 0]
-    outcome.loc[i, 'Id'] = Id
-    outcome.loc[i, 'Category'] = predict
-#outcome.columns = ['Id', 'Category']
-print(outcome.dtypes)
-outcome['Id'] = outcome['Id'].astype('int')
-outcome['Category'] = outcome['Category'].astype('int')
-print(outcome.dtypes)
-outcome.to_csv('submission.csv', index = False)
+    #for K2
+    matrix23 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp2 = float(0)
+    tn2 = float(0)
+    fp2 = float(0)
+    fn2 = float(0)
+    for i in range(0, len(df_traink1)):
+        predict = classify(k23tree, cc, df_traink1[i:i+1])
+        if(predict == df_traink1.iat[i, df_traink1.shape[1]-1]):
+            if(predict == 1):   tp2 += 1
+            else:   tn2 += 1
+        else:
+            if(predict == 1):   fp2 += 1
+            else:   fn2 += 1
+    acc2 = (tp2+tn2) / (tp2+tn2+fp2+fn2)
+    rec2 = tp2/(tp2+fn2)
+    pre2 = tp2/(tp2+fp2)
+    matrix23['Predict > 50k(1)'] = [tp2, fp2]
+    matrix23['Predict <= 50k(0)'] = [fn2, tn2]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix23)
+    #print 'Accuracy:', acc2
+    #print 'Sensitivity(Recall):', rec2
+    #print 'precision:', pre2
+    
+    #for k3
+    matrix13 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    tp3 = float(0)
+    tn3 = float(0)
+    fp3 = float(0)
+    fn3 = float(0)
+    for i in range(0, len(df_traink2)):
+        predict = classify(k13tree, cc, df_traink2[i:i+1])
+        if(predict == df_traink2.iat[i, df_traink2.shape[1]-1]):
+            if(predict == 1):   tp3 += 1
+            else:   tn3 += 1
+        else:
+            if(predict == 1):   fp3 += 1
+            else:   fn3 += 1
+    acc3 = (tp3+tn3) / (tp3+tn3+fp3+fn3)
+    rec3 = tp3/(tp3+fn3)
+    pre3 = tp3/(tp3+fp3)
+    matrix13['Predict > 50k(1)'] = [tp3, fp3]
+    matrix13['Predict <= 50k(0)'] = [fn3, tn3]
+    print('Confusion Matrix K_fold--------------------------')
+    print(matrix13)
+    #print 'Accuracy:', acc3
+    #print 'Sensitivity(Recall):', rec3
+    #print 'precision:', pre3
+
+    #print ' '
+    print('Average Confusion matrix with K_fold')
+    matrix_avg = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    matrix_avg['Predict > 50k(1)'] = [np.mean([tp1, tp2, tp3]), np.mean([fp1, fp2, fp3])]
+    matrix_avg['Predict <= 50k(0)'] = [np.mean([fn1, fn2, fn3]), np.mean([tn1, tn2, tn3])]
+    print(matrix_avg)
+    av_acc = np.mean([acc1, acc2, acc3])
+    av_rec = np.mean([rec1, rec2, rec3])
+    av_pre = np.mean([pre1, pre2, pre3])
+    print ('Average Accuracy:', av_acc)
+    print ('Average Sensitivity(Recall):', av_rec)
+    print ('Average Precision:', av_pre)
+
+hold_out()
+K_fold()
