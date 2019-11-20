@@ -6,7 +6,7 @@ import re
 import math
 import random
 
-max_depth = 10
+max_depth = 20
 def cal_gain(col, category):
     df_H = pd.DataFrame()
     df_H = df_H.append(category.value_counts(normalize = True))
@@ -179,8 +179,12 @@ def cal_gain(col, category):
         return string, G
 
 
-def create_tree(data, label, target):
-    #print(data)
+def create_tree(data, label, target, height):
+    height += 1
+    #print(height)
+    if height > max_depth:
+        reett = data['Category'].mode()
+        #return rett
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
     for col in range(ret_all_p_n.shape[1]):
@@ -227,7 +231,7 @@ def create_tree(data, label, target):
             #branch = data_copy[data_copy[target[0]].isin([col])]
             branch = data.loc[choose]
             #print(branch)
-            mytree[target][col] = create_tree(branch, label, label_target)
+            mytree[target][col] = create_tree(branch, label, label_target, height)
             #return branch
         return mytree
 
@@ -297,14 +301,13 @@ def hold_out():
         tree1 = tree1.drop(columns = [cf1[delete]])
         del cf1[delete]
     target = []
-    mytree1 = create_tree(tree1, cf1, target)
-    predict1 = []
+    height1 = 0
+    mytree1 = create_tree(tree1, cf1, target, height1)
+    #predict1 = []
     df_test1 = df_test.copy()
     ret = list(set(cc).difference(set(cf1)))
     df_test1 = df_test1.drop(columns = ret)
     
-    for i in range(0, len(df_test1)):
-        predict1.append(classify(mytree1, cf1, df_test1[i:i+1]))
     #second tree    
     tree2_index = 0
     tree2 = pd.DataFrame()
@@ -318,15 +321,13 @@ def hold_out():
         tree2 = tree2.drop(columns = [cf2[delete]])
         del cf2[delete]
     target2 = []
-    mytree2 = create_tree(tree2, cf2, target2)
-    predict2 = []
+    height2 = 0
+    mytree2 = create_tree(tree2, cf2, target2, height2)
+    #predict2 = []
     df_test2 = df_test.copy()
     ret = list(set(cc).difference(set(cf2)))
     df_test2 = df_test2.drop(columns = ret)
-
-    for i in range(0, len(df_test2)):
-        predict2.append(classify(mytree2, cf2, df_test2[i:i+1]))
-
+    #third tree
     tree3_index = 0
     tree3 = pd.DataFrame()
     for i in range(len(df_train)):
@@ -339,36 +340,31 @@ def hold_out():
         tree3 = tree3.drop(columns = [cf3[delete]])
         del cf3[delete]
     target3 = []
-    mytree3 = create_tree(tree3, cf3, target3)
-    predict3 = []
+    height3 = 0
+    mytree3 = create_tree(tree3, cf3, target3, height3)
+    #predict3 = []
     df_test3 = df_test.copy()
     ret = list(set(cc).difference(set(cf3)))
     df_test3 = df_test3.drop(columns = ret)
-
-    for i in range(0, len(df_test3)):
-        predict3.append(classify(mytree3, cf3, df_test3[i:i+1]))
-    predict_final = []
-    for i in range(0, len(predict3)):
-        predict_final.append(predict1[i] + predict2[i] + predict3[i])
-    #predict_final = np.array(predict1) + np.array(predict2) + np.array(predict3)
-    #print(predict_final)
+    
     tp = float(0)
     tn = float(0)
     fp = float(0)
     fn = float(0)
     cat = df_test.shape[1]-1
-    ser = pd.Series(predict_final)
-    #ser[ser > 1]
-    
-    for i in range(0, len(ser)):
-        tmp = ser[i]
-        cmp_num = pd.Series(tmp)
-        if (cmp_num > 1).bool():     #means two voted for 1
-            if(df_test.iat[i, cat] == 1):  tp += 1
+    for i in range(0, len(df_test3)):
+        pre1 = classify(mytree1, cf1, df_test1[i:i+1])
+        pre2 = classify(mytree2, cf2, df_test2[i:i+1])
+        pre3 = classify(mytree3, cf3, df_test3[i:i+1])
+        pre_tot = pre1+pre2+pre3
+        if(pre_tot > 1):    #means votes for 1 larger or equal 2
+            if(df_test.iat[i, cat] == 1):   tp += 1
             else:   fp += 1
         else:
-            if(df_test.iat[i, cat] == 1):  fn += 1 #guess0, actual 1
+            if(df_test.iat[i, cat] == 1):   fn += 1#guess 0, actual 1
             else:   tn += 1
+    #print(type(predict_final))
+    
     matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
     matrix['Predict > 50k(1)'] = [tp, fp]
     matrix['Predict <= 50k(0)'] = [fn, tn]
@@ -394,7 +390,8 @@ def for_k123(df_train, df_test):
         tree1 = tree1.drop(columns = [cf1[delete]])
         del cf1[delete]
     target = []
-    mytree1 = create_tree(tree1, cf1, target)
+    height1 = 0
+    mytree1 = create_tree(tree1, cf1, target, height1)
     predict1 = []
     df_test1 = df_test.copy()
     ret = list(set(cc).difference(set(cf1)))
@@ -415,7 +412,8 @@ def for_k123(df_train, df_test):
         tree2 = tree2.drop(columns = [cf2[delete]])
         del cf2[delete]
     target2 = []
-    mytree2 = create_tree(tree2, cf2, target2)
+    height2 = 0
+    mytree2 = create_tree(tree2, cf2, target2, height2)
     predict2 = []
     df_test2 = df_test.copy()
     ret = list(set(cc).difference(set(cf2)))
@@ -436,7 +434,8 @@ def for_k123(df_train, df_test):
         tree3 = tree3.drop(columns = [cf3[delete]])
         del cf3[delete]
     target3 = []
-    mytree3 = create_tree(tree3, cf3, target3)
+    height3 = 0
+    mytree3 = create_tree(tree3, cf3, target3, height3)
     predict3 = []
     df_test3 = df_test.copy()
     ret = list(set(cc).difference(set(cf3)))
@@ -478,7 +477,7 @@ def K_fold():
     for i in range(0, len(ser)):
         tmp = ser[i]
         cmp_num = pd.Series(tmp)
-        if (cmp_num > 1).bool():  #means two or above vote for yes(1)
+        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
             if(df_traink3.iat[i, cat] == 1):  tp += 1
             else:   fp += 1
         else:
@@ -499,7 +498,9 @@ def K_fold():
     #print(predictk3)
     ser1 = pd.Series(predictk1)
     for i in range(0, len(ser1)):
-        if(ser1[i] > 1):  #means two or above vote for yes(1)
+        tmp = ser[i]
+        cmp_num = pd.Series(tmp)
+        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
             if(df_traink1.iat[i, cat] == 1):  tp2 += 1
             else:   fp2 += 1
         else:
@@ -520,7 +521,9 @@ def K_fold():
     #print(predictk3)
     ser2 = pd.Series(predictk2)
     for i in range(0, len(ser2)):
-        if(ser2[i] > 1):  #means two or above vote for yes(1)
+        tmp = ser[i]
+        cmp_num = pd.Series(tmp)
+        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
             if(df_traink2.iat[i, cat] == 1):  tp3 += 1
             else:   fp3 += 1
         else:
@@ -535,6 +538,7 @@ def K_fold():
     matrix_avg = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
     matrix_avg['Predict > 50k(1)'] = [np.mean([tp, tp2, tp3]), np.mean([fp, fp2, fp3])]
     matrix_avg['Predict <= 50k(0)'] = [np.mean([fn, fn2, fn3]), np.mean([tn, tn2, tn3])]
+    print ('Confusion Matrix for K fold---------------------------------------------')
     print(matrix_avg)
     acc = (tp+tp2+tp3+tn+tn2+tn3)/(tp+tp2+tp3+fp+fp2+fp3+fn+fn2+fn3+tn+tn2+tn3)
     rec = (tp+tp2+tp3)/(tp+tp2+tp3+fn+fn2+fn3)
@@ -543,4 +547,4 @@ def K_fold():
     print ('Average Sensitivity(Recall):', rec)
     print ('Average Precision:', pre)
 hold_out()
-K_fold()
+#K_fold()
