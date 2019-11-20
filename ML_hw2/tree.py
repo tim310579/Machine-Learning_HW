@@ -7,7 +7,7 @@ import math
 #import numba as nb
 #import matplotlib.pyplot as plt
 import cython
-
+max_depth = 20
 #warnings.filterwarnings('ignore')
 
 #cdef float H, R1, R2, R3, G1, G2, G3, maxx, fir, mid, thi, H_part
@@ -218,7 +218,11 @@ create tree
 #cdef int le
 #cdef list label
 #@nb.jit()
-def create_tree(data, label, target):
+def create_tree(data, label, target, height):
+    height += 1
+    if height > max_depth:
+        rett = data['Category'].mode()
+        return rett
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
     #print(label)
@@ -273,7 +277,7 @@ def create_tree(data, label, target):
             #branch = data_copy[data_copy[target[0]].isin([col])]
             branch = data.loc[choose]
             #print(branch)
-            mytree[target][col] = create_tree(branch, label, label_target)
+            mytree[target][col] = create_tree(branch, label, label_target, height)
             #return branch
         return mytree
 '''
@@ -309,11 +313,13 @@ def classify(tree, featlabel, testdata):
             valueOFfeat = second[key]
         except KeyError:
             #print('cannot predict this one since the node has no feature of it, so replace it with zero')
-            return 0
+            classlabel = np.int64(0)
+            return classlabel
         if isinstance(valueOFfeat, dict):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
             classlabel = valueOFfeat
+    if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
     return classlabel
 #cdef int predict
 #cdef int Id
@@ -335,7 +341,7 @@ def hold_out():
     dfx_test = pd.read_csv('X_test.csv')
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
-    df_train = df_train[0:300]
+    #df_train = df_train[0:300]
     choose1 = df_train[df_train['Category'] == 1].index
     df_train1 = df_train.loc[choose1]
     #print(df_train1)
@@ -357,7 +363,8 @@ def hold_out():
     target = []
 #for col in cc:
  #   print(cal_gain(df_train[col], df_train['Category']))
-    mytree = (create_tree(df_train10, cc, target))
+    height = 0
+    mytree = (create_tree(df_train10, cc, target, height))
     #print(mytree)
     matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
     #outcome = pd.DataFrame(columns = ['Id', 'Category'])
@@ -400,7 +407,7 @@ def hold_out():
 def K_fold():
     df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
-    df_traink = df_traink[0:300]
+    #df_traink = df_traink[0:300]
     split = len(df_traink)
     df_traink1 = df_traink[0:int(split/3)]
     df_traink2 = df_traink[int(split/3):int((split*2)/3)]
@@ -416,9 +423,12 @@ def K_fold():
     target1 = []
     target2 = []
     target3 = []
-    k12tree = (create_tree(traink12, cc, target1))
-    k23tree = (create_tree(traink23, cc, target2))
-    k13tree = (create_tree(traink13, cc, target3))
+    height1 = 0
+    height2 = 0
+    height3 = 0
+    k12tree = (create_tree(traink12, cc, target1, height1))
+    k23tree = (create_tree(traink23, cc, target2, height2))
+    k13tree = (create_tree(traink13, cc, target3, height3))
     
     matrix12 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
     tp1 = float(0)
