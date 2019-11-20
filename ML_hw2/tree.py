@@ -6,8 +6,8 @@ import re
 import math
 #import numba as nb
 #import matplotlib.pyplot as plt
-import cython
-max_depth = 20
+#import cython
+max_depth = 10
 #warnings.filterwarnings('ignore')
 
 #cdef float H, R1, R2, R3, G1, G2, G3, maxx, fir, mid, thi, H_part
@@ -221,7 +221,7 @@ create tree
 def create_tree(data, label, target, height):
     height += 1
     if height > max_depth:
-        rett = data['Category'].mode()
+        rett = data['Category'].mode()[0]
         return rett
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
@@ -319,7 +319,7 @@ def classify(tree, featlabel, testdata):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
             classlabel = valueOFfeat
-    if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
+    #if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
     return classlabel
 #cdef int predict
 #cdef int Id
@@ -341,7 +341,7 @@ def hold_out():
     dfx_test = pd.read_csv('X_test.csv')
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
-    #df_train = df_train[0:300]
+    #df_train = df_train[0:500]
     choose1 = df_train[df_train['Category'] == 1].index
     df_train1 = df_train.loc[choose1]
     #print(df_train1)
@@ -365,7 +365,7 @@ def hold_out():
  #   print(cal_gain(df_train[col], df_train['Category']))
     height = 0
     mytree = (create_tree(df_train10, cc, target, height))
-    #print(mytree)
+    
     matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
     #outcome = pd.DataFrame(columns = ['Id', 'Category'])
     #print(outcome.dtypes)
@@ -517,5 +517,5 @@ def K_fold():
     print ('Average Sensitivity(Recall):', av_rec)
     print ('Average Precision:', av_pre)
 
-hold_out()
-K_fold()
+#hold_out()
+#K_fold()

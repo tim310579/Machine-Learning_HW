@@ -6,7 +6,7 @@ import re
 import math
 import random
 
-max_depth = 20
+max_depth = 10
 def cal_gain(col, category):
     df_H = pd.DataFrame()
     df_H = df_H.append(category.value_counts(normalize = True))
@@ -183,8 +183,8 @@ def create_tree(data, label, target, height):
     height += 1
     #print(height)
     if height > max_depth:
-        reett = data['Category'].mode()
-        #return rett
+        rett = data['Category'].mode()[0]
+        return rett
     ret_all_p_n = pd.DataFrame()
     ret_all_p_n = ret_all_p_n.append(data['Category'].value_counts())
     for col in range(ret_all_p_n.shape[1]):
@@ -269,7 +269,7 @@ def classify(tree, featlabel, testdata):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
             classlabel = valueOFfeat
-    if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
+    #if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
     return classlabel
 
 dfx = pd.read_csv('X_train.csv')
