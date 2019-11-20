@@ -358,22 +358,23 @@ def hold_out():
     fn = float(0)
     cat = df_test.shape[1]-1
     ser = pd.Series(predict_final)
+    #ser[ser > 1]
+    
     for i in range(0, len(ser)):
-        cmp_num = ser[i]
-        if(cmp_num >= 2):
+        if(ser[i] == 2 | ser[i] == 3):     #means two voted 1
             if(df_test.iat[i, cat] == 1):  tp += 1
             else:   fp += 1
         else:
             if(df_test.iat[i, cat] == 1):  fn += 1 #guess0, actual 1
             else:   tn += 1
     matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    acc = (tp+tn) / (tp+tn+fp+fn)
-    rec = tp/(tp+fn)
-    pre = tp/(tp+fp)
     matrix['Predict > 50k(1)'] = [tp, fp]
     matrix['Predict <= 50k(0)'] = [fn, tn]
     print('Confusion Matrix Holdout--------------------------------------')
     print( matrix)
+    acc = (tp+tn) / (tp+tn+fp+fn)
+    rec = tp/(tp+fn)
+    pre = tp/(tp+fp)
     print ('Accuracy:', acc)
     print ('Sensitivity(Recall):', rec)
     print ('precision:', pre)
@@ -471,8 +472,9 @@ def K_fold():
     fp = float(0)
     fn = float(0)
     #print(predictk3)
-    for i in range(0, len(predictk3)):
-        cmp_num = predictk3[i]
+    ser = pd.Series(predictk3)
+    for i in range(0, len(ser)):
+        cmp_num = ser[i]
         if(cmp_num >= 2):  #means two or above vote for yes(1)
             if(df_traink3.iat[i, cat] == 1):  tp += 1
             else:   fp += 1
@@ -492,8 +494,9 @@ def K_fold():
     fp2 = float(0)
     fn2 = float(0)
     #print(predictk3)
-    for i in range(0, len(predictk1)):
-        cmp_num = predict[i]
+    ser1 = pd.Series(predictk1)
+    for i in range(0, len(ser1)):
+        cmp_num = ser1[i]
         if(cmp_num >= 2):  #means two or above vote for yes(1)
             if(df_traink1.iat[i, cat] == 1):  tp2 += 1
             else:   fp2 += 1
@@ -513,8 +516,9 @@ def K_fold():
     fp3 = float(0)
     fn3 = float(0)
     #print(predictk3)
-    for i in range(0, len(predictk2)):
-        cmp_num = predictk2[i]
+    ser2 = pd.Series(predictk2)
+    for i in range(0, len(ser2)):
+        cmp_num = ser2[i]
         if(cmp_num >= 2):  #means two or above vote for yes(1)
             if(df_traink2.iat[i, cat] == 1):  tp3 += 1
             else:   fp3 += 1
