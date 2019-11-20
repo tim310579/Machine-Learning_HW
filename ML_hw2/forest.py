@@ -285,7 +285,7 @@ dfy = dfy.drop(columns = ['Id'])
 def hold_out():
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
-    df_train = df_train[0:300]
+    #df_train = df_train[0:300]
     #print(df_train)
     split = len(df_train)
     df_test = df_train[int(split*0.7): split]
@@ -465,7 +465,7 @@ def for_k123(df_train, df_test):
 def K_fold():
     df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
-    df_traink = df_traink[0:300]
+    #df_traink = df_traink[0:300]
     split = len(df_traink)
     df_traink1 = df_traink[0:int(split/3)]
     df_traink2 = df_traink[int(split/3):int((split*2)/3)]
