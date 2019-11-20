@@ -517,5 +517,5 @@ def K_fold():
     print ('Average Sensitivity(Recall):', av_rec)
     print ('Average Precision:', av_pre)
 
-#hold_out()
-#K_fold()
+hold_out()
+K_fold()
