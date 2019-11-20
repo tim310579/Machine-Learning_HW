@@ -474,8 +474,7 @@ def K_fold():
     #print(predictk3)
     ser = pd.Series(predictk3)
     for i in range(0, len(ser)):
-        cmp_num = ser[i]
-        if(cmp_num >= 2):  #means two or above vote for yes(1)
+        if(ser[i] == 2 | ser[i] == 3):  #means two or above vote for yes(1)
             if(df_traink3.iat[i, cat] == 1):  tp += 1
             else:   fp += 1
         else:
@@ -496,8 +495,7 @@ def K_fold():
     #print(predictk3)
     ser1 = pd.Series(predictk1)
     for i in range(0, len(ser1)):
-        cmp_num = ser1[i]
-        if(cmp_num >= 2):  #means two or above vote for yes(1)
+        if(ser1[i] == 2 | ser[i] == 3):  #means two or above vote for yes(1)
             if(df_traink1.iat[i, cat] == 1):  tp2 += 1
             else:   fp2 += 1
         else:
@@ -518,8 +516,7 @@ def K_fold():
     #print(predictk3)
     ser2 = pd.Series(predictk2)
     for i in range(0, len(ser2)):
-        cmp_num = ser2[i]
-        if(cmp_num >= 2):  #means two or above vote for yes(1)
+        if(ser2[i] == 2 | ser2[i] == 3):  #means two or above vote for yes(1)
             if(df_traink2.iat[i, cat] == 1):  tp3 += 1
             else:   fp3 += 1
         else:
