@@ -262,12 +262,14 @@ def classify(tree, featlabel, testdata):
         try:
             valueOFfeat = second[key]
         except KeyError:
+            classlabel = np.int64(0)
+            return classlabel
             #print('cannot predict this one since the node has no feature of it, so replace it with zero')
-            return 0
         if isinstance(valueOFfeat, dict):
             classlabel = classify(valueOFfeat, featlabel, testdata)
         else:
             classlabel = valueOFfeat
+    if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
     return classlabel
 
 dfx = pd.read_csv('X_train.csv')
@@ -353,15 +355,21 @@ def hold_out():
     fn = float(0)
     cat = df_test.shape[1]-1
     for i in range(0, len(df_test3)):
+        pre1 = 0
+        pre2 = 0
+        pre3 = 0
+        pre_tot = 0
         pre1 = classify(mytree1, cf1, df_test1[i:i+1])
         pre2 = classify(mytree2, cf2, df_test2[i:i+1])
         pre3 = classify(mytree3, cf3, df_test3[i:i+1])
         pre_tot = pre1+pre2+pre3
-        if(pre_tot > 1):    #means votes for 1 larger or equal 2
+        #print(pre1, pre2, pre3, pre_tot)
+        #print(type(pre1), type(pre2), type(pre3), type(pre_tot))
+        if pre_tot > 1 :    #means votes for 1 larger or equal 2
             if(df_test.iat[i, cat] == 1):   tp += 1
             else:   fp += 1
         else:
-            if(df_test.iat[i, cat] == 1):   fn += 1#guess 0, actual 1
+            if(df_test.iat[i, cat] == 1):   fn += 1 #guess 0, actual 1
             else:   tn += 1
     #print(type(predict_final))
     
@@ -392,13 +400,10 @@ def for_k123(df_train, df_test):
     target = []
     height1 = 0
     mytree1 = create_tree(tree1, cf1, target, height1)
-    predict1 = []
     df_test1 = df_test.copy()
     ret = list(set(cc).difference(set(cf1)))
     df_test1 = df_test1.drop(columns = ret)
     
-    for i in range(0, len(df_test1)):
-        predict1.append(classify(mytree1, cf1, df_test1[i:i+1]))
     #second tree    
     tree2_index = 0
     tree2 = pd.DataFrame()
@@ -414,13 +419,9 @@ def for_k123(df_train, df_test):
     target2 = []
     height2 = 0
     mytree2 = create_tree(tree2, cf2, target2, height2)
-    predict2 = []
     df_test2 = df_test.copy()
     ret = list(set(cc).difference(set(cf2)))
     df_test2 = df_test2.drop(columns = ret)
-
-    for i in range(0, len(df_test2)):
-        predict2.append(classify(mytree2, cf2, df_test2[i:i+1]))
 
     tree3_index = 0
     tree3 = pd.DataFrame()
@@ -436,19 +437,31 @@ def for_k123(df_train, df_test):
     target3 = []
     height3 = 0
     mytree3 = create_tree(tree3, cf3, target3, height3)
-    predict3 = []
     df_test3 = df_test.copy()
     ret = list(set(cc).difference(set(cf3)))
     df_test3 = df_test3.drop(columns = ret)
 
+    tp = float(0)
+    tn = float(0)
+    fp = float(0)
+    fn = float(0)
+    cat = df_test.shape[1]-1
     for i in range(0, len(df_test3)):
-        predict3.append(classify(mytree3, cf3, df_test3[i:i+1]))
-    predict_final = []
-    for i in range(0, len(predict3)):
-        predict_final.append(predict1[i] + predict2[i] + predict3[i])
-    #predict_final = np.array(predict1) + np.array(predict2) + np.array(predict3)
-    
-    return predict_final
+        pre1 = classify(mytree1, cf1, df_test1[i:i+1])
+        pre2 = classify(mytree2, cf2, df_test2[i:i+1])
+        pre3 = classify(mytree3, cf3, df_test3[i:i+1])
+        pre_tot = pre1+pre2+pre3
+        if(pre_tot > 1):
+            if(df_test.iat[i, cat] == 1):   tp += 1
+            else:   fp += 1
+        else:
+            if(df_test.iat[i, cat] == 1):   fn += 1 #guess 0, actual 1
+            else:   tn += 1
+
+    matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
+    matrix['Predict > 50k(1)'] = [tp, fp]
+    matrix['Predict <= 50k(0)'] = [fn, tn]
+    return matrix
 def K_fold():
     df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
@@ -466,85 +479,29 @@ def K_fold():
     traink23 = traink23.reset_index(drop = True)
     traink13 = traink13.reset_index(drop = True)
     
-    cat = df_traink3.shape[1]-1
-    predictk3 = for_k123(traink12, df_traink3)    #k3 for test first
-    tp = float(0)
-    tn = float(0)
-    fp = float(0)
-    fn = float(0)
-    #print(predictk3)
-    ser = pd.Series(predictk3)
-    for i in range(0, len(ser)):
-        tmp = ser[i]
-        cmp_num = pd.Series(tmp)
-        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
-            if(df_traink3.iat[i, cat] == 1):  tp += 1
-            else:   fp += 1
-        else:
-            if(df_traink3.iat[i, cat] == 1):  fn += 1 #guess0, actual 1
-            else:   tn += 1
-    matrix1 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix1['Predict > 50k(1)'] = [tp, fp]
-    matrix1['Predict <= 50k(0)'] = [fn, tn]
+    
+    matrix1 = for_k123(traink12, df_traink3)    #k3 for test first
     print ('Confusion Matrix---------------------------------------------')
     print (matrix1)
     
-    cat = df_traink1.shape[1]-1
-    predictk1 = for_k123(traink23, df_traink1)    #k3 for test first
-    tp2 = float(0)
-    tn2 = float(0)
-    fp2 = float(0)
-    fn2 = float(0)
-    #print(predictk3)
-    ser1 = pd.Series(predictk1)
-    for i in range(0, len(ser1)):
-        tmp = ser[i]
-        cmp_num = pd.Series(tmp)
-        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
-            if(df_traink1.iat[i, cat] == 1):  tp2 += 1
-            else:   fp2 += 1
-        else:
-            if(df_traink1.iat[i, cat] == 1):  fn2 += 1 #guess0, actual 1
-            else:   tn2 += 1
-    matrix2 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix2['Predict > 50k(1)'] = [tp2, fp2]
-    matrix2['Predict <= 50k(0)'] = [fn2, tn2]
+    matrix2 = for_k123(traink23, df_traink1)    #k1 for test first
     print ('Confusion Matrix---------------------------------------------')
     print (matrix2)
 
-    cat = df_traink2.shape[1]-1
-    predictk2 = for_k123(traink13, df_traink2)    #k3 for test first
-    tp3 = float(0)
-    tn3 = float(0)
-    fp3 = float(0)
-    fn3 = float(0)
-    #print(predictk3)
-    ser2 = pd.Series(predictk2)
-    for i in range(0, len(ser2)):
-        tmp = ser[i]
-        cmp_num = pd.Series(tmp)
-        if (cmp_num.item() > 1):  #means two or above vote for yes(1)
-            if(df_traink2.iat[i, cat] == 1):  tp3 += 1
-            else:   fp3 += 1
-        else:
-            if(df_traink2.iat[i, cat] == 1):  fn3 += 1 #guess0, actual 1
-            else:   tn3 += 1
-    matrix3 = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix3['Predict > 50k(1)'] = [tp3, fp3]
-    matrix3['Predict <= 50k(0)'] = [fn3, tn3]
+    matrix3 = for_k123(traink13, df_traink2)    #k2 for test first 
     print ('Confusion Matrix---------------------------------------------')
     print (matrix3)
 
     matrix_avg = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix_avg['Predict > 50k(1)'] = [np.mean([tp, tp2, tp3]), np.mean([fp, fp2, fp3])]
-    matrix_avg['Predict <= 50k(0)'] = [np.mean([fn, fn2, fn3]), np.mean([tn, tn2, tn3])]
+    matrix_avg = matrix1 + matrix2 + matrix3
     print ('Confusion Matrix for K fold---------------------------------------------')
+    acc = (matrix_avg.iat[0,0]+matrix_avg.iat[1,1])/(matrix_avg.iat[0,0]+matrix_avg.iat[1,1]+matrix_avg.iat[0,1]+matrix_avg.iat[1,0])
+    rec = matrix_avg.iat[0,0]/(matrix_avg.iat[0,0]+matrix_avg.iat[0,1])
+    pre = matrix_avg.iat[0,0]/(matrix_avg.iat[0,0]+matrix_avg.iat[1,0])
+    matrix_avg /= 3
     print(matrix_avg)
-    acc = (tp+tp2+tp3+tn+tn2+tn3)/(tp+tp2+tp3+fp+fp2+fp3+fn+fn2+fn3+tn+tn2+tn3)
-    rec = (tp+tp2+tp3)/(tp+tp2+tp3+fn+fn2+fn3)
-    pre = (tp+tp2+tp3)/(tp+tp2+tp3+fp+fp2+fp3)
     print ('Average Accuracy:', acc)
     print ('Average Sensitivity(Recall):', rec)
     print ('Average Precision:', pre)
 hold_out()
-#K_fold()
+K_fold()
