@@ -271,24 +271,7 @@ def classify(tree, featlabel, testdata):
             classlabel = valueOFfeat
     #if  (type(classlabel) != np.int64):   classlabel = np.int64(0)
     return classlabel
-
-dfx = pd.read_csv('X_train.csv')
-dfy = pd.read_csv('y_train.csv')
-c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
-cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
-cn = ['age', 'fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
-for col in c:
-    dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
-    
-dfy = dfy.drop(columns = ['Id'])
-    
-def hold_out():
-    df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-    df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
-    df_test = pd.read_csv('X_test.csv')
-    df_train = df_train[0:60]
-    #print(df_train)
-    
+def predict_result(df_train, cc, df_test):
     tree1_index = 0
     tree1 = pd.DataFrame()
     for i in range(len(df_train)):
@@ -307,118 +290,92 @@ def hold_out():
     df_test1 = df_test.copy()
     ret = list(set(cc).difference(set(cf1)))
     df_test1 = df_test1.drop(columns = ret)
-    
-    #second tree    
-    tree2_index = 0
-    tree2 = pd.DataFrame()
-    for i in range(len(df_train)):
-        tree2_index = random.randint(0, len(df_train))
-        tree2 = tree2.append(df_train[tree2_index: tree2_index+1])
-    tree2 = tree2.reset_index(drop = True)
-    cf2 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf2)-1)
-        tree2 = tree2.drop(columns = [cf2[delete]])
-        del cf2[delete]
-    target2 = []
-    height2 = 0
-    mytree2 = create_tree(tree2, cf2, target2, height2)
-    #predict2 = []
-    df_test2 = df_test.copy()
-    ret = list(set(cc).difference(set(cf2)))
-    df_test2 = df_test2.drop(columns = ret)
-
-    #third tree
-
-    tree3_index = 0
-    tree3 = pd.DataFrame()
-    for i in range(len(df_train)):
-        tree3_index = random.randint(0, len(df_train))
-        tree3 = tree3.append(df_train[tree3_index: tree3_index+1])
-    tree3 = tree3.reset_index(drop = True)
-    cf3 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf3)-1)
-        tree3 = tree3.drop(columns = [cf3[delete]])
-        del cf3[delete]
-    target3 = []
-    height3 = 0
-    mytree3 = create_tree(tree3, cf3, target3, height3)
-    #predict3 = []
-    df_test3 = df_test.copy()
-    ret = list(set(cc).difference(set(cf3)))
-    df_test3 = df_test3.drop(columns = ret)
-    
-    #forth tree
-    tree4_index = 0
-    tree4 = pd.DataFrame()
-    for i in range(len(df_train)):
-    	tree4_index = random.randint(0, len(df_train))
-    	tree4 = tree4.append(df_train[tree4_index: tree4_index+1])
-    tree4 = tree4.reset_index(drop = True)
-    cf4 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf4)-1)
-        tree4 = tree4.drop(columns = [cf4[delete]])
-        del cf4[delete]
-    target = []
-    height4 = 0
-    mytree4 = create_tree(tree4, cf1, target, height4)
-    #predict1 = []
-    df_test4 = df_test.copy()
-    ret = list(set(cc).difference(set(cf4)))
-    df_test4 = df_test4.drop(columns = ret)
-
-    #fifth tree
-
-    tree5_index = 0
-    tree5 = pd.DataFrame()
-    for i in range(len(df_train)):
-    	tree5_index = random.randint(0, len(df_train))
-    	tree5 = tree5.append(df_train[tree5_index: tree5_index+1])
-    tree5 = tree5.reset_index(drop = True)
-    cf5 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf5)-1)
-        tree5 = tree5.drop(columns = [cf5[delete]])
-        del cf5[delete]
-    target = []
-    height5 = 0
-    mytree5 = create_tree(tree5, cf5, target, height5)
-    
-    df_test5 = df_test.copy()
-    ret = list(set(cc).difference(set(cf5)))
-    df_test5 = df_test15drop(columns = ret)
-
+    predict = []
     cat = df_test.shape[1]-1
-    submit = pd.DataFrame()
-    for i in range(0, len(df_test3)):
+    score = 0
+    for i in range(0, len(df_test1)):
         pre1 = 0
-        pre2 = 0
-        pre3 = 0
-        pre4 = 0
-        pre5 = 0
-        pre_tot = 0
         pre1 = classify(mytree1, cf1, df_test1[i:i+1])
-        pre2 = classify(mytree2, cf2, df_test2[i:i+1])
-        pre3 = classify(mytree3, cf3, df_test3[i:i+1])
-        pre4 = classify(mytree4, cf4, df_test4[i:i+1])
-        pre5 = classify(mytree5, cf5, df_test5[i:i+1])
-        pre_tot = pre1+pre2+pre3+pre4+pre5
-       
-        if pre_tot > 2 :    #means votes for 1 larger or equal 3
-            submit.loc[i, 'Id'] = df_test.iat[i, 0]
-            submit.loc[i, 'Category'] = 1	#predict 1
-        else:
-            submit.loc[i, 'Id'] = df_test.iat[i, 0]
-            submit.loc[i, 'Category'] = 0
-            
-    submit.columns = ['Id', 'Category']
-    submit['Id'] = submit['Id'].astype('int')
-    submit['Category'] = submit['Category'].astype('int')
-    print(submit)
-    print(submit.dtypes)
-    submit.to_csv('submit3.csv', index = False)
+        if(pre1 == df_test.iat[i, cat]): score += 1
+        
     
+   
+    return score, mytree1, cf1
+        
+dfx = pd.read_csv('X_train.csv')
+dfy = pd.read_csv('y_train.csv')
+c = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
+cc = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
+cn = ['age', 'fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
+for col in c:
+    dfx[col].replace([" ?"], [dfx[col].mode()], inplace = True)     #replace the missing vlaue with mode
+    
+dfy = dfy.drop(columns = ['Id'])
+tree_num = 21
+def hold_out():
+    df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
+    df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
+    df_test = pd.read_csv('X_test.csv')
+    #df_train = df_train[0:40]
+    #print(df_train)
+    valid = len(df_train)
+    df_valid = pd.DataFrame()
+    df_valid = df_train[int(valid*0.75): valid]
+    df_train = df_train[0: int(valid*0.75)]
+    predict_all = []
+    for i in range(tree_num):
+        predict = predict_result(df_train, cc, df_valid)
+        predict_all.append(predict)
+    #print(predict_all)
+    
+    count_score = []
+    for i in range(tree_num):
+        count_score.append(predict_all[i][0])
+    #print(count_score)
+    cat = df_valid.shape[1]-1
+    for i in range(int(tree_num/2)):
+        a = count_score.index(min(count_score))     #score low should out
+        del count_score[a]
+        del predict_all[a]
+    #cat = 10
+    cat = len(df_test)
+    pred_for_sub = []
+    tree_real = tree_num - int(tree_num/2)
+    for i in range(tree_real):      #begin predict
+        pred_line = []
+        df_testi = df_test.copy()
+        ret = list(set(cc).difference(set(predict_all[i][2])))
+        df_testi = df_testi.drop(columns = ret)
+        for j in range(0, cat):
+            pred = classify(predict_all[i][1], predict_all[i][2], df_testi[j:j+1])
+            pred_line.append(pred)
+        pred_for_sub.append(pred_line)
+    submit = pd.DataFrame()
+    submit = submit.append(pred_for_sub)
+
+    
+    print(submit)
+    vote = []
+    for col in submit.columns:
+        tmp = submit[col].sum()
+        vote.append(tmp)
+        
+    last = pd.DataFrame()
+
+    for i in range(cat):
+        last.loc[i, 'Id'] = df_test.iat[i, 0]
+        if(vote[i] > int(tree_real/2)):
+            last.loc[i, 'Category'] = 1
+        else:
+            last.loc[i, 'Category'] = 0
+    
+    last.columns = ['Id', 'Category']
+    last['Id'] = last['Id'].astype('int')
+    last['Category'] = last['Category'].astype('int')
+    print(last)
+    print(last.dtypes)
+    last.to_csv('last.csv', index = False)  
+    last.to_csv('last_for_check.csv', index = False)
+            
 hold_out()
 #K_fold()
