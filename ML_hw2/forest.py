@@ -219,7 +219,7 @@ def create_tree(data, label, target, height):
         mytree = {target:{}}
         if(Gain[i][1] == 0):
             #print("8787")
-            rett = data['Category'].mode()  #deal with Gain == 0, but category has different value
+            rett = data['Category'].mode()[0]  #deal with Gain == 0, but category has different value
             return rett
         #print(target)
         sub_tree = pd.DataFrame()
