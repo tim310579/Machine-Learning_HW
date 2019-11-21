@@ -1,0 +1,276 @@
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Assoc-acdm
+{'age==27.5': {0: 0, 1: 1}}
+age==27.5
+37
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Bachelors
+{'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}
+occupation
+ Exec-managerial
+{'age==32.0': {0: 1, 1: 0}}
+age==32.0
+44
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Husband
+{'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}
+occupation
+ Protective-serv
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Husband
+{'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}
+occupation
+ Exec-managerial
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Assoc-acdm
+{'age==27.5': {0: 0, 1: 1}}
+age==27.5
+47
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Husband
+{'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}
+occupation
+ Craft-repair
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Bachelors
+{'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}
+occupation
+ Craft-repair
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 10th
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Masters
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 7th-8th
+{'age==48.5': {0: 1, 1: 0}}
+age==48.5
+27
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Bachelors
+{'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}
+occupation
+ Exec-managerial
+{'age==32.0': {0: 1, 1: 0}}
+age==32.0
+22
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 10th
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Not-in-family
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 11th
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Husband
+{'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}
+occupation
+ Other-service
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 10th
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ HS-grad
+{'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}
+native-country
+ United-States
+{'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}
+workclass
+ Private
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Bachelors
+{'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}
+occupation
+ Adm-clerical
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Assoc-acdm
+{'age==27.5': {0: 0, 1: 1}}
+age==27.5
+27
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Husband
+{'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}
+occupation
+ Prof-specialty
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Bachelors
+{'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}
+occupation
+ Adm-clerical
+1
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Not-in-family
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ 5th-6th
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Not-in-family
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Some-college
+{'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}
+relationship
+ Not-in-family
+0
+ 
+{'education': {' 11th': 0, ' 12th': 0, ' 1st-4th': 0, ' 7th-8th': {'age==48.5': {0: 1, 1: 0}}, ' 9th': 0, ' Assoc-acdm': {'age==27.5': {0: 0, 1: 1}}, ' Assoc-voc': 0, ' Bachelors': {'occupation': {' Adm-clerical': 1, ' Exec-managerial': {'age==32.0': {0: 1, 1: 0}}, ' Prof-specialty': {'age==29.25': {0: 0, 1: 1}}, ' Sales': 0, ' Tech-support': 0}}, ' HS-grad': {'native-country': {' Germany': 1, ' Haiti': 0, ' Jamaica': 0, ' United-States': {'workclass': {' Local-gov': {'age==52.25': {0: 1, 1: 0}}, ' Private': 0, ' Self-emp-inc': 0, ' Self-emp-not-inc': 0}}}}, ' Masters': 1, ' Some-college': {'relationship': {' Husband': {'occupation': {' Adm-clerical': 0, ' Craft-repair': 1, ' Farming-fishing': 0, ' Machine-op-inspct': {'age==38.5': {0: 0, 1: {'age==45.5': {0: 1, 1: 0}}}}, ' Prof-specialty': 0, ' Sales': {'age==35.0': {0: 1, 1: 0}}, ' Transport-moving': 1}}, ' Not-in-family': 0, ' Own-child': 0, ' Unmarried': {'workclass': {' Federal-gov': 1, ' Private': 0}}, ' Wife': 1}}}}
+education
+ Assoc-acdm
+{'age==27.5': {0: 0, 1: 1}}
+age==27.5
+25
+0
+ 
+Confusion Matrix--------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)                3.0                5.0
+Actual <= 50k(0)               5.0               18.0
+Accuracy: 0.6774193548387096
+Sensitivity(Recall): 0.375
+precision: 0.375

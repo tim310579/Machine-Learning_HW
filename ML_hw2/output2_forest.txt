@@ -1,0 +1,26 @@
+Confusion Matrix Holdout--------------------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              889.0              786.0
+Actual <= 50k(0)             523.0             4640.0
+Accuracy: 0.8085697572389587
+Sensitivity(Recall): 0.5307462686567164
+precision: 0.6296033994334278
+Confusion Matrix---------------------------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              971.0              915.0
+Actual <= 50k(0)             345.0             5367.0
+Confusion Matrix---------------------------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              889.0              909.0
+Actual <= 50k(0)             348.0             5451.0
+Confusion Matrix---------------------------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              924.0              919.0
+Actual <= 50k(0)             417.0             5337.0
+Confusion Matrix for K fold---------------------------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              928.0         914.333333
+Actual <= 50k(0)             370.0        5385.000000
+Average Accuracy: 0.8309494559494559
+Average Sensitivity(Recall): 0.5037090645920029
+Average Precision: 0.7149460708782742

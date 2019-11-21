@@ -1,0 +1,26 @@
+Confusion Matrix--------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)              876.0              783.0
+Actual <= 50k(0)             576.0             4604.0
+Accuracy: 0.8012867378271677
+Sensitivity(Recall): 0.5280289330922242
+precision: 0.6033057851239669
+Confusion Matrix K_fold--------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)             1050.0              803.0
+Actual <= 50k(0)             702.0             5043.0
+Confusion Matrix K_fold--------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)             1030.0              814.0
+Actual <= 50k(0)             668.0             5085.0
+Confusion Matrix K_fold--------------------------
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)             1050.0              780.0
+Actual <= 50k(0)             724.0             5043.0
+Average Confusion matrix with K_fold
+                  Predict > 50k(1)  Predict <= 50k(0)
+Actual > 50k(1)        1043.333333              799.0
+Actual <= 50k(0)        698.000000             5057.0
+Average Accuracy: 0.8029572233970294
+Average Sensitivity(Recall): 0.5663291664470115
+Average Precision: 0.5992646048757574
