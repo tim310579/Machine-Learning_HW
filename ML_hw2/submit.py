@@ -286,7 +286,7 @@ def hold_out():
     df_train = pd.concat([dfx, dfy], axis = 1)  #merge x and y
     df_train = df_train.sample(frac=1).reset_index(drop = True) #shuffle
     df_test = pd.read_csv('X_test.csv')
-    df_train = df_train[0:100]
+    df_train = df_train[0:60]
     #print(df_train)
     
     tree1_index = 0
@@ -327,7 +327,9 @@ def hold_out():
     df_test2 = df_test.copy()
     ret = list(set(cc).difference(set(cf2)))
     df_test2 = df_test2.drop(columns = ret)
+
     #third tree
+
     tree3_index = 0
     tree3 = pd.DataFrame()
     for i in range(len(df_train)):
@@ -347,24 +349,64 @@ def hold_out():
     ret = list(set(cc).difference(set(cf3)))
     df_test3 = df_test3.drop(columns = ret)
     
-    tp = float(0)
-    tn = float(0)
-    fp = float(0)
-    fn = float(0)
+    #forth tree
+    tree4_index = 0
+    tree4 = pd.DataFrame()
+    for i in range(len(df_train)):
+    	tree4_index = random.randint(0, len(df_train))
+    	tree4 = tree4.append(df_train[tree4_index: tree4_index+1])
+    tree4 = tree4.reset_index(drop = True)
+    cf4 = list(cc)
+    for i in range(5):
+        delete = random.randint(0, len(cf4)-1)
+        tree4 = tree4.drop(columns = [cf4[delete]])
+        del cf4[delete]
+    target = []
+    height4 = 0
+    mytree4 = create_tree(tree4, cf1, target, height4)
+    #predict1 = []
+    df_test4 = df_test.copy()
+    ret = list(set(cc).difference(set(cf4)))
+    df_test4 = df_test4.drop(columns = ret)
+
+    #fifth tree
+
+    tree5_index = 0
+    tree5 = pd.DataFrame()
+    for i in range(len(df_train)):
+    	tree5_index = random.randint(0, len(df_train))
+    	tree5 = tree5.append(df_train[tree5_index: tree5_index+1])
+    tree5 = tree5.reset_index(drop = True)
+    cf5 = list(cc)
+    for i in range(5):
+        delete = random.randint(0, len(cf5)-1)
+        tree5 = tree5.drop(columns = [cf5[delete]])
+        del cf5[delete]
+    target = []
+    height5 = 0
+    mytree5 = create_tree(tree5, cf5, target, height5)
+    
+    df_test5 = df_test.copy()
+    ret = list(set(cc).difference(set(cf5)))
+    df_test5 = df_test15drop(columns = ret)
+
     cat = df_test.shape[1]-1
     submit = pd.DataFrame()
     for i in range(0, len(df_test3)):
         pre1 = 0
         pre2 = 0
         pre3 = 0
+        pre4 = 0
+        pre5 = 0
         pre_tot = 0
         pre1 = classify(mytree1, cf1, df_test1[i:i+1])
         pre2 = classify(mytree2, cf2, df_test2[i:i+1])
         pre3 = classify(mytree3, cf3, df_test3[i:i+1])
-        pre_tot = pre1+pre2+pre3
-        #print(pre1, pre2, pre3, pre_tot)
-        #print(type(pre1), type(pre2), type(pre3), type(pre_tot))
-        if pre_tot > 1 :    #means votes for 1 larger or equal 2
+        pre4 = classify(mytree4, cf4, df_test4[i:i+1])
+        pre5 = classify(mytree5, cf5, df_test5[i:i+1])
+        pre_tot = pre1+pre2+pre3+pre4+pre5
+       
+        if pre_tot > 2 :    #means votes for 1 larger or equal 3
             submit.loc[i, 'Id'] = df_test.iat[i, 0]
             submit.loc[i, 'Category'] = 1	#predict 1
         else:
@@ -376,126 +418,7 @@ def hold_out():
     submit['Category'] = submit['Category'].astype('int')
     print(submit)
     print(submit.dtypes)
-    submit.to_csv('submit1.csv', index = False)
+    submit.to_csv('submit3.csv', index = False)
     
-
-def for_k123(df_train, df_test):
-    tree1_index = 0
-    tree1 = pd.DataFrame()
-    for i in range(len(df_train)):
-    	tree1_index = random.randint(0, len(df_train))
-    	tree1 = tree1.append(df_train[tree1_index: tree1_index+1])
-    tree1 = tree1.reset_index(drop = True)
-    cf1 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf1)-1)
-        tree1 = tree1.drop(columns = [cf1[delete]])
-        del cf1[delete]
-    target = []
-    height1 = 0
-    mytree1 = create_tree(tree1, cf1, target, height1)
-    df_test1 = df_test.copy()
-    ret = list(set(cc).difference(set(cf1)))
-    df_test1 = df_test1.drop(columns = ret)
-    
-    #second tree    
-    tree2_index = 0
-    tree2 = pd.DataFrame()
-    for i in range(len(df_train)):
-        tree2_index = random.randint(0, len(df_train))
-        tree2 = tree2.append(df_train[tree2_index: tree2_index+1])
-    tree2 = tree2.reset_index(drop = True)
-    cf2 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf2)-1)
-        tree2 = tree2.drop(columns = [cf2[delete]])
-        del cf2[delete]
-    target2 = []
-    height2 = 0
-    mytree2 = create_tree(tree2, cf2, target2, height2)
-    df_test2 = df_test.copy()
-    ret = list(set(cc).difference(set(cf2)))
-    df_test2 = df_test2.drop(columns = ret)
-
-    tree3_index = 0
-    tree3 = pd.DataFrame()
-    for i in range(len(df_train)):
-        tree3_index = random.randint(0, len(df_train))
-        tree3 = tree3.append(df_train[tree3_index: tree3_index+1])
-    tree3 = tree3.reset_index(drop = True)
-    cf3 = list(cc)
-    for i in range(5):
-        delete = random.randint(0, len(cf3)-1)
-        tree3 = tree3.drop(columns = [cf3[delete]])
-        del cf3[delete]
-    target3 = []
-    height3 = 0
-    mytree3 = create_tree(tree3, cf3, target3, height3)
-    df_test3 = df_test.copy()
-    ret = list(set(cc).difference(set(cf3)))
-    df_test3 = df_test3.drop(columns = ret)
-
-    tp = float(0)
-    tn = float(0)
-    fp = float(0)
-    fn = float(0)
-    cat = df_test.shape[1]-1
-    for i in range(0, len(df_test3)):
-        pre1 = classify(mytree1, cf1, df_test1[i:i+1])
-        pre2 = classify(mytree2, cf2, df_test2[i:i+1])
-        pre3 = classify(mytree3, cf3, df_test3[i:i+1])
-        pre_tot = pre1+pre2+pre3
-        if(pre_tot > 1):
-            if(df_test.iat[i, cat] == 1):   tp += 1
-            else:   fp += 1
-        else:
-            if(df_test.iat[i, cat] == 1):   fn += 1 #guess 0, actual 1
-            else:   tn += 1
-
-    matrix = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix['Predict > 50k(1)'] = [tp, fp]
-    matrix['Predict <= 50k(0)'] = [fn, tn]
-    return matrix
-def K_fold():
-    df_traink = pd.concat([dfx, dfy], axis = 1)  #merge x and y
-    df_traink = df_traink.sample(frac=1).reset_index(drop = True) #shuffle
-    #df_traink = df_traink[0:300]
-    split = len(df_traink)
-    df_traink1 = df_traink[0:int(split/3)]
-    df_traink2 = df_traink[int(split/3):int((split*2)/3)]
-    df_traink3 = df_traink[int((split*2)/3):split]
-    df_traink2 = df_traink2.reset_index(drop = True)
-    df_traink3 = df_traink3.reset_index(drop = True)
-    traink12 = pd.concat([df_traink1, df_traink2], axis = 0)
-    traink23 = pd.concat([df_traink2, df_traink3], axis = 0)
-    traink13 = pd.concat([df_traink1, df_traink3], axis = 0)
-    traink12 = traink12.reset_index(drop = True)
-    traink23 = traink23.reset_index(drop = True)
-    traink13 = traink13.reset_index(drop = True)
-    
-    
-    matrix1 = for_k123(traink12, df_traink3)    #k3 for test first
-    print ('Confusion Matrix---------------------------------------------')
-    print (matrix1)
-    
-    matrix2 = for_k123(traink23, df_traink1)    #k1 for test first
-    print ('Confusion Matrix---------------------------------------------')
-    print (matrix2)
-
-    matrix3 = for_k123(traink13, df_traink2)    #k2 for test first 
-    print ('Confusion Matrix---------------------------------------------')
-    print (matrix3)
-
-    matrix_avg = pd.DataFrame(index = ['Actual > 50k(1)', 'Actual <= 50k(0)'], columns = ['Predict > 50k(1)', 'Predict <= 50k(0)'])
-    matrix_avg = matrix1 + matrix2 + matrix3
-    print ('Confusion Matrix for K fold---------------------------------------------')
-    acc = (matrix_avg.iat[0,0]+matrix_avg.iat[1,1])/(matrix_avg.iat[0,0]+matrix_avg.iat[1,1]+matrix_avg.iat[0,1]+matrix_avg.iat[1,0])
-    rec = matrix_avg.iat[0,0]/(matrix_avg.iat[0,0]+matrix_avg.iat[0,1])
-    pre = matrix_avg.iat[0,0]/(matrix_avg.iat[0,0]+matrix_avg.iat[1,0])
-    matrix_avg /= 3
-    print(matrix_avg)
-    print ('Average Accuracy:', acc)
-    print ('Average Sensitivity(Recall):', rec)
-    print ('Average Precision:', pre)
 hold_out()
 #K_fold()
