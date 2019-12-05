@@ -1,4 +1,4 @@
-time python tree.py <a.txt> output1.txt
+time python tree.py > output1.txt
 
 
-time python forest.py <b.txt> output2.txt
+time python forest.py > output2.txt
