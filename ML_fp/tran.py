@@ -292,9 +292,9 @@ def predict_res(df_train, feature, df_test):
     cat = df_test.shape[1]-1
     for i in range(len(df_test1)):
         pre = classify(mytree, feature, df_test[i:i+1])
-        if(pre == 'train bus or ship'):
+        if(pre == 1):
             predict.append(1)
-        elif(pre == 'HSR or airplane'):
+        elif(pre == 2):
             predict.append(2)
         else:
             predict.append(3)
@@ -303,6 +303,9 @@ def predict_res(df_train, feature, df_test):
 
 df = pd.read_csv('tran.csv')
 df.replace(np.nan, 23, inplace=True)
+df['transportation'].replace(['train bus or ship'], 1, inplace = True)
+df['transportation'].replace(['HSR or airplane'], 2, inplace = True)
+df['transportation'].replace(['drive or ride by yourself'], 3, inplace = True)
 
 df['age'] = df['age'].astype('int64')
 
@@ -311,15 +314,15 @@ df.drop(delete, inplace = True)
 df = df.drop('Choose hometown or travel', axis = 1)
 
 feature = ['age', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
-f2 = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife', 'transportation']
+f2 = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
 for col in f2:
     df[col].replace(["?"],  [df[col].mode()], inplace = True)   #deal with missing
 
 df = df.sample(frac=1).reset_index(drop = True) #shuffle
 #df = df[0:100]
-choose1 = df[df['transportation'] == 'train bus or ship'].index
-choose2 = df[df['transportation'] == 'HSR or airplane'].index
-choose3 = df[df['transportation'] == 'drive or ride by yourself'].index
+choose1 = df[df['transportation'] == 1].index
+choose2 = df[df['transportation'] == 2].index
+choose3 = df[df['transportation'] == 3].index
 
 df_train1 = df.loc[choose1]
 df_train2 = df.loc[choose2]
@@ -341,7 +344,7 @@ df_train = df_train.reset_index(drop = True)
 df_test = df_test.reset_index(drop = True)
 
 predict_all = []
-tree_num = 7
+tree_num = 5
 for i in range(tree_num):
     predict = predict_res(df_train, feature, df_test)
     predict_all.append(predict)
@@ -355,9 +358,6 @@ for i in range(len(df_test)):
     final.append(new_pd[i].mode()[0])
 mat = np.zeros([3, 3])
 cat = df_test.shape[1]-1
-df_test['transportation'].replace(['train bus or ship'], 1, inplace = True)
-df_test['transportation'].replace(['HSR or airplane'], 2, inplace = True)
-df_test['transportation'].replace(['drive or ride by yourself'], 3, inplace = True)
 for i in range(len(df_test)):
     if(final[i] == 1):
         if(df_test.iat[i, cat] == 1):
