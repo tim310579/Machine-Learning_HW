@@ -1,4 +1,5 @@
-from sklearn.naive_bayes import GaussianNB
+from sklearn import preprocessing, linear_model
+from sklearn.linear_model  import LogisticRegression
 import pandas as pd
 import numpy as np
 
@@ -40,11 +41,15 @@ test_target.replace(['train bus or ship'], 1, inplace = True)
 test_target.replace(['HSR or airplane'], 2, inplace = True)
 test_target.replace(['drive or ride by yourself'], 3, inplace = True)
 
-model = GaussianNB()
+model = LogisticRegression()
 model = model.fit(train, target)
 result = model.predict(test)
-#print(model)
+
 test_target = test_target.reset_index(drop = True)
+
+from sklearn.metrics import confusion_matrix
+cnf=confusion_matrix(test_target, model.predict(test))
+print(cnf)
 mat = np.zeros([3, 3])
 for i in range(len(result)):
     if(result[i] == 1):
@@ -70,7 +75,7 @@ for i in range(len(result)):
             mat[2][2] += 1
 
 data_frame = pd.DataFrame(mat, index = ['Actual train, bus, ship', 'Actual HSR, airplane', 'Actual drive, ride'], columns = ['Predict train, bus, ship', 'HSR, airplane', 'drive, ride'])
-print('Naive bayes')
+print('Logistic regression')
 print(data_frame)
 acc = (mat[0][0] + mat[1][1] + mat[2][2])/len(result)
 rec = []
