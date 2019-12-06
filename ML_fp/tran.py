@@ -344,7 +344,7 @@ df_train = df_train.reset_index(drop = True)
 df_test = df_test.reset_index(drop = True)
 
 predict_all = []
-tree_num = 5
+tree_num = 51
 for i in range(tree_num):
     predict = predict_res(df_train, feature, df_test)
     predict_all.append(predict)
