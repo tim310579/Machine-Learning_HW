@@ -105,8 +105,13 @@ result.append(model2.predict(test))
 result.append(model3.predict(test))
 result.append(model4.predict(test))
 
+combine = []
+df_combine = pd.DataFrame(result)
+for col in df_combine.columns:
+    combine.append(df_combine[col].mode()[0])
+print(combine)
 name = ['Decision Tree', 'Random Forest', 'Naive Bayes', 'Logistic Regression', 'Neural Network']
 
 for i in range(5):
     print_matrix(name[i], result[i], test_target)
-
+print_matrix('Combine All', combine, test_target)
