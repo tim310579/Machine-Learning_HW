@@ -1,16 +1,28 @@
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
+from sklearn import preprocessing, linear_model
 import pandas as pd
 import numpy as np
 
-fea = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+fea = ['Choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
 
 train = pd.read_csv('tran.csv')
 train = train.sample(frac=1).reset_index(drop = True) #shuffle
 train.replace(np.nan, 23, inplace=True)
 for col in fea:
     train[col].replace(["?"],  [train[col].mode()], inplace = True)   #deal with missing
+delete =  train[train['Choose hometown or travel'] == 'travel'].index
+train.drop(delete, inplace = True)
+#train = train.drop('Choose hometown or travel', axis = 1)
+fea = ['Choose hometown or travel','age', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+
+le = preprocessing.LabelEncoder()
+for col in fea:   #transform to numeric data
+    encode_col = le.fit_transform(train[col])
+    train[col] = encode_col
+#print(train)
+
 split = len(train)
 test = train[int(split*0.7): split]
 train = train[0: int(split*0.7)]
@@ -19,21 +31,7 @@ train = train.drop(columns = 'transportation')
 
 test_target = test['transportation']
 test = test.drop(columns = 'transportation')
-cc = ['back hometown', 'travel']
-for i in range(2):
-    train['Choose hometown or travel'].replace(cc[i], i, inplace = True)
-    test['Choose hometown or travel'].replace(cc[i], i, inplace = True)
-fea = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
-replace = [['student', 'student(part-time)', 'office worker'], ['once every two weeks(or less)','about a month', 'two to three months', 'three months to half a year', 'half a year to one year', 'everyday'], ['north', 'west', 'south', 'east', 'outlying island(foreign)'], ['north', 'west', 'south', 'east', 'outlying island(foreign)'], ['below 50 km', '50-100km', '100-150km', '150-200km', 'over 200 km'], ['attend friend gatherings (more than twice a week)', 'attend friend gatherings occasionally (1-2 times a week)', 'never or seldom'], ['good', 'normal', 'not good'], ['male', 'female'], ['zero', '0-30000', '30000-60000', '60000 above'], ['yes', 'no']]
-num = 0
-i = 0
-for col in fea: #transform to numeric data
-    num = 0
-    for rep in replace[i]:
-        train[col].replace(rep, num, inplace = True)
-        test[col].replace(rep, num, inplace = True)
-        num += 1
-    i += 1
+
 
 target.replace(['train bus or ship'], 1, inplace = True)
 target.replace(['HSR or airplane'], 2, inplace = True)
@@ -41,6 +39,7 @@ target.replace(['drive or ride by yourself'], 3, inplace = True)
 test_target.replace(['train bus or ship'], 1, inplace = True)
 test_target.replace(['HSR or airplane'], 2, inplace = True)
 test_target.replace(['drive or ride by yourself'], 3, inplace = True)
+
 
 model = DecisionTreeClassifier(max_depth = 8)
 #model = tree.DecisionTreeClassifier()
