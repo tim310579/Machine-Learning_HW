@@ -64,7 +64,7 @@ train.replace(np.nan, 23, inplace=True)
 for col in fea:
     train[col].replace(["?"],  [train[col].mode()], inplace = True)   #deal with missing
 delete =  train[train['Choose hometown or travel'] == 'travel'].index
-train.drop(delete, inplace = True)
+#train.drop(delete, inplace = True)
 #train = train.drop('Choose hometown or travel', axis = 1)
 fea = ['Choose hometown or travel','age', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
 
@@ -72,25 +72,41 @@ le = preprocessing.LabelEncoder()
 for col in fea:   #transform to numeric data
     encode_col = le.fit_transform(train[col])
     train[col] = encode_col
-#print(train)
+train['transportation'].replace(['train bus or ship'], [1], inplace = True)
+train['transportation'].replace(['HSR or airplane'], [2], inplace = True)
+train['transportation'].replace(['drive or ride by yourself'], [3], inplace = True)
 
-split = len(train)
-test = train[int(split*0.7): split]
-train = train[0: int(split*0.7)]
+
+choose1 = train[train['transportation'] == 1].index
+choose2 = train[train['transportation'] == 2].index
+choose3 = train[train['transportation'] == 3].index
+
+df1 = train.loc[choose1]
+df2 = train.loc[choose2]
+df3 = train.loc[choose3]
+df1 = df1.reset_index(drop = True)
+df2 = df2.reset_index(drop = True)
+df3 = df3.reset_index(drop = True)
+len1 = len(df1)
+len2 = len(df2)
+len3 = len(df3)
+
+df1_test = df1[int(len1*0.7): len1]
+df2_test = df2[int(len2*0.7): len2]
+df3_test = df3[int(len3*0.7): len3]
+df1 = df1[0: int(len1*0.7)]
+df2 = df2[0: int(len2*0.7)]
+df3 = df3[0: int(len3*0.7)]
+
+train = pd.concat([df1, df2, df3], axis = 0)
+train = train.reset_index(drop = True)
+test = pd.concat([df1_test, df2_test, df3_test], axis =0)
+test = test.reset_index(drop = True)
+
 target = train['transportation']
 train = train.drop(columns = 'transportation')
-
 test_target = test['transportation']
 test = test.drop(columns = 'transportation')
-
-
-target.replace(['train bus or ship'], 1, inplace = True)
-target.replace(['HSR or airplane'], 2, inplace = True)
-target.replace(['drive or ride by yourself'], 3, inplace = True)
-test_target.replace(['train bus or ship'], 1, inplace = True)
-test_target.replace(['HSR or airplane'], 2, inplace = True)
-test_target.replace(['drive or ride by yourself'], 3, inplace = True)
-test_target = test_target.reset_index(drop = True)
 
 model0 = DecisionTreeClassifier(max_depth = 8).fit(train, target)
 model1 = RandomForestClassifier(max_depth = 8).fit(train, target)
@@ -109,7 +125,7 @@ combine = []
 df_combine = pd.DataFrame(result)
 for col in df_combine.columns:
     combine.append(df_combine[col].mode()[0])
-print(combine)
+
 name = ['Decision Tree', 'Random Forest', 'Naive Bayes', 'Logistic Regression', 'Neural Network']
 
 for i in range(5):
