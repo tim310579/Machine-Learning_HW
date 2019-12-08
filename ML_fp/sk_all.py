@@ -9,10 +9,7 @@ from sklearn.linear_model  import LogisticRegression
 from sklearn.neural_network import MLPClassifier
 from sklearn import model_selection
 from sklearn.model_selection import KFold
-from sklearn.model_selection import LeaveOneOut
-from sklearn.model_selection import LeavePOut
-from sklearn.model_selection import ShuffleSplit
-from sklearn.model_selection import StratifiedKFold
+from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score
@@ -33,7 +30,7 @@ def draw(name, model, y_bin, test, cl):
     auc = metrics.auc(fpr, tpr)
     mpl.rcParams['font.sans-serif'] = u'SimHei'
     mpl.rcParams['axes.unicode_minus'] = False
-    plt.plot(fpr, tpr, c = cl, lw = 2, alpha = 0.7, label = u'AUC=%.3f' % auc)
+    plt.plot(fpr, tpr, c = cl, lw = 2, alpha = 0.7, label = u'%s AUC=%.3f' % (name, auc))
     plt.plot((0, 1), (0, 1), c = '#808080', lw = 1, ls = '--', alpha = 0.7)
     plt.xlim((-0.01, 1.02))
     plt.ylim((-0.01, 1.02))
@@ -43,7 +40,7 @@ def draw(name, model, y_bin, test, cl):
     plt.ylabel('True Positive Rate', fontsize=13)
     plt.grid(b=True, ls=':')
     plt.legend(loc='lower right', fancybox=True, framealpha=0.8, fontsize=12)
-    plt.title(u'ROC AUC for 5 models', fontsize=17)
+    plt.title(u'ROC and AUC for 6 models', fontsize=17)
 
 def print_matrix(name, model, test, test_target):
     predict = model.predict(test)
@@ -56,8 +53,10 @@ def print_matrix(name, model, test, test_target):
     print(data_frame)
     print('')
     print('Accuracy: ', acc)
-    print('Precision: ', pre)
-    print('Recall: ', rec)
+    df_rp = pd.DataFrame([rec, pre], index = ['Recall', 'Precision'], columns = ['train, bus, ship', 'HSR, airplane', 'drive, ride'])
+    #print('Precision: ', pre)
+    #print('Recall: ', rec)
+    print(df_rp)
     print(' ')
     print(' ')
 
@@ -83,6 +82,15 @@ train['transportation'].replace(['train bus or ship'], [0], inplace = True)
 train['transportation'].replace(['HSR or airplane'], [1], inplace = True)
 train['transportation'].replace(['drive or ride by yourself'], [2], inplace = True)
 
+for i in range(len(train)):
+    if(train.iat[i, 1] < 18): train.iat[i, 1] = 0
+    elif(train.iat[i, 1] >= 18 and train.iat[i, 1] < 22): train.iat[i, 1] = 1
+    elif(train.iat[i, 1] >= 22 and train.iat[i, 1] < 26): train.iat[i, 1] = 2
+    elif(train.iat[i, 1] >= 26 and train.iat[i, 1] < 30): train.iat[i, 1] = 3
+    elif(train.iat[i, 1] >= 30 and train.iat[i, 1] < 35): train.iat[i, 1] = 4
+    elif(train.iat[i, 1] >= 35 and train.iat[i, 1] < 40): train.iat[i, 1] = 5
+    else: train.iat[i, 1] = 6
+    
 train_all = train.copy()
 train_all = train_all.drop(columns = 'transportation')
 test_all = train['transportation']
@@ -109,12 +117,13 @@ model = []
 model.append(DecisionTreeClassifier(max_depth = 8).fit(train, target))
 model.append(RandomForestClassifier(n_estimators=10, max_depth = 8, random_state=42).fit(train, target))
 model.append(GaussianNB().fit(train, target))
+model.append(SVC(gamma = 'auto', probability=True).fit(train, target))
 model.append(LogisticRegression().fit(train, target))
 model.append(MLPClassifier().fit(train, target))
-result = []
-name = ['Decision Tree', 'Random Forest', 'Naive Bayes', 'Logistic Regression', 'Neural Network']
-color = ['r', 'g', 'b', 'y', 'k']
-for i in range(5):
+
+name = ['Decision Tree', 'Random Forest', 'Naive Bayes', 'SVM', 'Logistic Regression', 'Neural Network']
+color = ['r', 'g', 'b', 'pink', 'k', 'orange']
+for i in range(6):
     print_matrix(name[i], model[i], test, test_target)
     draw(name[i], model[i], y_bin, test, color[i])
 #print(roc_auc_score(test_target, y_pred_proba))
