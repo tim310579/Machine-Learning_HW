@@ -93,6 +93,17 @@ train['transportation'].replace(['train bus or ship'], [0], inplace = True)
 train['transportation'].replace(['HSR or airplane'], [1], inplace = True)
 train['transportation'].replace(['drive or ride by yourself'], [2], inplace = True)
 
+#delete = ['location of work (school)', 'hometown location','interpersonal relationship', 'family relationship','have boy/girlfriend/husband/wife','gender']
+#train = train.drop(columns = delete)
+labels = ['train bus or ship','drive or ride by yourself','HSR or airplane']
+separeted = [0, 0.2, 0.2]
+size = train['transportation'].value_counts()
+plt.pie(size, labels = labels,  autopct = "%1.1f%%", explode = separeted,  pctdistance = 0.6, shadow=True)
+plt.title('Pie chart of transportation', {"fontsize" : 18})
+plt.legend(loc = "best")
+plt.savefig('Pie chart of transportation.png')
+plt.close()
+
 train_all = train.copy()
 train_all = train_all.drop(columns = 'transportation')
 test_all = train['transportation']
@@ -107,12 +118,12 @@ model.append(DecisionTreeClassifier(max_depth = 8).fit(train, target))
 model.append(RandomForestClassifier(n_estimators=10, max_depth = 8, random_state=42).fit(train, target))
 model.append(GaussianNB().fit(train, target))
 model.append(SVC(gamma = 'auto', probability=True).fit(train, target))
-model.append(LogisticRegression().fit(train, target))
-model.append(MLPClassifier().fit(train, target))
+model.append(LogisticRegression(max_iter=500).fit(train, target))
+#model.append(MLPClassifier(max_iter=600).fit(train, target))
 
-name = ['Decision Tree', 'Random Forest', 'Naive Bayes', 'SVM', 'Logistic Regression', 'Neural Network']
-color = ['r', 'g', 'b', 'pink', 'k', 'orange']
-for i in range(6):
+name = ['Decision Tree', 'Random Forest', 'Naive Bayes','SVM', 'Logistic Regression']
+color = ['r', 'g', 'b', 'pink', 'k']
+for i in range(5):
     print_matrix(name[i], model[i], test, test_target)
     draw(name[i], model[i], y_bin, test, color[i])
 #print(roc_auc_score(test_target, y_pred_proba))
@@ -120,8 +131,11 @@ for i in range(6):
 results = []
 kfold = KFold(n_splits=10, random_state = 42, shuffle = True)
 print('K-fold for K = 10')
-for i in range(6):
+for i in range(5):
     results.append(model_selection.cross_val_score(model[i], train_all, test_all, cv = kfold))
     print(name[i], 'Accuracy : ',results[i].mean())
 
-plt.show()
+plt.savefig('ROC curve.png')
+plt.close()
+
+#print(model[4])
