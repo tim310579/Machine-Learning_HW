@@ -1,83 +1,60 @@
-from sklearn import preprocessing, linear_model
-from sklearn.linear_model  import LogisticRegression
-import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from itertools import cycle
 
-fea = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+from sklearn import svm, datasets
+from sklearn.metrics import roc_curve, auc
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
+from scipy import interp
+from sklearn.metrics import roc_auc_score
 
-train = pd.read_csv('tran.csv')
-train = train.sample(frac=1).reset_index(drop = True) #shuffle
-train.replace(np.nan, 23, inplace=True)
-for col in fea:
-    train[col].replace(["?"],  [train[col].mode()], inplace = True)   #deal with missing
+# Import some data to play with
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
 
-fea = ['Choose hometown or travel','age', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+# Binarize the output
+y = label_binarize(y, classes=[0, 1, 2])
+n_classes = y.shape[1]
 
-le = preprocessing.LabelEncoder()
-for col in fea:   #transform to numeric data
-    encode_col = le.fit_transform(train[col])
-    train[col] = encode_col
+# Add noisy features to make the problem harder
+random_state = np.random.RandomState(0)
+n_samples, n_features = X.shape
+X = np.c_[X, random_state.randn(n_samples, 200 * n_features)]
 
-split = len(train)
-test = train[int(split*0.7): split]
-train = train[0: int(split*0.7)]
-target = train['transportation']
-train = train.drop(columns = 'transportation')
+# shuffle and split training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5,
+                                                    random_state=0)
 
-test_target = test['transportation']
-test = test.drop(columns = 'transportation')
+# Learn to predict each class against the other
+classifier = OneVsRestClassifier(svm.SVC(kernel='linear', probability=True,
+                                 random_state=random_state))
+y_score = classifier.fit(X_train, y_train).decision_function(X_test)
 
-target.replace(['train bus or ship'], 1, inplace = True)
-target.replace(['HSR or airplane'], 2, inplace = True)
-target.replace(['drive or ride by yourself'], 3, inplace = True)
-test_target.replace(['train bus or ship'], 1, inplace = True)
-test_target.replace(['HSR or airplane'], 2, inplace = True)
-test_target.replace(['drive or ride by yourself'], 3, inplace = True)
+# Compute ROC curve and ROC area for each class
+fpr = dict()
+tpr = dict()
+roc_auc = dict()
 
-model = LogisticRegression()
-model = model.fit(train, target)
-result = model.predict(test)
+for i in range(n_classes):
+    fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
+    print(fpr[i])
+    roc_auc[i] = auc(fpr[i], tpr[i])
 
-test_target = test_target.reset_index(drop = True)
+# Compute micro-average ROC curve and ROC area
+fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_score.ravel())
+roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
 
-from sklearn.metrics import confusion_matrix
-cnf=confusion_matrix(test_target, model.predict(test))
-print(cnf)
-mat = np.zeros([3, 3])
-for i in range(len(result)):
-    if(result[i] == 1):
-        if(test_target[i] == 1):
-            mat[0][0] += 1
-        elif(test_target[i] == 2):
-            mat[1][0] += 1
-        else:
-            mat[2][0] += 1
-    elif(result[i] == 2):
-        if(test_target[i] == 1):
-            mat[0][1] += 1
-        elif(test_target[i] == 2):
-            mat[1][1] += 1
-        else:
-            mat[2][1] += 1
-    else:
-        if(test_target[i] == 1):
-            mat[0][2] += 1
-        elif(test_target[i] == 2):
-            mat[1][2] += 1
-        else:
-            mat[2][2] += 1
-
-data_frame = pd.DataFrame(mat, index = ['Actual train, bus, ship', 'Actual HSR, airplane', 'Actual drive, ride'], columns = ['Predict train, bus, ship', 'HSR, airplane', 'drive, ride'])
-print('Logistic regression')
-print(data_frame)
-acc = (mat[0][0] + mat[1][1] + mat[2][2])/len(result)
-rec = []
-pre = []
-for i in range(3):
-    rec.append(mat[i][i]/(mat[i][0] + mat[i][1] + mat[i][2]))
-    pre.append(mat[i][i]/(mat[0][i] + mat[1][i] + mat[2][i]))
-rec_pre = np.array([rec, pre])
-#print(rec_pre)
-rp = pd.DataFrame(rec_pre, index = ['Sensitivity(Recall)', 'Precision'], columns = ['train, bus, ship', 'HSR, airplane', 'drive, ride'])
-print('Accuracy: ', acc)
-print(rp)
+lw = 2
+plt.plot(fpr[2], tpr[2], color='darkorange',
+         lw=lw, label='ROC curve (area = %0.2f)' % roc_auc[2])
+plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver operating characteristic example')
+plt.legend(loc="lower right")
+plt.show()

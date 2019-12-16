@@ -23,7 +23,7 @@ import numpy as np
 from sklearn import metrics
 from sklearn.preprocessing import label_binarize
 from sklearn.metrics import make_scorer, accuracy_score, precision_score, recall_score, f1_score
-
+import random
 
 def draw(name, model, y_bin, test, cl):
     y_score = model.predict_proba(test)
@@ -41,7 +41,7 @@ def draw(name, model, y_bin, test, cl):
     plt.ylabel('True Positive Rate', fontsize=13)
     plt.grid(b=True, ls=':')
     plt.legend(loc='lower right', fancybox=True, framealpha=0.8, fontsize=12)
-    plt.title(u'ROC and AUC for 6 models', fontsize=17)
+    plt.title(u'ROC and AUC for 5 models', fontsize=17)
 
 def print_matrix(name, model, test, test_target):
     predict = model.predict(test)
@@ -63,28 +63,20 @@ def print_matrix(name, model, test, test_target):
 
 
 
-fea = ['Choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
 
-train = pd.read_csv('tran.csv')
+train = pd.read_csv('final.csv',engine='python')
 #train = train.sample(frac=1).reset_index(drop = True) #shuffle
 train.replace(np.nan, 23, inplace=True)
 for col in fea:
     train[col].replace(["?"],  [train[col].mode()], inplace = True)   #deal with missing
-delete =  train[train['Choose hometown or travel'] == 'travel'].index
+delete =  train[train['choose hometown or travel'] == 'travel'].index
 #train.drop(delete, inplace = True)
 #train = train.reset_index(drop = True)
-#train = train.drop('Choose hometown or travel', axis = 1)
-fea = ['Choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
-'''
-for i in range(len(train)):
-    if(train.iat[i, 1] < 18): train.iat[i, 1] = 0
-    elif(train.iat[i, 1] >= 18 and train.iat[i, 1] < 22): train.iat[i, 1] = 1
-    elif(train.iat[i, 1] >= 22 and train.iat[i, 1] < 26): train.iat[i, 1] = 2
-    elif(train.iat[i, 1] >= 26 and train.iat[i, 1] < 30): train.iat[i, 1] = 3
-    elif(train.iat[i, 1] >= 30 and train.iat[i, 1] < 35): train.iat[i, 1] = 4
-    elif(train.iat[i, 1] >= 35 and train.iat[i, 1] < 40): train.iat[i, 1] = 5
-    else: train.iat[i, 1] = 6
-'''
+#train = train.drop('choose hometown or travel', axis = 1)
+fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+
+
 le = preprocessing.LabelEncoder()
 for col in fea:   #transform to numeric data
     encode_col = le.fit_transform(train[col])
@@ -104,11 +96,31 @@ plt.legend(loc = "best")
 plt.savefig('Pie chart of transportation.png')
 plt.close()
 
+repeat1 = train[train['transportation'] == 1].index
+repeat2 = train[train['transportation'] == 2].index
+    
+df_1 = pd.DataFrame()
+df_2 = pd.DataFrame()
+df_1 = train.loc[repeat1]
+df_2 = train.loc[repeat2]
+df_1 = df_1.reset_index(drop = True)
+df_2 = df_2.reset_index(drop = True)
+for i in range(int(len(df_1)/2)):
+    delete = random.randint(0, len(df_1)-1)
+    df_1 = df_1.drop(df_1.index[delete])
+for i in range(int(len(df_2)/2)):
+    delete = random.randint(0, len(df_2)-1)
+    df_2 = df_2.drop(df_2.index[delete])
+    
+#train = pd.concat([train, df_1, df_2], axis = 0)
+train = train.reset_index(drop = True)
+print(train.shape)
 train_all = train.copy()
 train_all = train_all.drop(columns = 'transportation')
 test_all = train['transportation']
 
 train, test, target, test_target = train_test_split(train_all, test_all, test_size=0.30, random_state=0)
+
 n_class = 3
 y_bin = label_binarize(test_target, np.arange(n_class))
 alpha = np.logspace(-2, 2, 20)
