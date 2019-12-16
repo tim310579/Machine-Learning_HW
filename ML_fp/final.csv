@@ -1,13 +1,13 @@
 choose hometown or travel,age,job,back home frequency,location of work (school),hometown location,distance between the above two,interpersonal relationship,family relationship,gender,financial situation(income),have boy/girlfriend/husband/wife,transportation
 back hometown,20,student (part-time),two to three months,north,south,150-200 km,never or seldom,normal,male,1-30000,no,HSR or airplane
 back hometown,24,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,26,office worker,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,20,student,half a year to one year,north,east,150-200 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,17,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),not good,male,0,no,drive or ride by yourself
 travel,17,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,never or seldom,good,female,0,no,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,drive or ride by yourself
 travel,17,student,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
 travel,22,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,1-30000,no,drive or ride by yourself
@@ -18,7 +18,7 @@ back hometown,20,student,once every two weeks (or less),north,north,below 50 km,
 back hometown,18,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,33,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,1-30000,no,HSR or airplane
 back hometown,20,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,HSR or airplane
-back hometown,24,student (part-time),three months to half a year,outlying island(foreign),north,150-200 km,attend friend gatherings (more than twice a week),normal,female,30000-60000,no,HSR or airplane
+back hometown,24,student (part-time),three months to half a year,outlying island(foreign),north,150-200 km,attend friend gatherings (more than twice a week),normal,female,30001-60000,no,HSR or airplane
 back hometown,17,student,once every two weeks (or less),north,north,150-200 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,18,student (part-time),about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,19,student (part-time),about a month,north,west,below 50 km,never or seldom,normal,male,1-30000,no,train bus or ship
@@ -28,20 +28,20 @@ back hometown,31,office worker,once every two weeks (or less),south,south,below 
 back hometown,20,student,three months to half a year,south,west,over 200 km,never or seldom,normal,female,0,no,HSR or airplane
 back hometown,22,student,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,HSR or airplane
 back hometown,21,student (part-time),about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,HSR or airplane
-back hometown,25,office worker,about a month,outlying island(foreign),north,150-200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,25,office worker,about a month,outlying island(foreign),north,150-200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 back hometown,20,student,two to three months,north,south,over 200 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,22,student,about a month,west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,27,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,21,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
-back hometown,31,office worker,about a month,north,west,100-150 km,never or seldom,good,male,30000-60000,yes,train bus or ship
-back hometown,26,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,31,office worker,about a month,north,west,100-150 km,never or seldom,good,male,30001-60000,yes,train bus or ship
+back hometown,26,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,34,office worker,about a month,south,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
 back hometown,35,office worker,two to three months,west,north,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
 travel,21,student,about a month,north,south,over 200 km,never or seldom,normal,male,0,no,drive or ride by yourself
-back hometown,33,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,33,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 travel,18,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
-back hometown,31,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,HSR or airplane
+back hometown,31,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,HSR or airplane
 travel,19,student,three months to half a year,north,outlying island(foreign),over 200 km,attend friend gatherings (more than twice a week),normal,male,0,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,100-150 km,never or seldom,good,female,0,no,train bus or ship
 travel,16,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
@@ -72,7 +72,7 @@ back hometown,21,student (part-time),about a month,west,north,50-100 km,attend f
 back hometown,22,student (part-time),about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,yes,drive or ride by yourself
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,student,half a year to one year,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,27,office worker,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,21,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,20,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,19,student (part-time),half a year to one year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
@@ -90,7 +90,7 @@ back hometown,22,student,once every two weeks (or less),north,west,50-100 km,att
 back hometown,23,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male的啾咪,0,no,train bus or ship
 back hometown,23,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 back hometown,21,student,about a month,north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,18,student (part-time),once every two weeks (or less),north,west,below 50 km,attend friend gatherings (more than twice a week),normal,male,1-30000,yes,train bus or ship
 back hometown,26,student,three months to half a year,north,west,100-150 km,never or seldom,good,male,1-30000,yes,drive or ride by yourself
@@ -116,19 +116,19 @@ back hometown,18,student,once every two weeks (or less),north,south,over 200 km,
 back hometown,19,student,once every two weeks (or less),north,north,150-200 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,25,student,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),not good,male,1-30000,no,train bus or ship
 back hometown,20,student (part-time),about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,drive or ride by yourself
-back hometown,31,office worker,three months to half a year,north,south,over 200 km,never or seldom,good,female,30000-60000,no,drive or ride by yourself
+back hometown,31,office worker,three months to half a year,north,south,over 200 km,never or seldom,good,female,30001-60000,no,drive or ride by yourself
 travel,24,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,22,student,about a month,north,west,100-150 km,never or seldom,good,male,0,yes,train bus or ship
-back hometown,35,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,HSR or airplane
+back hometown,35,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,HSR or airplane
 travel,19,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,normal,female,1-30000,no,train bus or ship
 travel,20,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,train bus or ship
-back hometown,23,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,23,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,23,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,20,student,about a month,north,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),west,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
-back hometown,20,office worker,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
-back hometown,31,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,27,office worker,once every two weeks (or less),west,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
+back hometown,20,office worker,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
+back hometown,31,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,32,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,female,1-30000,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,drive or ride by yourself
@@ -145,7 +145,7 @@ back hometown,21,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,20,student,three months to half a year,north,north,below 50 km,never or seldom,not good,male,0,no,train bus or ship
 travel,19,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,HSR or airplane
 travel,18,student,about a month,north,east,50-100 km,attend friend gatherings (more than twice a week),normal,female,0,yes,train bus or ship
-back hometown,26,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,26,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,21,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,20,student,about a month,north,north,50-100 km,never or seldom,good,male,0,yes,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
@@ -158,13 +158,13 @@ travel,25,student,once every two weeks (or less),south,south,50-100 km,attend fr
 back hometown,25,office worker,about a month,west,west,below 50 km,never or seldom,good,female,1-30000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,100-150 km,never or seldom,good,male,0,no,HSR or airplane
 back hometown,21,student,two to three months,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,HSR or airplane
-back hometown,29,office worker,half a year to one year,north,west,over 200 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+back hometown,29,office worker,half a year to one year,north,west,over 200 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,20,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,22,student,about a month,north,west,50-100 km,attend friend gatherings (more than twice a week),normal,male,0,yes,train bus or ship
 back hometown,21,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
-back hometown,35,office worker,once every two weeks (or less),south,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
-back hometown,23,office worker,once every two weeks (or less),west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30000-60000,no,HSR or airplane
+back hometown,35,office worker,once every two weeks (or less),south,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
+back hometown,23,office worker,once every two weeks (or less),west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
+back hometown,27,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30001-60000,no,HSR or airplane
 back hometown,19,student,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,20,student,about a month,north,south,over 200 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,30,office worker,about a month,west,south,100-150 km,never or seldom,normal,male,1-30000,no,train bus or ship
@@ -176,7 +176,7 @@ travel,24,student (part-time),about a month,north,north,below 50 km,attend frien
 travel,19,student,once every two weeks (or less),west,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,no,drive or ride by yourself
 back hometown,21,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,21,student (part-time),once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
@@ -185,7 +185,7 @@ back hometown,18,student (part-time),two to three months,north,south,over 200 km
 back hometown,21,student (part-time),once every two weeks (or less),north,north,50-100 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,22,student,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),west,west,below 50 km,never or seldom,normal,male,0,yes,drive or ride by yourself
-travel,27,office worker,about a month,south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+travel,27,office worker,about a month,south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,30,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,60000 above,yes,drive or ride by yourself
 back hometown,24,student,about a month,north,south,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
@@ -200,27 +200,27 @@ back hometown,19,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,south,over 200 km,never or seldom,good,female,0,no,HSR or airplane
 travel,20,student,about a month,north,north,50-100 km,never or seldom,good,female,0,no,drive or ride by yourself
-travel,22,student (part-time),two to three months,south,south,100-150 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,train bus or ship
+travel,22,student (part-time),two to three months,south,south,100-150 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,19,student,two to three months,north,south,over 200 km,never or seldom,good,male,0,no,HSR or airplane
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 travel,20,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,24,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),normal,female,1-30000,yes,train bus or ship
-back hometown,26,office worker,about a month,north,west,100-150 km,never or seldom,good,female,30000-60000,yes,train bus or ship
+back hometown,26,office worker,about a month,north,west,100-150 km,never or seldom,good,female,30001-60000,yes,train bus or ship
 back hometown,24,student,about a month,north,north,50-100 km,never or seldom,not good,male,0,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,female,0,no,train bus or ship
 back hometown,20,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
-travel,29,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+travel,29,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,60000 above,no,train bus or ship
 back hometown,23,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,HSR or airplane
-back hometown,37,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,37,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,20,student (part-time),two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),not good,female,0,no,HSR or airplane
 back hometown,22,student,about a month,north,north,50-100 km,never or seldom,good,female,0,no,train bus or ship
 back hometown,28,student,two to three months,north,west,50-100 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,train bus or ship
 back hometown,27,office worker,once every two weeks (or less),west,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
-travel,33,office worker,two to three months,north,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
-travel,25,office worker,two to three months,south,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+travel,33,office worker,two to three months,north,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
+travel,25,office worker,two to three months,south,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 back hometown,22,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,22,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,HSR or airplane
 back hometown,23,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,not good,male,1-30000,no,drive or ride by yourself
@@ -228,15 +228,15 @@ back hometown,20,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,0,yes,train bus or ship
 back hometown,20,student,about a month,west,north,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,HSR or airplane
 back hometown,20,student,about a month,north,north,100-150 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-travel,28,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,HSR or airplane
+travel,28,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,23,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,26,student (part-time),half a year to one year,north,south,over 200 km,never or seldom,good,female,1-30000,yes,HSR or airplane
 back hometown,20,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,25,student (part-time),two to three months,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
-back hometown,25,office worker,once every two weeks (or less),south,south,100-150 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,train bus or ship
-back hometown,25,office worker,half a year to one year,south,east,over 200 km,never or seldom,normal,female,30000-60000,no,train bus or ship
+back hometown,25,office worker,once every two weeks (or less),south,south,100-150 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,train bus or ship
+back hometown,25,office worker,half a year to one year,south,east,over 200 km,never or seldom,normal,female,30001-60000,no,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,drive or ride by yourself
 travel,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,drive or ride by yourself
 travel,42,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,drive or ride by yourself
@@ -256,11 +256,11 @@ back hometown,22,student (part-time),once every two weeks (or less),west,west,be
 back hometown,23,student,once every two weeks (or less),north,north,100-150 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
 back hometown,25,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,male,1-30000,no,drive or ride by yourself
-travel,27,office worker,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,30000-60000,no,train bus or ship
+travel,27,office worker,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,30001-60000,no,train bus or ship
 back hometown,23,student,about a month,west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,drive or ride by yourself
-back hometown,28,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30000-60000,no,train bus or ship
+back hometown,28,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30001-60000,no,train bus or ship
 back hometown,22,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
-back hometown,39,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,39,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,19,student,about a month,north,north,100-150 km,never or seldom,good,male,1-30000,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,drive or ride by yourself
 back hometown,20,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
@@ -273,7 +273,7 @@ back hometown,18,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,22,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,drive or ride by yourself
 back hometown,26,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
 back hometown,25,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
-back hometown,25,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
+back hometown,25,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,19,student (part-time),once every two weeks (or less),north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
 back hometown,23,office worker,once every two weeks (or less),west,north,150-200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,20,student,about a month,north,south,150-200 km,never or seldom,normal,male,0,no,HSR or airplane
@@ -281,18 +281,18 @@ back hometown,19,student,about a month,north,south,over 200 km,attend friend gat
 back hometown,22,student,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,HSR or airplane
 back hometown,20,student (part-time),once every two weeks (or less),north,west,150-200 km,never or seldom,good,female,1-30000,no,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),south,south,100-150 km,never or seldom,good,female,30000-60000,no,train bus or ship
+back hometown,27,office worker,once every two weeks (or less),south,south,100-150 km,never or seldom,good,female,30001-60000,no,train bus or ship
 back hometown,18,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,100-150 km,never or seldom,good,female,0,no,HSR or airplane
-back hometown,24,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,24,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),south,west,50-100 km,never or seldom,normal,female,0,no,train bus or ship
-back hometown,31,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,31,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,21,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,21,office worker,once every two weeks (or less),north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,21,student,three months to half a year,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,HSR or airplane
-back hometown,28,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,drive or ride by yourself
+back hometown,28,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,drive or ride by yourself
 travel,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
 back hometown,21,student (part-time),two to three months,north,north,100-150 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 travel,19,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,0,no,drive or ride by yourself
@@ -307,12 +307,12 @@ back hometown,21,student,about a month,north,north,below 50 km,attend friend gat
 back hometown,23,student,about a month,north,west,100-150 km,never or seldom,normal,male,1-30000,yes,train bus or ship
 back hometown,20,student,about a month,north,north,below 50 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),west,west,below 50 km,never or seldom,normal,female,0,no,train bus or ship
-travel,28,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30000-60000,no,drive or ride by yourself
+travel,28,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30001-60000,no,drive or ride by yourself
 travel,18,student,once every two weeks (or less),west,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,29,office worker,about a month,west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,female,60000 above,yes,train bus or ship
 back hometown,23,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,23,student,about a month,north,east,50-100 km,never or seldom,normal,male,0,yes,drive or ride by yourself
-back hometown,39,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,39,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,20,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 travel,16,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,female,0,yes,train bus or ship
@@ -335,7 +335,7 @@ back hometown,40,office worker,once every two weeks (or less),north,north,below 
 travel,22,student (part-time),about a month,south,north,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,train bus or ship
 back hometown,19,student,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,0,no,HSR or airplane
-back hometown,30,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,drive or ride by yourself
+back hometown,30,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),south,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,21,student,two to three months,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,drive or ride by yourself
@@ -346,34 +346,34 @@ travel,18,student,two to three months,north,east,150-200 km,attend friend occasi
 back hometown,23,student,three months to half a year,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,21,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,24,student,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,train bus or ship
-back hometown,24,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,train bus or ship
+back hometown,24,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,train bus or ship
 back hometown,29,office worker,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,drive or ride by yourself
 back hometown,17,student,two to three months,south,south,below 50 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,20,student,three months to half a year,south,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
-travel,37,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,37,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,25,office worker,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
 back hometown,23,student (part-time),two to three months,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 back hometown,22,office worker,two to three months,north,west,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 travel,18,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),south,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
-back hometown,32,office worker,three months to half a year,south,south,100-150 km,never or seldom,normal,female,30000-60000,yes,HSR or airplane
+back hometown,32,office worker,three months to half a year,south,south,100-150 km,never or seldom,normal,female,30001-60000,yes,HSR or airplane
 back hometown,38,student,once every two weeks (or less),north,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,18,student,three months to half a year,outlying island(foreign),north,over 200 km,attend friend gatherings (more than twice a week),normal,male,0,no,HSR or airplane
 back hometown,19,student,about a month,west,north,100-150 km,never or seldom,good,female,0,no,train bus or ship
 back hometown,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,60000 above,yes,train bus or ship
 back hometown,24,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 travel,20,student,once every two weeks (or less),west,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),west,west,below 50 km,never or seldom,good,male,30000-60000,no,drive or ride by yourself
+back hometown,27,office worker,once every two weeks (or less),west,west,below 50 km,never or seldom,good,male,30001-60000,no,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,no,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,18,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 travel,24,student (part-time),about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,train bus or ship
 back hometown,20,student,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
-back hometown,27,office worker,about a month,west,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
-back hometown,30,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
-back hometown,30,office worker,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,train bus or ship
+back hometown,27,office worker,about a month,west,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
+back hometown,30,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
+back hometown,30,office worker,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,train bus or ship
 back hometown,23,student,once every two weeks (or less),south,north,over 200 km,never or seldom,good,male,0,no,HSR or airplane
 back hometown,18,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,HSR or airplane
 back hometown,35,office worker,two to three months,north,west,50-100 km,never or seldom,good,male,60000 above,yes,train bus or ship
@@ -386,9 +386,9 @@ back hometown,19,student,about a month,north,north,50-100 km,never or seldom,nor
 back hometown,24,student,two to three months,north,south,over 200 km,never or seldom,normal,male,0,no,HSR or airplane
 back hometown,24,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,21,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,27,office worker,half a year to one year,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,27,office worker,half a year to one year,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,female,0,no,drive or ride by yourself
-back hometown,29,office worker,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,HSR or airplane
+back hometown,29,office worker,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,HSR or airplane
 back hometown,22,student,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,21,student,about a month,west,north,100-150 km,never or seldom,good,male,0,no,train bus or ship
@@ -400,24 +400,24 @@ back hometown,19,student,about a month,north,north,below 50 km,attend friend gat
 back hometown,21,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,25,office worker,about a month,south,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,25,office worker,about a month,south,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,drive or ride by yourself
 back hometown,18,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,23,student,about a month,north,west,150-200 km,attend friend gatherings (more than twice a week),not good,male,1-30000,no,HSR or airplane
 back hometown,23,student,two to three months,north,east,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 travel,26,student (part-time),about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,drive or ride by yourself
 travel,20,student,two to three months,north,south,150-200 km,attend friend gatherings (more than twice a week),normal,male,0,no,HSR or airplane
-back hometown,24,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,train bus or ship
+back hometown,24,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,32,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,drive or ride by yourself
 back hometown,21,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,train bus or ship
-back hometown,25,office worker,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,train bus or ship
+back hometown,25,office worker,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
-travel,25,office worker,two to three months,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
-back hometown,28,office worker,two to three months,west,west,50-100 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,yes,train bus or ship
+travel,25,office worker,two to three months,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
+back hometown,28,office worker,two to three months,west,west,50-100 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,never or seldom,good,male,0,no,train bus or ship
-back hometown,25,office worker,two to three months,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,25,office worker,two to three months,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,20,student (part-time),two to three months,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,18,student,two to three months,east,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,24,office worker,about a month,south,east,100-150 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
@@ -461,22 +461,22 @@ back hometown,20,student,once every two weeks (or less),north,north,below 50 km,
 back hometown,23,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
 back hometown,24,student,half a year to one year,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 travel,23,student,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,drive or ride by yourself
-back hometown,26,office worker,about a month,north,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
+back hometown,26,office worker,about a month,north,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,drive or ride by yourself
-back hometown,27,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,27,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 back hometown,22,student,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,19,student,about a month,north,south,150-200 km,never or seldom,normal,female,0,yes,train bus or ship
-back hometown,32,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+back hometown,32,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 back hometown,24,student (part-time),about a month,north,west,100-150 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,train bus or ship
 back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,female,0,no,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
-back hometown,25,office worker,half a year to one year,north,west,50-100 km,never or seldom,not good,female,30000-60000,no,HSR or airplane
+back hometown,25,office worker,half a year to one year,north,west,50-100 km,never or seldom,not good,female,30001-60000,no,HSR or airplane
 back hometown,22,student,two to three months,south,west,100-150 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,19,student (part-time),once every two weeks (or less),west,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
-back hometown,35,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30000-60000,yes,HSR or airplane
+back hometown,35,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30001-60000,yes,HSR or airplane
 travel,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,drive or ride by yourself
-back hometown,26,office worker,about a month,north,west,over 200 km,never or seldom,normal,female,30000-60000,no,train bus or ship
+back hometown,26,office worker,about a month,north,west,over 200 km,never or seldom,normal,female,30001-60000,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,23,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,drive or ride by yourself
 back hometown,24,student,about a month,south,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
@@ -485,26 +485,26 @@ back hometown,16,student,once every two weeks (or less),north,north,below 50 km,
 back hometown,22,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,train bus or ship
 back hometown,23,student (part-time),about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,22,student (part-time),about a month,north,south,over 200 km,never or seldom,normal,male,0,yes,HSR or airplane
-back hometown,32,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,32,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 travel,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,29,student,once every two weeks (or less),south,north,over 200 km,never or seldom,normal,male,0,yes,train bus or ship
 back hometown,24,student (part-time),about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,drive or ride by yourself
 back hometown,21,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,19,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,60000 above,yes,train bus or ship
-travel,35,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
+travel,35,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,22,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,18,student,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,drive or ride by yourself
 back hometown,22,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
-travel,23,office worker,half a year to one year,outlying island(foreign),north,over 200 km,never or seldom,good,male,30000-60000,yes,HSR or airplane
+travel,23,office worker,half a year to one year,outlying island(foreign),north,over 200 km,never or seldom,good,male,30001-60000,yes,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,22,student,about a month,west,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,no,drive or ride by yourself
 back hometown,21,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),not good,female,0,no,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,21,student (part-time),half a year to one year,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
-travel,27,office worker,about a month,east,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,27,office worker,about a month,east,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,19,student (part-time),about a month,west,north,100-150 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
@@ -520,7 +520,7 @@ back hometown,20,student,three months to half a year,north,north,below 50 km,nev
 back hometown,21,student,about a month,south,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,20,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,20,student,about a month,north,east,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-back hometown,28,office worker,half a year to one year,north,south,150-200 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,28,office worker,half a year to one year,north,south,150-200 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,22,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,HSR or airplane
 back hometown,19,student,three months to half a year,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,22,student,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,yes,drive or ride by yourself
@@ -529,13 +529,13 @@ back hometown,18,student,two to three months,north,south,over 200 km,never or se
 back hometown,28,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,HSR or airplane
 back hometown,21,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,36,office worker,half a year to one year,north,west,below 50 km,never or seldom,normal,female,1-30000,yes,train bus or ship
-back hometown,53,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,HSR or airplane
+back hometown,53,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,18,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,drive or ride by yourself
 back hometown,21,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,HSR or airplane
-back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,24,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
@@ -556,20 +556,20 @@ back hometown,30,office worker,about a month,north,west,100-150 km,attend friend
 back hometown,22,student (part-time),about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,drive or ride by yourself
 back hometown,22,student,three months to half a year,west,north,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-travel,24,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,24,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,24,student,three months to half a year,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,HSR or airplane
 back hometown,20,student (part-time),about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 travel,27,student (part-time),half a year to one year,south,north,over 200 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,train bus or ship
 back hometown,21,student,about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
 back hometown,20,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
 back hometown,23,student (part-time),about a month,north,south,over 200 km,never or seldom,good,male,1-30000,yes,train bus or ship
-travel,24,office worker,once every two weeks (or less),north,west,150-200 km,attend friend gatherings (more than twice a week),good,female,30000-60000,no,train bus or ship
+travel,24,office worker,once every two weeks (or less),north,west,150-200 km,attend friend gatherings (more than twice a week),good,female,30001-60000,no,train bus or ship
 back hometown,19,student,about a month,north,west,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),south,west,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
 back hometown,19,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,19,student,half a year to one year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,HSR or airplane
-back hometown,27,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,train bus or ship
+back hometown,27,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,train bus or ship
 back hometown,20,student,two to three months,south,west,150-200 km,attend friend occasionally (1-2 times a week),not good,male,0,no,drive or ride by yourself
 back hometown,21,student,about a month,north,west,100-150 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,21,student,about a month,north,west,50-100 km,never or seldom,good,male,0,yes,train bus or ship
@@ -583,14 +583,14 @@ back hometown,19,student,about a month,south,west,150-200 km,attend friend occas
 back hometown,24,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 travel,18,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
 back hometown,19,student,two to three months,north,south,over 200 km,never or seldom,normal,male,0,no,drive or ride by yourself
-travel,33,office worker,two to three months,north,outlying island(foreign),over 200 km,never or seldom,not good,male,30000-60000,no,HSR or airplane
+travel,33,office worker,two to three months,north,outlying island(foreign),over 200 km,never or seldom,not good,male,30001-60000,no,HSR or airplane
 travel,20,student (part-time),three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,drive or ride by yourself
 back hometown,23,office worker,two to three months,east,west,150-200 km,attend friend gatherings (more than twice a week),good,male,60000 above,no,drive or ride by yourself
 travel,22,student,once every two weeks (or less),north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,yes,HSR or airplane
 back hometown,18,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,25,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,0,no,drive or ride by yourself
 travel,19,student,about a month,north,north,50-100 km,never or seldom,normal,male,0,yes,train bus or ship
-travel,25,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend gatherings (more than twice a week),good,female,30000-60000,no,drive or ride by yourself
+travel,25,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend gatherings (more than twice a week),good,female,30001-60000,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
@@ -602,7 +602,7 @@ back hometown,23,student (part-time),two to three months,north,south,over 200 km
 back hometown,26,student,once every two weeks (or less),north,west,100-150 km,never or seldom,normal,male,0,no,drive or ride by yourself
 back hometown,24,student,two to three months,west,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,0,no,HSR or airplane
 back hometown,24,student,about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
-back hometown,31,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,31,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,19,office worker,about a month,south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,23,student,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
 back hometown,29,student,about a month,north,west,100-150 km,never or seldom,normal,male,0,no,train bus or ship
@@ -612,14 +612,14 @@ back hometown,23,student,once every two weeks (or less),west,south,over 200 km,n
 back hometown,22,student,about a month,west,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,HSR or airplane
 travel,24,student,half a year to one year,north,outlying island(foreign),over 200 km,never or seldom,normal,female,0,no,drive or ride by yourself
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-travel,25,office worker,half a year to one year,west,west,below 50 km,never or seldom,not good,male,30000-60000,yes,drive or ride by yourself
+travel,25,office worker,half a year to one year,west,west,below 50 km,never or seldom,not good,male,30001-60000,yes,drive or ride by yourself
 back hometown,29,office worker,about a month,south,south,below 50 km,never or seldom,normal,male,1-30000,no,drive or ride by yourself
 back hometown,22,student,two to three months,south,north,over 200 km,attend friend gatherings (more than twice a week),good,male,0,yes,HSR or airplane
 travel,25,office worker,three months to half a year,south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
-back hometown,23,office worker,two to three months,north,south,over 200 km,never or seldom,good,female,30000-60000,yes,HSR or airplane
+back hometown,23,office worker,two to three months,north,south,over 200 km,never or seldom,good,female,30001-60000,yes,HSR or airplane
 back hometown,24,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
-back hometown,28,office worker,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
-back hometown,23,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,drive or ride by yourself
+back hometown,28,office worker,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
+back hometown,23,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,drive or ride by yourself
 back hometown,23,student,three months to half a year,outlying island(foreign),west,100-150 km,attend friend gatherings (more than twice a week),good,male,0,yes,HSR or airplane
 back hometown,23,student,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,drive or ride by yourself
 travel,39,office worker,half a year to one year,north,east,over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,drive or ride by yourself
@@ -627,58 +627,58 @@ back hometown,23,office worker,two to three months,east,south,over 200 km,attend
 back hometown,22,student,three months to half a year,south,north,100-150 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
 travel,18,student,two to three months,north,north,50-100 km,attend friend occasionally (1-2 times a week),not good,female,0,yes,train bus or ship
 back hometown,17,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
-back hometown,22,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
+back hometown,22,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
 travel,21,student,about a month,north,north,below 50 km,never or seldom,normal,female,0,yes,drive or ride by yourself
 back hometown,19,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-travel,36,office worker,two to three months,west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,train bus or ship
+travel,36,office worker,two to three months,west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-back hometown,26,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,train bus or ship
+back hometown,26,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,train bus or ship
 back hometown,18,student,half a year to one year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,19,student,about a month,north,east,150-200 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,20,student (part-time),about a month,west,east,over 200 km,never or seldom,good,male,1-30000,no,train bus or ship
 back hometown,30,office worker,half a year to one year,outlying island(foreign),north,over 200 km,never or seldom,normal,male,60000 above,yes,train bus or ship
-back hometown,23,office worker,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
+back hometown,23,office worker,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
 back hometown,23,student (part-time),three months to half a year,east,west,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,33,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,60000 above,yes,train bus or ship
 travel,20,student,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),normal,female,60000 above,no,train bus or ship
-back hometown,23,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,23,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 back hometown,32,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
-travel,29,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,drive or ride by yourself
+travel,29,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,drive or ride by yourself
 back hometown,21,student,two to three months,south,north,over 200 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,19,student,two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,19,student,about a month,south,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
 back hometown,20,student,about a month,south,south,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 travel,30,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
 back hometown,19,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
-back hometown,22,student,about a month,south,west,150-200 km,never or seldom,good,male,30000-60000,yes,train bus or ship
+back hometown,22,student,about a month,south,west,150-200 km,never or seldom,good,male,30001-60000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),west,north,100-150 km,never or seldom,good,male,0,yes,train bus or ship
-travel,24,office worker,half a year to one year,outlying island(foreign),north,over 200 km,never or seldom,good,female,30000-60000,no,train bus or ship
+travel,24,office worker,half a year to one year,outlying island(foreign),north,over 200 km,never or seldom,good,female,30001-60000,no,train bus or ship
 back hometown,35,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,60000 above,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),west,west,50-100 km,never or seldom,good,male,0,no,train bus or ship
-travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 back hometown,33,office worker,two to three months,north,north,below 50 km,never or seldom,normal,female,60000 above,no,HSR or airplane
-travel,30,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,HSR or airplane
+travel,30,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,HSR or airplane
 travel,33,office worker,half a year to one year,north,north,below 50 km,attend friend gatherings (more than twice a week),not good,male,60000 above,yes,drive or ride by yourself
 back hometown,22,student,about a month,south,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,23,student,about a month,east,south,100-150 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 travel,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
-travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,drive or ride by yourself
+travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,drive or ride by yourself
 back hometown,22,student,two to three months,south,west,150-200 km,never or seldom,normal,male,0,yes,train bus or ship
 travel,22,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,18,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,18,office worker,once every two weeks (or less),west,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,22,student (part-time),two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,HSR or airplane
-back hometown,27,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,female,30000-60000,yes,train bus or ship
-back hometown,30,office worker,about a month,west,north,100-150 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,27,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,female,30001-60000,yes,train bus or ship
+back hometown,30,office worker,about a month,west,north,100-150 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,20,student (part-time),about a month,north,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
-back hometown,29,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30000-60000,no,train bus or ship
-back hometown,28,office worker,three months to half a year,west,south,100-150 km,never or seldom,good,female,30000-60000,yes,drive or ride by yourself
+back hometown,29,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,30001-60000,no,train bus or ship
+back hometown,28,office worker,three months to half a year,west,south,100-150 km,never or seldom,good,female,30001-60000,yes,drive or ride by yourself
 back hometown,87,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
-travel,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+travel,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,25,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,21,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,drive or ride by yourself
@@ -689,13 +689,13 @@ back hometown,18,student (part-time),once every two weeks (or less),west,north,5
 travel,23,student,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
 back hometown,20,student,about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 travel,49,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,drive or ride by yourself
-back hometown,25,office worker,about a month,east,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,25,office worker,about a month,east,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 travel,22,student,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,male,0,yes,drive or ride by yourself
 back hometown,19,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,drive or ride by yourself
-back hometown,26,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,30000-60000,yes,HSR or airplane
+back hometown,26,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,30001-60000,yes,HSR or airplane
 travel,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 back hometown,26,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
-travel,32,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,drive or ride by yourself
+travel,32,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,drive or ride by yourself
 back hometown,24,student,half a year to one year,north,outlying island(foreign),over 200 km,never or seldom,good,female,1-30000,no,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,never or seldom,good,male,0,no,HSR or airplane
 back hometown,24,student,once every two weeks (or less),north,west,50-100 km,never or seldom,normal,female,60000 above,no,train bus or ship
@@ -703,23 +703,23 @@ back hometown,22,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,21,student,once every two weeks (or less),west,west,below 50 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),west,north,150-200 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,34,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
-travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,26,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,1-30000,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,30,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,60000 above,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
-travel,25,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+travel,25,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,19,student,two to three months,north,north,below 50 km,never or seldom,good,male,0,no,drive or ride by yourself
 back hometown,22,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-travel,36,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
-back hometown,31,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+travel,36,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
+back hometown,31,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,east,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
-back hometown,30,office worker,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,no,train bus or ship
+back hometown,30,office worker,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
-back hometown,30,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,HSR or airplane
+back hometown,30,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,HSR or airplane
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
-travel,34,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30000-60000,no,HSR or airplane
+travel,34,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30001-60000,no,HSR or airplane
 back hometown,25,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,HSR or airplane
 travel,25,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
@@ -732,21 +732,21 @@ back hometown,21,student,once every two weeks (or less),north,north,50-100 km,at
 back hometown,29,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,21,student (part-time),once every two weeks (or less),north,west,100-150 km,never or seldom,good,female,1-30000,yes,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,drive or ride by yourself
 back hometown,25,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,60000 above,yes,HSR or airplane
 back hometown,20,student,about a month,west,south,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,43,office worker,once every two weeks (or less),outlying island(foreign),north,over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,HSR or airplane
 back hometown,23,student,two to three months,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,HSR or airplane
-back hometown,35,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,35,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,23,student,two to three months,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,21,student,two to three months,north,south,150-200 km,never or seldom,normal,male,0,no,HSR or airplane
 back hometown,22,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-travel,25,office worker,about a month,south,south,below 50 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,yes,drive or ride by yourself
+travel,25,office worker,about a month,south,south,below 50 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,20,student,two to three months,east,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,train bus or ship
 back hometown,20,student,about a month,north,south,over 200 km,never or seldom,normal,male,0,no,drive or ride by yourself
 back hometown,23,student (part-time),about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
 back hometown,22,student,about a month,north,west,100-150 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
-travel,29,office worker,two to three months,south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+travel,29,office worker,two to three months,south,south,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 travel,18,student (part-time),once every two weeks (or less),north,west,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,0,no,drive or ride by yourself
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,drive or ride by yourself
@@ -761,10 +761,10 @@ back hometown,20,student,once every two weeks (or less),north,north,50-100 km,at
 travel,19,student,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,21,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,1-30000,no,drive or ride by yourself
 travel,23,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,HSR or airplane
-travel,25,office worker,half a year to one year,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,yes,HSR or airplane
+travel,25,office worker,half a year to one year,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,yes,HSR or airplane
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 travel,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
-travel,27,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+travel,27,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,24,student,about a month,north,north,50-100 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
@@ -775,14 +775,14 @@ back hometown,21,student,three months to half a year,north,south,over 200 km,att
 back hometown,20,student,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,22,student,half a year to one year,north,south,over 200 km,never or seldom,normal,male,0,no,HSR or airplane
 back hometown,23,office worker,about a month,north,west,over 200 km,never or seldom,normal,male,1-30000,yes,HSR or airplane
-back hometown,24,student (part-time),three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
+back hometown,24,student (part-time),three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
 back hometown,22,student,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,HSR or airplane
 back hometown,18,student,once every two weeks (or less),west,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,drive or ride by yourself
 back hometown,22,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
-back hometown,27,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,27,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,office worker,about a month,south,south,50-100 km,never or seldom,good,female,60000 above,yes,drive or ride by yourself
-back hometown,26,office worker,two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,HSR or airplane
+back hometown,26,office worker,two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,HSR or airplane
 back hometown,27,office worker,half a year to one year,outlying island(foreign),south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,60000 above,yes,HSR or airplane
 back hometown,21,student (part-time),three months to half a year,west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
@@ -790,26 +790,26 @@ back hometown,21,student (part-time),about a month,north,south,over 200 km,atten
 back hometown,21,student,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,22,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,HSR or airplane
 back hometown,21,student (part-time),about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
-back hometown,29,office worker,once every two weeks (or less),north,east,150-200 km,never or seldom,good,female,30000-60000,yes,train bus or ship
+back hometown,29,office worker,once every two weeks (or less),north,east,150-200 km,never or seldom,good,female,30001-60000,yes,train bus or ship
 back hometown,19,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,good,male,1-30000,yes,train bus or ship
-back hometown,31,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+back hometown,31,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 back hometown,18,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,18,student,three months to half a year,north,outlying island(foreign),over 200 km,never or seldom,normal,female,0,no,HSR or airplane
 back hometown,18,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,25,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
-travel,37,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
-back hometown,28,office worker,two to three months,north,east,over 200 km,never or seldom,good,male,30000-60000,no,drive or ride by yourself
+travel,37,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
+back hometown,28,office worker,two to three months,north,east,over 200 km,never or seldom,good,male,30001-60000,no,drive or ride by yourself
 back hometown,25,student (part-time),once every two weeks (or less),north,south,150-200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,20,student (part-time),two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 travel,23,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,drive or ride by yourself
 back hometown,22,student (part-time),two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,west,50-100 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,24,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
-back hometown,28,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,HSR or airplane
+back hometown,28,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,HSR or airplane
 back hometown,24,student,about a month,west,north,100-150 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
-travel,28,office worker,three months to half a year,north,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
-back hometown,29,office worker,three months to half a year,north,south,over 200 km,never or seldom,good,female,30000-60000,yes,HSR or airplane
+travel,28,office worker,three months to half a year,north,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
+back hometown,29,office worker,three months to half a year,north,south,over 200 km,never or seldom,good,female,30001-60000,yes,HSR or airplane
 back hometown,21,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,HSR or airplane
 back hometown,30,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
 back hometown,24,student (part-time),about a month,east,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
@@ -823,7 +823,7 @@ back hometown,22,student,about a month,north,west,100-150 km,never or seldom,nor
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
 back hometown,24,student,about a month,north,west,100-150 km,never or seldom,normal,female,0,no,HSR or airplane
-back hometown,24,office worker,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,24,office worker,once every two weeks (or less),west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,20,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,22,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
@@ -831,10 +831,10 @@ back hometown,35,office worker,half a year to one year,south,north,over 200 km,n
 back hometown,20,student (part-time),half a year to one year,north,south,150-200 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,HSR or airplane
 travel,23,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,22,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,1-30000,yes,train bus or ship
-back hometown,25,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
+back hometown,25,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,19,student,about a month,south,south,150-200 km,never or seldom,good,male,0,no,train bus or ship
-back hometown,23,office worker,about a month,west,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,23,office worker,about a month,west,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,34,office worker,three months to half a year,west,north,150-200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,drive or ride by yourself
 back hometown,25,student,half a year to one year,south,east,over 200 km,never or seldom,good,male,1-30000,no,train bus or ship
 back hometown,24,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
@@ -848,17 +848,17 @@ back hometown,23,student (part-time),about a month,north,south,over 200 km,atten
 back hometown,17,student,two to three months,east,west,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,drive or ride by yourself
 travel,18,student,two to three months,west,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-back hometown,35,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
-back hometown,25,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,HSR or airplane
-back hometown,23,office worker,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,35,office worker,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
+back hometown,25,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,HSR or airplane
+back hometown,23,office worker,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,21,student (part-time),two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,20,student,two to three months,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,33,office worker,half a year to one year,south,west,below 50 km,never or seldom,normal,male,1-30000,no,train bus or ship
+back hometown,33,office worker,half a year to one year,south,west,below 50 km,never or seldom,normal,male,0 - 30000(月薪 有打工者) Monthly salary part-time,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
-travel,28,office worker,two to three months,west,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
-travel,34,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30000-60000,no,HSR or airplane
+travel,28,office worker,two to three months,west,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
+travel,34,office worker,half a year to one year,north,south,over 200 km,never or seldom,normal,female,30001-60000,no,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,100-150 km,attend friend gatherings (more than twice a week),good,female,0,yes,train bus or ship
@@ -866,7 +866,7 @@ back hometown,19,student,about a month,north,north,below 50 km,attend friend gat
 back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,24,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,19,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,train bus or ship
-back hometown,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,20,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,female,0,no,train bus or ship
@@ -878,32 +878,32 @@ back hometown,21,student (part-time),once every two weeks (or less),north,south,
 travel,38,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,HSR or airplane
 back hometown,18,student,about a month,west,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,25,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
-travel,23,office worker,?,south,south,below 50 km,never or seldom,not good,male,1-30000,no,drive or ride by yourself
+travel,23,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,not good,male,1-30000,no,drive or ride by yourself
 back hometown,25,office worker,once every two weeks (or less),south,south,50-100 km,never or seldom,normal,male,1-30000,no,train bus or ship
 back hometown,18,student,about a month,north,west,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,HSR or airplane
 back hometown,23,student,three months to half a year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,21,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
-back hometown,18,office worker,about a month,north,south,over 200 km,never or seldom,normal,male,30000-60000,no,HSR or airplane
+back hometown,18,office worker,about a month,north,south,over 200 km,never or seldom,normal,male,30001-60000,no,HSR or airplane
 back hometown,20,student,half a year to one year,outlying island(foreign),outlying island(foreign),over 200 km,never or seldom,not good,male,60000 above,yes,drive or ride by yourself
 back hometown,19,student,two to three months,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,30000-60000,no,drive or ride by yourself
+back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,30001-60000,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,0,no,drive or ride by yourself
-back hometown,24,office worker,about a month,north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,24,office worker,about a month,north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,26,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,17,student,once every two weeks (or less),west,west,50-100 km,never or seldom,not good,male,0,no,drive or ride by yourself
 back hometown,20,student,about a month,north,north,below 50 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,22,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,drive or ride by yourself
 back hometown,29,office worker,three months to half a year,west,north,100-150 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
-back hometown,23,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
-back hometown,30,office worker,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,23,office worker,two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
+back hometown,30,office worker,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 travel,22,office worker,three months to half a year,north,south,150-200 km,attend friend occasionally (1-2 times a week),not good,female,0,no,drive or ride by yourself
 back hometown,25,student,two to three months,north,north,100-150 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 travel,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,drive or ride by yourself
 back hometown,26,office worker,half a year to one year,south,west,below 50 km,never or seldom,normal,female,0,yes,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,22,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,HSR or airplane
-back hometown,26,office worker,three months to half a year,east,north,100-150 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,train bus or ship
+back hometown,26,office worker,three months to half a year,east,north,100-150 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,train bus or ship
 back hometown,24,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,HSR or airplane
 back hometown,22,student,about a month,north,south,over 200 km,never or seldom,normal,male,1-30000,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
@@ -912,18 +912,18 @@ back hometown,17,student,two to three months,east,west,over 200 km,attend friend
 back hometown,21,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,drive or ride by yourself
 back hometown,19,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
-back hometown,25,office worker,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
-back hometown,24,office worker,about a month,north,west,50-100 km,attend friend gatherings (more than twice a week),good,male,30000-60000,no,train bus or ship
+back hometown,25,office worker,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
+back hometown,24,office worker,about a month,north,west,50-100 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,train bus or ship
 back hometown,24,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 back hometown,19,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,19,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,20,student,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,train bus or ship
-back hometown,22,office worker,about a month,north,west,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,22,office worker,about a month,north,west,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,28,student,once every two weeks (or less),north,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,22,student (part-time),about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,drive or ride by yourself
-back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 travel,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,drive or ride by yourself
-back hometown,25,office worker,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+back hometown,25,office worker,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),west,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
@@ -932,7 +932,7 @@ back hometown,18,student,about a month,north,north,below 50 km,attend friend occ
 back hometown,21,student,once every two weeks (or less),south,south,below 50 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,22,student,two to three months,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 travel,30,office worker,half a year to one year,north,north,below 50 km,never or seldom,normal,male,0,no,train bus or ship
-travel,30,office worker,half a year to one year,north,north,below 50 km,never or seldom,normal,female,30000-60000,yes,train bus or ship
+travel,30,office worker,half a year to one year,north,north,below 50 km,never or seldom,normal,female,30001-60000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),west,north,50-100 km,never or seldom,normal,female,0,no,train bus or ship
 back hometown,20,student,two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,0,yes,HSR or airplane
 travel,19,student,once every two weeks (or less),west,north,50-100 km,never or seldom,normal,female,0,no,drive or ride by yourself
@@ -941,9 +941,9 @@ back hometown,23,student,two to three months,north,west,over 200 km,never or sel
 back hometown,21,student,two to three months,north,south,over 200 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,22,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 back hometown,22,student (part-time),about a month,west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,HSR or airplane
-back hometown,24,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,HSR or airplane
-back hometown,30,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
-back hometown,30,office worker,about a month,west,north,100-150 km,never or seldom,normal,male,30000-60000,yes,drive or ride by yourself
+back hometown,24,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,HSR or airplane
+back hometown,30,office worker,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
+back hometown,30,office worker,about a month,west,north,100-150 km,never or seldom,normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,24,student,once every two weeks (or less),west,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,24,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
@@ -960,16 +960,16 @@ back hometown,18,student,once every two weeks (or less),north,north,50-100 km,ne
 back hometown,21,student,about a month,west,south,100-150 km,attend friend gatherings (more than twice a week),normal,male,0,no,HSR or airplane
 back hometown,21,student (part-time),about a month,west,south,150-200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
 back hometown,22,student (part-time),two to three months,south,west,150-200 km,attend friend gatherings (more than twice a week),good,male,1-30000,no,drive or ride by yourself
-back hometown,32,office worker,two to three months,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,32,office worker,two to three months,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 travel,22,student,about a month,west,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,24,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 travel,30,office worker,two to three months,south,south,100-150 km,never or seldom,good,male,1-30000,no,train bus or ship
-back hometown,39,office worker,two to three months,north,south,over 200 km,never or seldom,good,female,30000-60000,yes,HSR or airplane
+back hometown,39,office worker,two to three months,north,south,over 200 km,never or seldom,good,female,30001-60000,yes,HSR or airplane
 travel,20,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,female,0,yes,train bus or ship
 back hometown,24,office worker,once every two weeks (or less),west,west,below 50 km,never or seldom,normal,male,1-30000,no,drive or ride by yourself
 back hometown,24,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,east,100-150 km,never or seldom,normal,female,30000-60000,no,train bus or ship
-back hometown,33,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,HSR or airplane
+back hometown,26,office worker,once every two weeks (or less),north,east,100-150 km,never or seldom,normal,female,30001-60000,no,train bus or ship
+back hometown,33,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,HSR or airplane
 back hometown,21,student,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,24,student (part-time),about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,24,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
@@ -985,7 +985,7 @@ travel,28,office worker,once every two weeks (or less),west,west,below 50 km,att
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 travel,19,student (part-time),about a month,north,north,below 50 km,never or seldom,good,female,1-30000,no,train bus or ship
 back hometown,18,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
-travel,28,student (part-time),three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,HSR or airplane
+travel,28,student (part-time),three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,HSR or airplane
 back hometown,24,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,18,student,about a month,west,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 travel,23,student,about a month,north,north,50-100 km,attend friend gatherings (more than twice a week),normal,male,1-30000,yes,train bus or ship
@@ -999,8 +999,8 @@ back hometown,22,student (part-time),once every two weeks (or less),north,north,
 back hometown,18,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,21,student (part-time),about a month,south,west,100-150 km,never or seldom,normal,female,0,no,train bus or ship
 back hometown,26,office worker,about a month,north,west,50-100 km,never or seldom,normal,male,60000 above,no,train bus or ship
-back hometown,27,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
-back hometown,24,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,train bus or ship
+back hometown,27,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
+back hometown,24,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,drive or ride by yourself
 back hometown,24,student (part-time),two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,drive or ride by yourself
@@ -1009,17 +1009,17 @@ back hometown,21,student,about a month,north,north,50-100 km,attend friend occas
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,22,student,three months to half a year,north,west,150-200 km,never or seldom,normal,male,0,no,train bus or ship
-travel,30,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
+travel,30,office worker,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
 back hometown,23,student (part-time),about a month,west,west,below 50 km,attend friend gatherings (more than twice a week),good,male,1-30000,yes,drive or ride by yourself
 travel,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),not good,male,0,no,drive or ride by yourself
 back hometown,21,student (part-time),half a year to one year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,HSR or airplane
-back hometown,20,student,half a year to one year,north,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,20,student,half a year to one year,north,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,22,student,two to three months,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
-back hometown,33,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+back hometown,33,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 travel,24,office worker,three months to half a year,east,east,over 200 km,never or seldom,normal,male,1-30000,yes,drive or ride by yourself
 back hometown,18,student,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,HSR or airplane
-back hometown,30,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,yes,train bus or ship
+back hometown,30,office worker,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,33,office worker,about a month,west,south,100-150 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,yes,train bus or ship
 back hometown,26,student,half a year to one year,north,outlying island(foreign),150-200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,HSR or airplane
 back hometown,29,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
@@ -1029,23 +1029,23 @@ back hometown,28,office worker,two to three months,north,south,over 200 km,atten
 travel,18,student,once every two weeks (or less),north,north,below 50 km,never or seldom,good,female,0,no,drive or ride by yourself
 travel,22,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,north,50-100 km,never or seldom,normal,female,0,no,train bus or ship
-travel,27,office worker,two to three months,north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,27,office worker,two to three months,north,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,24,student,three months to half a year,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,never or seldom,good,female,0,no,train bus or ship
 back hometown,22,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,HSR or airplane
-back hometown,28,office worker,about a month,west,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,drive or ride by yourself
-back hometown,39,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,HSR or airplane
+back hometown,28,office worker,about a month,west,west,100-150 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,drive or ride by yourself
+back hometown,39,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,HSR or airplane
 travel,20,student,once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,yes,train bus or ship
 back hometown,20,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,20,student,three months to half a year,north,east,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,22,student,about a month,south,south,below 50 km,attend friend gatherings (more than twice a week),good,female,0,no,HSR or airplane
-back hometown,29,office worker,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
-back hometown,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
-back hometown,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
-travel,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+back hometown,29,office worker,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
+back hometown,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
+back hometown,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
+travel,31,office worker,once every two weeks (or less),south,south,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,20,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,24,student,once every two weeks (or less),west,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 travel,26,office worker,about a month,south,south,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,drive or ride by yourself
@@ -1054,21 +1054,21 @@ travel,18,student,once every two weeks (or less),north,north,below 50 km,attend 
 travel,18,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,0,no,HSR or airplane
 back hometown,22,student,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,HSR or airplane
 back hometown,22,student (part-time),about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
-travel,35,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,35,office worker,about a month,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,drive or ride by yourself
 back hometown,21,student,two to three months,north,south,over 200 km,never or seldom,normal,female,0,no,train bus or ship
 back hometown,19,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 travel,34,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),good,female,0,no,train bus or ship
 back hometown,25,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
 back hometown,22,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,HSR or airplane
-back hometown,30,office worker,two to three months,north,north,below 50 km,never or seldom,normal,female,30000-60000,yes,train bus or ship
+back hometown,30,office worker,two to three months,north,north,below 50 km,never or seldom,normal,female,30001-60000,yes,train bus or ship
 back hometown,22,student (part-time),three months to half a year,north,west,150-200 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,HSR or airplane
-back hometown,29,office worker,about a month,east,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,30000-60000,yes,train bus or ship
+back hometown,29,office worker,about a month,east,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,west,50-100 km,attend friend gatherings (more than twice a week),good,female,0,yes,train bus or ship
 back hometown,18,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,25,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,train bus or ship
-back hometown,22,office worker,about a month,north,south,over 200 km,never or seldom,good,male,30000-60000,no,HSR or airplane
+back hometown,22,office worker,about a month,north,south,over 200 km,never or seldom,good,male,30001-60000,no,HSR or airplane
 back hometown,32,office worker,once every two weeks (or less),south,south,100-150 km,never or seldom,normal,female,1-30000,yes,train bus or ship
 back hometown,22,student,about a month,west,south,100-150 km,attend friend gatherings (more than twice a week),normal,female,0,yes,HSR or airplane
 back hometown,20,student (part-time),once every two weeks (or less),west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
@@ -1078,48 +1078,48 @@ back hometown,22,student,about a month,north,north,below 50 km,never or seldom,g
 back hometown,24,student,three months to half a year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),good,female,0,no,HSR or airplane
 back hometown,32,office worker,about a month,north,east,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,drive or ride by yourself
 back hometown,21,student,two to three months,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,female,0,no,HSR or airplane
-back hometown,36,office worker,three months to half a year,north,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,drive or ride by yourself
+back hometown,36,office worker,three months to half a year,north,south,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,west,100-150 km,never or seldom,good,female,0,no,train bus or ship
 back hometown,18,student,three months to half a year,south,north,over 200 km,attend friend gatherings (more than twice a week),normal,male,0,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 travel,20,student (part-time),three months to half a year,west,west,below 50 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,drive or ride by yourself
-back hometown,31,office worker,once every two weeks (or less),east,south,100-150 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
-back hometown,32,office worker,once every two weeks (or less),east,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,HSR or airplane
+back hometown,31,office worker,once every two weeks (or less),east,south,100-150 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
+back hometown,32,office worker,once every two weeks (or less),east,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,HSR or airplane
 back hometown,22,student,about a month,north,north,below 50 km,never or seldom,normal,female,0,no,train bus or ship
 back hometown,23,student (part-time),two to three months,south,south,50-100 km,never or seldom,normal,female,1-30000,no,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,female,0,yes,train bus or ship
-travel,35,office worker,once every two weeks (or less),west,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30000-60000,yes,drive or ride by yourself
+travel,35,office worker,once every two weeks (or less),west,west,100-150 km,attend friend gatherings (more than twice a week),good,male,30001-60000,yes,drive or ride by yourself
 travel,21,student,about a month,west,north,150-200 km,never or seldom,normal,male,0,yes,drive or ride by yourself
 travel,35,office worker,about a month,north,north,below 50 km,never or seldom,good,male,60000 above,yes,drive or ride by yourself
-back hometown,23,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,no,train bus or ship
+back hometown,23,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,no,train bus or ship
 back hometown,35,office worker,about a month,west,south,100-150 km,attend friend occasionally (1-2 times a week),normal,male,60000 above,yes,drive or ride by yourself
 back hometown,26,office worker,half a year to one year,north,west,150-200 km,never or seldom,normal,female,60000 above,no,HSR or airplane
 back hometown,21,student,about a month,west,north,over 200 km,attend friend occasionally (1-2 times a week),not good,female,0,no,train bus or ship
-back hometown,28,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,HSR or airplane
+back hometown,28,office worker,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,60000 above,no,train bus or ship
-travel,42,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
-back hometown,29,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+travel,42,office worker,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
+back hometown,29,office worker,once every two weeks (or less),south,south,below 50 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,22,student (part-time),about a month,east,east,150-200 km,never or seldom,normal,male,1-30000,yes,drive or ride by yourself
-back hometown,24,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,24,office worker,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,22,student (part-time),about a month,north,north,50-100 km,never or seldom,good,male,1-30000,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),north,north,below 50 km,never or seldom,good,female,1-30000,yes,train bus or ship
 travel,21,student,three months to half a year,north,west,150-200 km,never or seldom,not good,male,1-30000,no,drive or ride by yourself
-back hometown,30,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,30,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,yes,drive or ride by yourself
 back hometown,21,student,about a month,south,west,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,HSR or airplane
 travel,24,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,drive or ride by yourself
 back hometown,19,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,20,student,once every two weeks (or less),west,west,below 50 km,never or seldom,good,female,0,no,drive or ride by yourself
-back hometown,35,office worker,once every two weeks (or less),west,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
+back hometown,35,office worker,once every two weeks (or less),west,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,20,student,half a year to one year,north,north,50-100 km,never or seldom,normal,male,0,no,train bus or ship
 back hometown,24,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
-back hometown,25,office worker,about a month,west,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
+back hometown,25,office worker,about a month,west,north,100-150 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 travel,21,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,28,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
-back hometown,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,train bus or ship
+back hometown,25,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
-back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,18,student,about a month,north,west,100-150 km,attend friend gatherings (more than twice a week),normal,female,0,yes,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,18,student,two to three months,north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
@@ -1138,11 +1138,11 @@ back hometown,19,student,once every two weeks (or less),west,west,below 50 km,ne
 travel,19,student,two to three months,north,west,150-200 km,never or seldom,good,female,0,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,22,student (part-time),two to three months,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,train bus or ship
-back hometown,26,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,drive or ride by yourself
+back hometown,26,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,drive or ride by yourself
 back hometown,32,office worker,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
 back hometown,20,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
-travel,36,office worker,three months to half a year,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,HSR or airplane
-travel,38,office worker,about a month,west,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,train bus or ship
+travel,36,office worker,three months to half a year,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,HSR or airplane
+travel,38,office worker,about a month,west,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,train bus or ship
 back hometown,81,office worker,half a year to one year,north,south,150-200 km,attend friend occasionally (1-2 times a week),not good,male,60000 above,no,drive or ride by yourself
 back hometown,21,student,once every two weeks (or less),south,west,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,HSR or airplane
 back hometown,20,student (part-time),about a month,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,female,0,no,HSR or airplane
@@ -1154,7 +1154,7 @@ back hometown,21,student,once every two weeks (or less),north,west,50-100 km,att
 back hometown,22,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,office worker,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 travel,29,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),normal,male,0,no,drive or ride by yourself
-back hometown,28,office worker,two to three months,south,south,below 50 km,attend friend occasionally (1-2 times a week),good,female,30000-60000,yes,drive or ride by yourself
+back hometown,28,office worker,two to three months,south,south,below 50 km,attend friend occasionally (1-2 times a week),good,female,30001-60000,yes,drive or ride by yourself
 travel,22,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,1-30000,no,drive or ride by yourself
 back hometown,19,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,22,student,half a year to one year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,HSR or airplane
@@ -1168,15 +1168,15 @@ back hometown,23,student (part-time),two to three months,north,south,over 200 km
 back hometown,22,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,20,student,about a month,north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,26,office worker,about a month,south,south,below 50 km,never or seldom,good,male,30000-60000,no,drive or ride by yourself
-back hometown,27,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,26,office worker,about a month,south,south,below 50 km,never or seldom,good,male,30001-60000,no,drive or ride by yourself
+back hometown,27,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 back hometown,30,office worker,two to three months,south,south,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
 back hometown,19,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,18,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,0,yes,HSR or airplane
-back hometown,39,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,no,train bus or ship
+back hometown,39,office worker,once every two weeks (or less),south,south,50-100 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 back hometown,20,student,two to three months,north,west,150-200 km,never or seldom,good,male,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,100-150 km,never or seldom,good,female,0,no,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
@@ -1190,19 +1190,19 @@ travel,28,office worker,once every two weeks (or less),north,north,below 50 km,n
 back hometown,19,student,once every two weeks (or less),south,south,50-100 km,never or seldom,normal,male,0,no,drive or ride by yourself
 back hometown,24,office worker,once every two weeks (or less),north,south,150-200 km,never or seldom,normal,male,1-30000,no,drive or ride by yourself
 back hometown,18,student,two to three months,west,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
-travel,24,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30000-60000,no,drive or ride by yourself
+travel,24,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,normal,male,30001-60000,no,drive or ride by yourself
 back hometown,18,student,once every two weeks (or less),south,south,below 50 km,never or seldom,good,male,0,no,drive or ride by yourself
 travel,20,student,half a year to one year,north,south,over 200 km,attend friend gatherings (more than twice a week),normal,female,0,yes,drive or ride by yourself
 back hometown,22,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 travel,19,student,half a year to one year,north,south,150-200 km,never or seldom,normal,male,0,no,HSR or airplane
 back hometown,22,student,about a month,north,west,150-200 km,attend friend occasionally (1-2 times a week),good,male,0,yes,HSR or airplane
 back hometown,22,student,once every two weeks (or less),north,south,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
-back hometown,35,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,yes,HSR or airplane
+back hometown,35,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,yes,HSR or airplane
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,23,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
 back hometown,28,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,60000 above,yes,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
-travel,40,office worker,about a month,north,north,below 50 km,never or seldom,good,male,30000-60000,yes,drive or ride by yourself
+travel,40,office worker,about a month,north,north,below 50 km,never or seldom,good,male,30001-60000,yes,drive or ride by yourself
 back hometown,20,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,23,student,two to three months,north,north,100-150 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 travel,22,student (part-time),two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
@@ -1216,7 +1216,7 @@ back hometown,20,student,once every two weeks (or less),north,north,50-100 km,at
 travel,21,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,20,student,about a month,south,north,over 200 km,attend friend gatherings (more than twice a week),good,male,0,no,HSR or airplane
 back hometown,25,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,yes,train bus or ship
-back hometown,31,office worker,once every two weeks (or less),west,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,train bus or ship
+back hometown,31,office worker,once every two weeks (or less),west,west,50-100 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,50-100 km,never or seldom,good,female,1-30000,no,train bus or ship
 back hometown,23,student,about a month,north,south,150-200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,never or seldom,good,female,0,yes,train bus or ship
@@ -1225,9 +1225,9 @@ back hometown,20,student,about a month,north,north,100-150 km,never or seldom,no
 back hometown,23,student (part-time),half a year to one year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,1-30000,yes,train bus or ship
 travel,23,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),not good,female,1-30000,yes,HSR or airplane
 back hometown,23,student,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
-travel,23,office worker,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30000-60000,no,train bus or ship
+travel,23,office worker,two to three months,north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship
 back hometown,21,student,once every two weeks (or less),north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,32,office worker,once every two weeks (or less),west,west,50-100 km,never or seldom,good,female,30000-60000,yes,drive or ride by yourself
+back hometown,32,office worker,once every two weeks (or less),west,west,50-100 km,never or seldom,good,female,30001-60000,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,18,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,drive or ride by yourself
 back hometown,23,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
@@ -1267,9 +1267,9 @@ back hometown,21,student (part-time),about a month,north,west,100-150 km,attend 
 back hometown,21,student,once every two weeks (or less),north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,yes,train bus or ship
 travel,23,student,about a month,north,south,over 200 km,never or seldom,normal,male,1-30000,no,train bus or ship
 travel,21,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,26,office worker,about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,male,30000-60000,yes,HSR or airplane
+back hometown,26,office worker,about a month,south,north,over 200 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,yes,HSR or airplane
 back hometown,21,student,about a month,south,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-travel,26,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,not good,female,30000-60000,yes,HSR or airplane
+travel,26,office worker,once every two weeks (or less),north,north,below 50 km,never or seldom,not good,female,30001-60000,yes,HSR or airplane
 back hometown,20,student,three months to half a year,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,male,0,no,HSR or airplane
 travel,22,student (part-time),half a year to one year,north,north,below 50 km,attend friend gatherings (more than twice a week),not good,female,1-30000,yes,train bus or ship
 back hometown,19,student,about a month,north,south,over 200 km,never or seldom,normal,female,0,no,train bus or ship
@@ -1289,7 +1289,7 @@ back hometown,22,student,two to three months,north,north,below 50 km,attend frie
 back hometown,25,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,HSR or airplane
 travel,25,office worker,half a year to one year,north,outlying island(foreign),over 200 km,attend friend occasionally (1-2 times a week),good,male,60000 above,yes,drive or ride by yourself
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,never or seldom,good,female,0,no,train bus or ship
-back hometown,32,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,yes,HSR or airplane
+back hometown,32,office worker,two to three months,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,yes,HSR or airplane
 back hometown,30,student,half a year to one year,north,east,over 200 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,train bus or ship
 travel,20,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 travel,19,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,yes,train bus or ship
@@ -1309,7 +1309,7 @@ back hometown,18,student,once every two weeks (or less),west,west,below 50 km,ne
 back hometown,21,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,23,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 back hometown,22,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend gatherings (more than twice a week),good,female,1-30000,yes,train bus or ship
-back hometown,24,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,train bus or ship
+back hometown,24,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 travel,24,student (part-time),once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),normal,male,1-30000,no,train bus or ship
 back hometown,20,student (part-time),once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,female,1-30000,no,train bus or ship
@@ -1347,6 +1347,6 @@ back hometown,19,student,once every two weeks (or less),north,north,below 50 km,
 travel,19,student,about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,yes,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,north,below 50 km,attend friend gatherings (more than twice a week),good,female,0,no,drive or ride by yourself
 travel,19,student,about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),normal,female,0,yes,train bus or ship
-travel,29,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30000-60000,no,train bus or ship
+travel,29,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),normal,female,30001-60000,no,train bus or ship
 back hometown,22,student (part-time),two to three months,north,west,100-150 km,attend friend gatherings (more than twice a week),normal,male,1-30000,no,drive or ride by yourself
 back hometown,21,student,once every two weeks (or less),north,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
