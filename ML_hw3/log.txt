@@ -1,0 +1,40 @@
+For data1----------------------------------------------------------------
+
+L2_norm weight : [-6.46392002  0.68687298  0.52429129]
+L2_norm matrix
+          Predict 1  Predict 0
+Actual 1         50          0
+Actual 0          0         50
+Accuracy : 1.0
+Recall : 1.0
+Precision : 1.0
+
+Cross entropy weight : [-5.345022    0.57139411  0.52407722]
+Cross entropy matrix
+          Predict 1  Predict 0
+Actual 1         50          0
+Actual 0          0         50
+Accuracy : 1.0
+Recall : 1.0
+Precision : 1.0
+
+For data2----------------------------------------------------------------
+
+L2_norm weight : [-3.14647003  0.6577216   0.91622468]
+L2_norm matrix
+          Predict 1  Predict 0
+Actual 1         39         11
+Actual 0          8         42
+Accuracy : 0.81
+Recall : 0.78
+Precision : 0.8297872340425532
+
+Cross entropy weight : [-1.9407866   0.51261007  0.57375826]
+Cross entropy matrix
+          Predict 1  Predict 0
+Actual 1         41          9
+Actual 0         10         40
+Accuracy : 0.81
+Recall : 0.82
+Precision : 0.803921568627451
+
