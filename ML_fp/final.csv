@@ -1,4 +1,4 @@
-choose hometown or travel,age,job,back home frequency,location of work (school),hometown location,distance between the above two,interpersonal relationship,family relationship,gender,financial situation(income),have boy/girlfriend/husband/wife,transportation
+choose hometown or travel,age,job,back home frequency,location of work (school),hometown location,distance between the above two,interpersonal relationship,family relationship,gender,financial situation(income),have boy or girlfriend or husband or wife,transportation
 back hometown,20,student (part-time),two to three months,north,south,150-200 km,never or seldom,normal,male,1-30000,no,HSR or airplane
 back hometown,24,student,about a month,north,west,100-150 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,26,office worker,about a month,north,north,below 50 km,attend friend gatherings (more than twice a week),good,male,30001-60000,no,drive or ride by yourself
@@ -88,7 +88,7 @@ back hometown,18,student,about a month,north,east,100-150 km,attend friend occas
 back hometown,26,student (part-time),about a month,north,north,50-100 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,22,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,1-30000,no,train bus or ship
 back hometown,23,student,once every two weeks (or less),north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
-back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male的啾咪,0,no,train bus or ship
+back hometown,20,student,once every two weeks (or less),north,north,50-100 km,attend friend gatherings (more than twice a week),good,male,0,no,train bus or ship
 back hometown,23,student (part-time),about a month,north,south,over 200 km,attend friend occasionally (1-2 times a week),good,female,1-30000,no,train bus or ship
 back hometown,26,office worker,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,30001-60000,no,train bus or ship
 back hometown,21,student,about a month,north,north,50-100 km,never or seldom,good,male,0,no,train bus or ship
@@ -854,7 +854,7 @@ back hometown,23,office worker,two to three months,north,north,below 50 km,atten
 back hometown,21,student (part-time),two to three months,north,west,150-200 km,attend friend occasionally (1-2 times a week),normal,female,0,no,train bus or ship
 back hometown,20,student,two to three months,south,north,over 200 km,attend friend occasionally (1-2 times a week),normal,male,0,no,train bus or ship
 back hometown,18,student,about a month,north,west,50-100 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
-back hometown,33,office worker,half a year to one year,south,west,below 50 km,never or seldom,normal,male,0 - 30000(月薪 有打工者) Monthly salary part-time,no,train bus or ship
+back hometown,33,office worker,half a year to one year,south,west,below 50 km,never or seldom,normal,male,1-30000,no,train bus or ship
 back hometown,18,student,once every two weeks (or less),north,north,below 50 km,attend friend occasionally (1-2 times a week),good,male,0,no,train bus or ship
 back hometown,19,student,once every two weeks (or less),north,west,50-100 km,attend friend occasionally (1-2 times a week),good,female,0,no,train bus or ship
 travel,28,office worker,two to three months,west,north,50-100 km,attend friend occasionally (1-2 times a week),normal,male,30001-60000,no,train bus or ship

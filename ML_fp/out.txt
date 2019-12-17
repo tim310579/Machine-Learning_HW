@@ -1,14 +1,13 @@
-(1351, 13)
 Decision Tree ----------------------------------------------------------------------
                          Predict train, bus, ship  HSR, airplane  drive, ride
-Actual train, bus, ship                       202             18           34
+Actual train, bus, ship                       198             20           36
 Actual HSR, airplane                           54             11            5
 Actual drive, ride                             51              9           22
 
-Accuracy:  0.5788177339901478
+Accuracy:  0.5689655172413793
            train, bus, ship  HSR, airplane  drive, ride
-Recall             0.795276       0.157143     0.268293
-Precision          0.657980       0.289474     0.360656
+Recall             0.779528       0.157143     0.268293
+Precision          0.653465       0.275000     0.349206
  
  
 Random Forest ----------------------------------------------------------------------
@@ -25,14 +24,14 @@ Precision          0.697368       0.479167     0.462963
  
 Naive Bayes ----------------------------------------------------------------------
                          Predict train, bus, ship  HSR, airplane  drive, ride
-Actual train, bus, ship                       201              9           44
+Actual train, bus, ship                       200             10           44
 Actual HSR, airplane                           46             14           10
 Actual drive, ride                             36              3           43
 
-Accuracy:  0.6354679802955665
+Accuracy:  0.6330049261083743
            train, bus, ship  HSR, airplane  drive, ride
-Recall             0.791339       0.200000     0.524390
-Precision          0.710247       0.538462     0.443299
+Recall             0.787402       0.200000     0.524390
+Precision          0.709220       0.518519     0.443299
  
  
 SVM ----------------------------------------------------------------------
@@ -51,17 +50,17 @@ Logistic Regression ------------------------------------------------------------
                          Predict train, bus, ship  HSR, airplane  drive, ride
 Actual train, bus, ship                       225             14           15
 Actual HSR, airplane                           46             19            5
-Actual drive, ride                             46              7           29
+Actual drive, ride                             45              7           30
 
-Accuracy:  0.6724137931034483
+Accuracy:  0.6748768472906403
            train, bus, ship  HSR, airplane  drive, ride
-Recall             0.885827       0.271429     0.353659
-Precision          0.709779       0.475000     0.591837
+Recall             0.885827       0.271429     0.365854
+Precision          0.712025       0.475000     0.600000
  
  
 K-fold for K = 10
 Decision Tree Accuracy :  0.6136274509803922
-Random Forest Accuracy :  0.6387745098039215
-Naive Bayes Accuracy :  0.6321241830065361
+Random Forest Accuracy :  0.6402777777777778
+Naive Bayes Accuracy :  0.6313834422657952
 SVM Accuracy :  0.6446732026143791
-Logistic Regression Accuracy :  0.6454248366013071
+Logistic Regression Accuracy :  0.6461655773420479

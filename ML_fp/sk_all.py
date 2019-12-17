@@ -63,9 +63,9 @@ def print_matrix(name, model, test, test_target):
 
 
 
-fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy or girlfriend or husband or wife']
 
-train = pd.read_csv('final.csv',engine='python')
+train = pd.read_csv('final.csv')
 #train = train.sample(frac=1).reset_index(drop = True) #shuffle
 train.replace(np.nan, 23, inplace=True)
 for col in fea:
@@ -74,7 +74,7 @@ delete =  train[train['choose hometown or travel'] == 'travel'].index
 #train.drop(delete, inplace = True)
 #train = train.reset_index(drop = True)
 #train = train.drop('choose hometown or travel', axis = 1)
-fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
+fea = ['choose hometown or travel', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy or girlfriend or husband or wife']
 
 
 le = preprocessing.LabelEncoder()
@@ -85,36 +85,23 @@ train['transportation'].replace(['train bus or ship'], [0], inplace = True)
 train['transportation'].replace(['HSR or airplane'], [1], inplace = True)
 train['transportation'].replace(['drive or ride by yourself'], [2], inplace = True)
 
-#delete = ['location of work (school)', 'hometown location','interpersonal relationship', 'family relationship','have boy/girlfriend/husband/wife','gender']
-#train = train.drop(columns = delete)
+#distribution of target************
 labels = ['train bus or ship','drive or ride by yourself','HSR or airplane']
 separeted = [0, 0.2, 0.2]
 size = train['transportation'].value_counts()
 plt.pie(size, labels = labels,  autopct = "%1.1f%%", explode = separeted,  pctdistance = 0.6, shadow=True)
 plt.title('Pie chart of transportation', {"fontsize" : 18})
 plt.legend(loc = "best")
-plt.savefig('Pie chart of transportation.png')
+plt.savefig('picture/Pie chart of transportation.png')
 plt.close()
+#***********************
 
-repeat1 = train[train['transportation'] == 1].index
-repeat2 = train[train['transportation'] == 2].index
-    
-df_1 = pd.DataFrame()
-df_2 = pd.DataFrame()
-df_1 = train.loc[repeat1]
-df_2 = train.loc[repeat2]
-df_1 = df_1.reset_index(drop = True)
-df_2 = df_2.reset_index(drop = True)
-for i in range(int(len(df_1)/2)):
-    delete = random.randint(0, len(df_1)-1)
-    df_1 = df_1.drop(df_1.index[delete])
-for i in range(int(len(df_2)/2)):
-    delete = random.randint(0, len(df_2)-1)
-    df_2 = df_2.drop(df_2.index[delete])
-    
-#train = pd.concat([train, df_1, df_2], axis = 0)
 train = train.reset_index(drop = True)
-print(train.shape)
+
+delete = ['choose hometown or travel', 'age', 'interpersonal relationship', 'family relationship','gender', 'have boy/girlfriend/husband/wife']
+#train = train.drop(columns = delete)
+#print(train.shape)
+
 train_all = train.copy()
 train_all = train_all.drop(columns = 'transportation')
 test_all = train['transportation']

@@ -285,6 +285,7 @@ def predict_res(df_train, feature, df_test):
     target = []
     height = 0
     mytree = (create_tree(tree, f1, target, height))
+    print(mytree)
     df_test1 = df_test.copy()
     ret = list(set(feature).difference(set(f1)))
     df_test1 = df_test1.drop(columns = ret)
@@ -301,7 +302,7 @@ def predict_res(df_train, feature, df_test):
 
     return predict
 
-df = pd.read_csv('tran.csv')
+df = pd.read_csv('final.csv', engine = 'python')
 df.replace(np.nan, 23, inplace=True)
 df['transportation'].replace(['train bus or ship'], 1, inplace = True)
 df['transportation'].replace(['HSR or airplane'], 2, inplace = True)
@@ -309,9 +310,7 @@ df['transportation'].replace(['drive or ride by yourself'], 3, inplace = True)
 
 df['age'] = df['age'].astype('int64')
 
-delete = df[df['Choose hometown or travel'] == 'travel'].index
-df.drop(delete, inplace = True)
-df = df.drop('Choose hometown or travel', axis = 1)
+
 
 feature = ['age', 'job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
 f2 = ['job', 'back home frequency', 'location of work (school)', 'hometown location', 'distance between the above two', 'interpersonal relationship', 'family relationship', 'gender', 'financial situation(income)', 'have boy/girlfriend/husband/wife']
@@ -344,7 +343,7 @@ df_train = df_train.reset_index(drop = True)
 df_test = df_test.reset_index(drop = True)
 
 predict_all = []
-tree_num = 7
+tree_num = 1
 for i in range(tree_num):
     predict = predict_res(df_train, feature, df_test)
     predict_all.append(predict)
