@@ -106,7 +106,9 @@ train_all = train.copy()
 train_all = train_all.drop(columns = 'transportation')
 test_all = train['transportation']
 
-train, test, target, test_target = train_test_split(train_all, test_all, test_size=0.30, random_state=0)
+#split data******
+train, test, target, test_target = train_test_split(train_all, test_all, test_size=0.30, random_state=100)
+#*************
 
 n_class = 3
 y_bin = label_binarize(test_target, np.arange(n_class))
