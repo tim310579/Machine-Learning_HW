@@ -117,7 +117,7 @@ if __name__ == "__main__":
     y = np.array([df['label']]).T
     X2 = X/np.amax(X, axis=0) # maximum of X array
     i = 1
-    for i in range(1, 6):
+    for i in range(1, 11):
         neural_network.train(X2, y, i*10000)
         print ("New weights after training %d times: " % (i*10000))
         neural_network.print_weights()
@@ -131,6 +131,8 @@ if __name__ == "__main__":
     tmp_y1 = []
     tmp_x0 = []
     tmp_y0 = []
+    hid1, hid2, hid3, out = neural_network.think(array(X2))
+    print(out)
     for i in range(100):
         data = X[i]
         hid1, hid2, hid3, out = neural_network.think(array(X2[i]))
@@ -140,8 +142,9 @@ if __name__ == "__main__":
         else:
             tmp_x0.append(data[0])
             tmp_y0.append(data[1])
-    plt.plot(tmp_x1, tmp_y1, 'o', color = 'b')
-    plt.plot(tmp_x0, tmp_y0, 'o', color = 'r')
+    plt.plot(tmp_x1, tmp_y1, 'o', color = 'b', label = '1')
+    plt.plot(tmp_x0, tmp_y0, 'o', color = 'r', label = '0')
+    plt.legend(loc = 'best')
     a = np.arange(0, 100)
     b = a
     plt.plot(a, b, c = 'g')
@@ -162,8 +165,9 @@ if __name__ == "__main__":
         else:
             real_x0.append(data[0])
             real_y0.append(data[1])
-    plt.plot(real_x1, real_y1, 'o', color = 'b')
-    plt.plot(real_x0, real_y0, 'o', color = 'r')
+    plt.plot(real_x1, real_y1, 'o', color = 'b', label = '1')
+    plt.plot(real_x0, real_y0, 'o', color = 'r', label = '0')
+    plt.legend(loc = 'best')
     a = np.arange(0, 100)
     b = a
     plt.plot(a, b, c = 'g')
